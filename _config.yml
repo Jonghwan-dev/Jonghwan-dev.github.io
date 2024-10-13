@@ -18,10 +18,6 @@
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
 lang:                  en
-<<<<<<< HEAD
-
-=======
->>>>>>> 68fd10f1be93980602c1eee50c7ea6f780cf888b
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Itinerant V-log
@@ -41,7 +37,7 @@ keywords:              [AI, DeepLearning, cv, Hemodynamic]
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  /assets/img/logo.png
+logo:                  /assets/img/my.jpg
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
@@ -53,9 +49,9 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Example
-    url:               /example/
-  - title:             Documentation
+  - title:             Deeplearning
+    url:               /deeplearning/
+  - title:             Hemodynamic
     url:               /docs/
   - title:             About
     url:               /about/
