@@ -363,8 +363,8 @@ plugins:
 social:
    name:                <Kim> <Jonghwan>
    links:
-     - https://twitter.com/<jonghwan>
-     - https://github.com/<Jonghwan-dev>
+     - https://twitter.com/jonghwan
+     - https://github.com/Jonghwan-dev
 
 
 # Plugin Configs
