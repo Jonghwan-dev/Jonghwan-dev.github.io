@@ -18,7 +18,10 @@
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
 lang:                  en
+<<<<<<< HEAD
 
+=======
+>>>>>>> 68fd10f1be93980602c1eee50c7ea6f780cf888b
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Itinerant V-log
