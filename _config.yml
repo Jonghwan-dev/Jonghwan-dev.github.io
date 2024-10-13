@@ -50,9 +50,9 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Deeplearning
-    url:               /deeplearning/
+    url:               /deeplearning/_posts/
   - title:             Hemodynamic
-    url:               /docs/
+    url:               /docs/_post/
   - title:             About
     url:               /about/
 
@@ -92,7 +92,7 @@ remote_theme: hydecorp/hydejack@v9
 # ----------------------------------------------------------------------------------------
  
 # Sidebar image and theme color of the site.
-accent_image:          /assets/img/sidebar-bg.jpg
+accent_image:          /assets/img/bg_sky.jpg
 accent_color:          rgb(79,177,186)
 
 # This is used for the `theme-color` meta tag,
