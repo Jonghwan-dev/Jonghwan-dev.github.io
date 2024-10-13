@@ -17,14 +17,14 @@
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en,ko
+lang:                  en
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Itinerant V-log
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
-description:           >
+description:          
   Greetings! I'm itinerant developer, Jonghwan Kim
   Welcome to my V-log
 
@@ -360,11 +360,11 @@ plugins:
 #   admins:              <id>
 
 # Used on index and about sites
-# social:
-#   name:                <firstname> <lastname>
-#   links:
-#     - https://twitter.com/<username>
-#     - https://github.com/<username>
+social:
+   name:                <Kim> <Jonghwan>
+   links:
+     - https://twitter.com/<jonghwan>
+     - https://github.com/<Jonghwan-dev>
 
 
 # Plugin Configs
