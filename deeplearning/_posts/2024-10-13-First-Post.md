@@ -1,12 +1,8 @@
 ---
+layout: deeplearning/_posts
 title: "github.io 블로그 시작하기"
 excerpt: "Github Blog 서비스인 github.io 블로그를 시작하기로 했다"
 
-categoies:
-    - Blog
-
-tags:
-    - Blog
 
 last_modified_at: 2024-10-13T08:06:00-05:00
 ---
