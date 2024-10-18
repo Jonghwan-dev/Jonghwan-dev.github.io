@@ -8,7 +8,7 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    안녕하세요! 
+    안녕하세요!  보잘 것 없는 블로그에 와주신 여러분 정말 감사합니다!
 
   # This photo will be used in the about section
   picture:
