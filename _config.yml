@@ -17,7 +17,7 @@
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en
+lang:                  ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Itinerant B-log
@@ -42,19 +42,26 @@ logo:                  /assets/img/i.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                <Kim> <Jonghwan>
-  email:               <kjh00012120@gmail.com>
+  name:                Kim Jonghwan
+  email:               kjh00012120@gmail.com
   # # Used by `jekyll-seo-tag`:
   # twitter:             <username>
 
 # Add links to the sidebar.
 menu:
-  - title:             Deeplearning
-    url:               /deeplearning/_posts/
-  - title:             Hemodynamic
-    url:               /docs/_posts/
-  - title:             About
+  - title:             ABOUT
     url:               /about/
+  - title:             Deep_learning
+    url:               /deep_learning/
+  - title:             CV
+    url:               /cv/
+  - title:             Hemodynamic
+    url:               /hemodynamics/
+  - title:             4D Flow MR
+    url:               /4d_flow_mr/
+  - title:             Echocardigraphy
+    url:               /echocardiography/
+
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..

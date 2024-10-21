@@ -1,6 +1,7 @@
 # Ignore docs files
 _site
 _drafts
+.ruby-version
 build
 dist
 
@@ -43,6 +44,8 @@ Gemfile.lock
 _zip
 /stats.json
 .dev.vars
+/dist
+/build
 
 /assets/js/*hydejack-*
 /_sass/*/__*__/*

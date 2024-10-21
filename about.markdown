@@ -1,18 +1,23 @@
 ---
-layout: page
-title: About
+layout: about
+title:  About
 permalink: /about/
+sidebar: true 
 ---
+## Hello, World! 
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hi, I'm **SANGMIN PARK**! 😀<br>
+I am cse student of **[INHA University]**.<br>
+I like to solve brain teasing problems in field of CSE.<br>
+I'm also a 🏆**[HEAVY!! gamer]**!🎮 The reason why I decided to study **[GAME DEVELOPMENT]**!<br> 
+And love to **[draw](https://blog.naver.com/netboy0524)** 🎨 some stuff.  <br><br>
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+This Blog is for my Study and Game Develop records.💻<br>
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## THANK YOU! 
 
 
-[jekyll-organization]: https://github.com/jekyll
+
+<br><br><br>
+## 박상민 / SANG MIN PARK
+<!--author-->
