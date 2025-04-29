@@ -57,7 +57,8 @@ menu:
   - title: ABOUT
     url: /about/
   - title: RESEARCH
-    submenus:
+    url: /Research/
+    submenu:
       - title: Deep Learning
         url: /deep_learning/
       - title: Computer Vision
@@ -69,11 +70,11 @@ menu:
       - title: Hemodynamic
         url: /hemodynamics/
   - title: PROJECTS
-    url: /projects/
+    url: /Projects/
   - title: POSTS
-    url: /posts/
+    url: /Posts/
   - title: CONTACT
-    url: /contact/
+    url: /Contact/
 
 
 
