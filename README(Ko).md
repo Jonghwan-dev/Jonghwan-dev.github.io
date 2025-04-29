@@ -1,10 +1,11 @@
 # ITinerant Blog
 
-이 블로그는 Jonghwan Kim(김종환)의 개인 기술 블로그로, AI, 딥러닝, 의료 영상, 유방 초음파 등 다양한 IT 주제의 학습과 경험을 공유합니다.
+이 공간은 'Jonghwand Kim's Tech blog' 입니다.   
+AI, 딥러닝, 의료 영상 처리 등 다양한 IT 주제의 학습과 경험을 공유하고자 합니다.
 
 ## 소개
 - **저자:** Jonghwan Kim (itinerant developer)
-- **주요 주제:** AI, Deep Learning, Medical Imaging, Breast Ultrasound, 개발 노트, 영어 학습
+- **주요 주제:** AI, Deep Learning, Medical Imaging, 개발 노트, 영어 학습
 - **목적:**  
   최신 기술 트렌드, 연구 리뷰, 프로젝트 실습, 개발 경험, 그리고 실용적인 팁을 기록하고 공유하여 지속적인 학습과 성장을 지원하는 것
 
@@ -33,7 +34,7 @@
 - `_featured_categories/` — 카테고리 설명 및 구조 정의
 - `assets/` — 이미지, CSS, JavaScript 등 정적 파일 저장
 - `Gemfile` — 루비 젬(의존성) 관리 파일
-- `README.md` — 블로그 개요 및 사용법 문서
+- `README.md`, `README(ko).md` — 블로그 개요 및 사용법 문서
 
 ## 커스터마이징 방법
 - `_config.yml` 파일에서 블로그 제목, 설명, 태그라인 등 기본 정보를 수정할 수 있습니다.

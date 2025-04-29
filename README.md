@@ -1,7 +1,7 @@
 # ITinerant Blog
 
 Welcome to the personal tech blog of Jonghwan Kim (itinerant developer).  
-This blog shares insights, research, and experiences across various IT fields, including AI, deep learning, medical imaging, and breast ultrasound.
+This blog shares insights, research, and experiences across various IT fields, including AI, deep learning, and medical imaging process.
 
 ## Introduction
 - **Author:** Jonghwan Kim (itinerant developer)
@@ -34,7 +34,7 @@ This blog shares insights, research, and experiences across various IT fields, i
 - `_featured_categories/` — Category descriptions and structure
 - `assets/` — Static files (images, CSS, JavaScript)
 - `Gemfile` — Dependency management for Ruby gems
-- `README.md` — Blog overview and usage guide (this file)
+- `README.md`, `README(ko).md` — Blog overview and usage guide
 
 ## Customization
 - Update basic information like title, tagline, and author details in `_config.yml`.
