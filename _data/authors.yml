@@ -8,10 +8,10 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about: |
-    Position  : Researcher, Dept. of Public Health & AI, National Cancer Center  
-    Focus     : Breast ultrasound, medical image analysis, clinical data with AI  
-    Interest  : Deep learning, Medical imaging, Healthcare AI, Cancer, Ultrasound  
-    Contact   : 📧 [army@ncc.re.kr](mailto:army@ncc.re.kr) | 💻 [GitHub](https://github.com/Jonghwan-dev)
+    **Position**  : Researcher, Dept. of Public Health & AI, National Cancer Center  
+    **Focus**     : Breast ultrasound, medical image analysis, clinical data with AI  
+    **Interest**  : Deep learning, Medical imaging, Healthcare AI, Cancer, Ultrasound  
+    **Contact**   : 📧 [army@ncc.re.kr](mailto:army@ncc.re.kr) | 💻 [GitHub](https://github.com/Jonghwan-dev)
     
     
 
