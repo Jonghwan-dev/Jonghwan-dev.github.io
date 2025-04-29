@@ -2,9 +2,7 @@
 layout: post
 title: "Example Post Title"
 description: "Short SEO-friendly description of the post."
-categories:
-  - research
-  - implementation
+categories: research/implementation
 tags: [AI, Research, CNN]
 related_posts:
   - /research/implementation/HO_1
@@ -15,8 +13,8 @@ image:
     400w: /assets/img/example-small.jpg
 excerpt_separator: <!--more-->
 sitemap: true
-date: 2025-04-29
-last_modified_at: 2025-04-29T12:00:00+09:00
+date: 2024-03-19
+last_modified_at: 2024-03-19T12:00:00+09:00
 comments: true
 ---
 

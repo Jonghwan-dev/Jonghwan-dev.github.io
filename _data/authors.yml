@@ -8,12 +8,10 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about: |
-    국립암센터 보건 AI학과 소속 연구원으로 의료인공지능 중에서 유방 초음파 영상 분석 연구를 진행행하고 있습니다.  
-    연구 과정에서 얻은 인사이트, 논문 리뷰, 프로젝트 경험을 공유하고자 합니다.  
-    Interest: Deeplearning, Medical imaging, Healthcare AI, Cancer, Ultrasound  
-    Contact:   
-        ([e-mail : army@ncc.re.kr](mailto:army@ncc.re.kr))  
-        ([GitHub](https://github.com/Jonghwan-dev))  
+    Position  : Researcher, Dept. of Public Health & AI, National Cancer Center  
+    Focus     : Breast ultrasound, medical image analysis, clinical data with AI  
+    Interest  : Deep learning, Medical imaging, Healthcare AI, Cancer, Ultrasound  
+    Contact   : 📧 [army@ncc.re.kr](mailto:army@ncc.re.kr) | 💻 [GitHub](https://github.com/Jonghwan-dev)
     
     
 
