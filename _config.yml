@@ -70,12 +70,12 @@ menu:
   - title: ABOUT
     url: /about/
   - title: RESEARCH
-    url: /Research/
+    url: /research/
     submenu:
       - title: Paper Review
-        url: /Research/paper-review/
+        url: /research/paper-review/
       - title: Implementation
-        url: /Research/implementation/
+        url: /research/implementation/
   - title: AI & CODING
     url: /ai-coding/
   - title: DEVLOG
