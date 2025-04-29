@@ -73,9 +73,9 @@ menu:
     url: /research/
     submenu:
       - title: Paper Review
-        url: /research/paper-review/
+        url: /paper-review/
       - title: Implementation
-        url: /research/implementation/
+        url: /implementation/
   - title: AI & CODING
     url: /ai-coding/
   - title: DEVLOG
