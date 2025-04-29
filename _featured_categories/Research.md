@@ -1,21 +1,8 @@
 ---
-# Featured tags need to have either the `list` or `grid` layout (PRO only).
 layout: list
-
-# The title of the tag's page.
-title: RESEARCH
-
-# The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
-slug: Research
-
-# (Optional) Write a short (~150 characters) description of this featured tag.
+title: Research
+slug: research
 description: >
-  My research interests include computer vision, medical image segmentation, and deep learning.
-
-# (Optional) You can disable grouping posts by date.
-# no_groups: true
-
-# Exclude this example category from the sitemap.
-# DON'T USE THIS SETTING IN YOUR CATEGORIES!
+  This category focuses on academic research in artificial intelligence, computer vision, and medical imaging. It includes paper reviews and practical implementations, providing critical analysis and experimental reproductions to deepen understanding and inspire future innovation.
 sitemap: true
 ---

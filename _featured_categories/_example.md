@@ -3,14 +3,14 @@
 layout: list
 
 # The title of the tag's page.
-title: Deep_learning
+title: title name # it shows blog UI
 
 # The name of the tag, used in a post's front matter (e.g. tags: [<slug>]).
-slug: deep_learning
+slug: file name # it is files name that you set in _posts folder
 
 # (Optional) Write a short (~150 characters) description of this featured tag.
 description: >
-  Research of Deep learning
+  description of the file
 
 # (Optional) You can disable grouping posts by date.
 # no_groups: true
