@@ -15,6 +15,7 @@ image:
     400w: /assets/img/example-small.jpg
 excerpt_separator: <!--more-->
 sitemap: true
+date: 2025-04-29
 last_modified_at: 2025-04-29T12:00:00+09:00
 comments: true
 ---

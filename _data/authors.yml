@@ -8,13 +8,12 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about: |
-    국립암센터 보건 AI학과 소속 연구원으로 AI와 의료영상 중 유방 초음파 영상 분석 및 딥러닝 기반 임상 데이터 연구에 집중하고 있습니다.
-    연구 과정에서 얻은 인사이트, 논문 리뷰, 프로젝트 경험을 공유하여 AI와 의료영상 분야의 최신 동향을 나누기 위해 운영하고 있습니다.
-    관심 분야: 딥러닝, 의료영상, 임상데이터, 헬스케어 AI, 유방암, 초음파 영상
-    기술: Linux, Python, PyTorch, W&B
-    문의 및 협업 제안: 
-        ([e-mail : army@ncc.re.kr](mailto:army@ncc.re.kr)) 
-        ([GitHub](https://github.com/Jonghwan-dev))
+    국립암센터 보건 AI학과 소속 연구원으로 의료인공지능 중에서 유방 초음파 영상 분석 연구를 진행행하고 있습니다.  
+    연구 과정에서 얻은 인사이트, 논문 리뷰, 프로젝트 경험을 공유하고자 합니다.  
+    Interest: Deeplearning, Medical imaging, Healthcare AI, Cancer, Ultrasound  
+    Contact:   
+        ([e-mail : army@ncc.re.kr](mailto:army@ncc.re.kr))  
+        ([GitHub](https://github.com/Jonghwan-dev))  
     
     
 
