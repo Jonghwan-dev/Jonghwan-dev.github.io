@@ -20,19 +20,24 @@
 lang:                  ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Itinerant B-log
+title:                 ITinerant blog
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:          >
-  Greetings! I'm itinerant developer, Jonghwan Kim
-  Welcome to my B-log
+  Greetings! I'm itinerant developer, Jonghwan Kim.
+  Welcome to my blog.
 
 # A shorter description for the sidebar.
-tagline:               learning for `DeepLearning`,`CV`,`Hemodynamic`
+tagline:               learning for `AI`,`DeepLearning`,`Medical imaging`,`Breast Ultrasound`
 
 # A list of keywords for your blog
-keywords:              [AI, DeepLearning, CV, Hemodynamic]
+keywords:              ["AI", "DeepLearning", "Computer Vision", 
+                        "CV", "Medical Imaging", "Breast Cancer", 
+                        "Breast Ultrasound", "Ultrasound", "딥러닝", 
+                        "의료영상", "인공지능", "임상데이터", "헬스케어", 
+                        "Research", "논문리뷰", "Python", "PyTorch", 
+                        "TensorFlow", "Healthcare AI"]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
@@ -49,18 +54,27 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             ABOUT
-    url:               /about/
-  - title:             Deep_learning
-    url:               /deep_learning/
-  - title:             CV
-    url:               /cv/
-  - title:             Hemodynamic
-    url:               /hemodynamics/
-  - title:             4D Flow MR
-    url:               /4d_flow_mr/
-  - title:             Echocardigraphy
-    url:               /echocardiography/
+  - title: ABOUT
+    url: /about/
+  - title: RESEARCH
+    submenus:
+      - title: Deep Learning
+        url: /deep_learning/
+      - title: Computer Vision
+        url: /computer_vision/
+      - title: Medical Imaging
+        url: /medical_imaging/
+      - title: Breast Ultrasound
+        url: /breast_ultrasound/
+      - title: Hemodynamic
+        url: /hemodynamics/
+  - title: PROJECTS
+    url: /projects/
+  - title: POSTS
+    url: /posts/
+  - title: CONTACT
+    url: /contact/
+
 
 
 # Add links to the footer.
@@ -74,10 +88,10 @@ legal:
     url:               /CHANGELOG/
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2024. All rights reserved.
+copyright:             © 2025. All rights reserved.
 
 # Format of the permalinks
-permalink:             /:categories/:year-:month-:day-:title/
+permalink:             /:categories/:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
@@ -154,11 +168,11 @@ defaults:
       layout:          plain
       sitemap:         false
 
-  # # You can use the following to enable comments on all posts.
-  # - scope:
-  #     type:            posts
-  #   values:
-  #     comments:        true
+  # You can use the following to enable comments on all posts.
+  - scope:
+     type:            posts
+    values:
+      comments:        true
 
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:
@@ -370,7 +384,7 @@ plugins:
 social:
    name:                <Kim> <Jonghwan>
    links:
-     - https://twitter.com/jonghwan
+     - http
      - https://github.com/Jonghwan-dev
 
 
