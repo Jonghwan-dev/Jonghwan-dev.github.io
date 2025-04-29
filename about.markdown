@@ -4,7 +4,7 @@ title:  About
 permalink: /about/
 sidebar: true 
 ---
-## Hello, World! 
+## Greetings! 
 
 Hello! I'm **Kim Jonghwan**, a researcher at the Department of Health AI, National Cancer Center, Korea. <br>
 My primary focus is on artificial intelligence development, especially in computer vision for medical image segmentation. Currently, my research delves into breast cancer, aiming to advance diagnostic accuracy and patient care through deep learning and innovative AI solutions. I believe deep learning can revolutionize healthcare by uncovering patterns and insights that were previously inaccessible. <br>

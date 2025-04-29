@@ -384,7 +384,7 @@ plugins:
 social:
    name:                <Kim> <Jonghwan>
    links:
-     - http
+     - https://huggingface.co/Itinerant
      - https://github.com/Jonghwan-dev
 
 
