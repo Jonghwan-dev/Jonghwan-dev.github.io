@@ -167,7 +167,7 @@ kramdown:
 # ========================================================================================
 
 hydejack:
-  post_addons: [about, newsletter, related, random, comments]
+  post_addons: [about, newsletter, related, random]
   project_addons: [about, newsletter, other, comments]
   no_break_layout: true
   use_lsi: true
