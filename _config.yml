@@ -3,7 +3,7 @@
 
 # Uncomment and set the URL of your site (with protocol, e.g. `https://`)
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-# url:                   https://username.github.io
+url:                   https://jonghwan-dev.github.io
 
 # Uncomment and set the "base URL" of your site.
 # When your site is in a subdirectory, set to `/<name of directory>`,
@@ -17,7 +17,7 @@
 # ========================================================================================
 
 # Site language (e.g., "ko-KR" for Korean, "en-US" for English)
-lang: ko-KR, en-US
+lang: ko-KR
 
 # Site title (appears in browser tab and sidebar)
 title: ITinerant Blog
