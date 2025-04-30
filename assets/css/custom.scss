@@ -1,15 +1,15 @@
 .post-comments {
-    max-width: 46rem;          // Hydejack 기본 지면폭
-    margin: 4rem auto 0;
+    max-width: 46rem;            /* Hydejack 기본 지면폭 */
+    margin: 3rem auto 0;
     padding: 0 1rem;
   
     .comments__title {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       font-size: 1.4rem;
       font-weight: 600;
     }
   
-    .giscus-frame {            // iframe 가변폭
+    .giscus-frame {              /* iframe 가변폭 */
       width: 100% !important;
     }
   }

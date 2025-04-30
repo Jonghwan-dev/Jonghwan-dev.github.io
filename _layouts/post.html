@@ -23,10 +23,7 @@ layout: base
 {% assign patch = version[2] | plus:0 %}
 
 {% include_cached components/post.html post=page no_link_title=true no_excerpt=true hide_image=page.hide_image hide_description=page.hide_description %}
-<section class="post-comments">
-  <h2 class="comments__title">Comments</h2>
-  {% include giscus.html %}
-</section>
+
 {% include components/dingbat.html %}
 
 {% assign addons = page.addons | default:site.hydejack.post_addons %}
