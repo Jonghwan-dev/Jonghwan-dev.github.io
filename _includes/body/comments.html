@@ -1,6 +1,6 @@
 {%- comment -%} Hydejack comments addon → Giscus {%- endcomment -%}
 
-{% if page.layout == "post" and page.comments != false %}
+{% if (page.layout == "post" or page.layout == "about") and page.comments != false %}
   <section class="post-comments">
     <h2 class="comments__title">Comments</h2>
     {% include giscus.html %}
