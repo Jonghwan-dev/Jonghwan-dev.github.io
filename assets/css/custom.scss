@@ -1,9 +1,0 @@
-#comments {
-    max-width: var(--post-width, 46rem); // Hydejack 기본 지면폭과 맞춤
-    margin: 4rem auto 0;                // 가운데 정렬 + 위쪽 간격
-    padding: 0 1rem;
-  }
-  
-  #comments .giscus-frame {
-    width: 100% !important;             // iframe 가변폭 유지
-  }
