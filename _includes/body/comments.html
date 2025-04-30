@@ -1,6 +1,8 @@
-{%- comment -%} Hydejack “comments” 애드온 → Giscus 치환 {%- endcomment -%}
+{%- comment -%} Hydejack comments addon → Giscus {%- endcomment -%}
 
-<section class="post-comments">
-  <h2 class="comments__title">Comments</h2>
-  {% include giscus.html %}
-</section>
+{% if page.layout == "post" and page.comments != false %}
+  <section class="post-comments">
+    <h2 class="comments__title">Comments</h2>
+    {% include giscus.html %}
+  </section>
+{% endif %}
