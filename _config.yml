@@ -132,10 +132,11 @@ defaults:
   - scope:
       path: assets/
     values:
-      sitemap: false
+      sitemap: true
   - scope:
       type: posts
     values:
+      sitemap: true
       comments: true
   - scope:
       type: projects
