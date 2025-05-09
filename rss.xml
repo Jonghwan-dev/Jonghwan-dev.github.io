@@ -1,0 +1,48 @@
+---
+layout: null
+permalink: /rss.xml         
+sitemap: false               
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <link>{{ site.url }}{{ site.baseurl }}</link>
+    <description>{{ site.description | xml_escape }}</description>
+    <language>{{ site.lang | default: 'ko' }}</language>
+
+    <!-- RSS 자체 URL 명시 -->
+    <atom:link rel="self"
+               href="{{ site.url }}/rss.xml"
+               type="application/rss+xml" />
+
+    {% for post in site.posts limit:50 %}
+    <item>
+      <title>{{ post.title | xml_escape }}</title>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+
+      <!-- 카테고리 & 태그 출력 -->
+      {% assign cats = post.categories | concat:post.tags | uniq %}
+      {% for cat in cats %}
+      <category>{{ cat | xml_escape }}</category>
+      {% endfor %}
+
+      <!-- 작성자 (site.author.* 값 사용) -->
+      <author>{{ site.author.email }} ({{ site.author.name | xml_escape }})</author>
+
+      <!-- 요약 -->
+      <description>{{ post.excerpt | strip_html | xml_escape }}</description>
+
+      <!-- 본문 전문 -->
+      <content:encoded><![CDATA[
+        {{ post.content | xml_escape }}
+      ]]></content:encoded>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
