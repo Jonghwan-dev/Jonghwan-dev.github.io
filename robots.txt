@@ -1,7 +1,7 @@
-User-agent: *  
+User-agent: *
 
-Allow: /  
+Allow: /
 
-Sitemap: https://jonghwan-dev.github.io/sitemap.xml  
+Sitemap: https://jonghwan-dev.github.io/sitemap.xml
 
-Sitemap: https://jonghwan-dev.github.io/rss.xml  
+Sitemap: https://jonghwan-dev.github.io/rss.xml
