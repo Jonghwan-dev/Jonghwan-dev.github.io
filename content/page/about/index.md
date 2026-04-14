@@ -26,7 +26,7 @@ lastmod: 2026-04-14
 
 ## 연락처
 
-- GitHub: [Jonghwan-dev](https://github.com/Jonghwan-dev)
+- GitHub: [jonghwan-dev](https://github.com/jonghwan-dev)
 - 이메일: kjh00012120@gmail.com
 
 > 블로그 내용에 대한 피드백이나 협업 제안은 언제든지 환영합니다.

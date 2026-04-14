@@ -1,4 +1,4 @@
-baseURL = "https://Jonghwan-dev.github.io/"
+baseURL = "https://jonghwan-dev.github.io/"
 languageCode = "ko-KR"
 title = "ArmyKim_space"
 theme = "stack"
@@ -64,7 +64,7 @@ hasCJKLanguage = true
     provider = "giscus"
 
   [params.comments.giscus]
-    repo             = "Jonghwan-dev/Jonghwan-dev.github.io"
+    repo             = "jonghwan-dev/jonghwan-dev.github.io"
     repoID           = "R_kgDOSB8O0Q"
     category         = "Announcements"
     categoryID       = "DIC_kwDOSB8O0c4C6zRB"
@@ -119,7 +119,7 @@ hasCJKLanguage = true
   [[menu.social]]
     identifier = "github"
     name       = "GitHub"
-    url        = "https://github.com/Jonghwan-dev"
+    url        = "https://github.com/jonghwan-dev"
     weight     = 1
     params     = { icon = "brand-github", newTab = true }
 
