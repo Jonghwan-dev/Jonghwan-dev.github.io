@@ -90,28 +90,28 @@ hasCJKLanguage = true
   [[menu.main]]
     identifier = "archives"
     name       = "Archives"
-    url        = "/archives"
+    url        = "/archives/"
     weight     = 2
     params     = { icon = "archives" }
 
   [[menu.main]]
     identifier = "tags"
     name       = "Tags"
-    url        = "/tags"
+    url        = "/tags/"
     weight     = 3
     params     = { icon = "tag" }
 
   [[menu.main]]
     identifier = "search"
     name       = "Search"
-    url        = "/search"
+    url        = "/search/"
     weight     = 4
     params     = { icon = "search" }
 
   [[menu.main]]
     identifier = "about"
     name       = "About"
-    url        = "/about"
+    url        = "/about/"
     weight     = 5
     params     = { icon = "user" }
 

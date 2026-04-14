@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>General on ArmyKim_space</title>
-        <link>https://jonghwan-dev.github.io/categories/general/</link>
+        <link>http://localhost:1313/categories/general/</link>
         <description>Recent content in General on ArmyKim_space</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ko-KR</language>
-        <lastBuildDate>Tue, 14 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jonghwan-dev.github.io/categories/general/index.xml" rel="self" type="application/rss+xml" /><item>
-            <title>The AI Stack을 시작합니다</title>
-            <link>https://jonghwan-dev.github.io/post/hello-world/</link>
+        <lastBuildDate>Tue, 14 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/general/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>블로그 시작</title>
+            <link>http://localhost:1313/post/hello-world/</link>
             <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
-            <guid>https://jonghwan-dev.github.io/post/hello-world/</guid>
-            <description>&lt;p&gt;AI와 개발 도구를 탐구하는 블로그, The AI Stack입니다.&lt;/p&gt;&#xA;</description>
+            <guid>http://localhost:1313/post/hello-world/</guid>
+            <description>&lt;p&gt;재밌겠다 블로그 열심히 해봐야지 NCC 최고 미녀 이동현&lt;/p&gt;&#xA;</description>
         </item></channel>
 </rss>
