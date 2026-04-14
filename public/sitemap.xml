@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/tags/ai/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/categories/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/categories/general/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/tags/intro/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/post/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/tags/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/post/hello-world/</loc>
+    <lastmod>2026-04-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://%EC%84%9C%EB%B2%84IP:1313/archives/</loc>
+  </url>
+</urlset>

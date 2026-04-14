@@ -1,0 +1,58 @@
+baseURL = "https://Jonghwan-dev.github.io/"
+languageCode = "ko-KR"
+title = "The AI Stack"
+theme = "stack"
+paginate = 10
+hasCJKLanguage = true
+
+[params]
+  mainSections = ["post"]
+  featuredImageField = "image"
+  rssFullContent = true
+
+  [params.footer]
+    since = 2024
+
+  [params.dateFormat]
+    published = "2006-01-02"
+    lastUpdated = "2006-01-02 15:04 MST"
+
+  [params.sidebar]
+    emoji = "🤖"
+    subtitle = "AI · Dev · Tools"
+
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+
+  [params.article.license]
+    enabled = false
+    default = ""
+
+  [params.comments]
+    enabled = false
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives"
+    weight = 2
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags"
+    weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
