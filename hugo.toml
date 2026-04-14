@@ -1,9 +1,15 @@
 baseURL = "https://Jonghwan-dev.github.io/"
 languageCode = "ko-KR"
-title = "The AI Stack"
+title = "ArmyKim_space"
 theme = "stack"
 paginate = 10
 hasCJKLanguage = true
+
+# ─── Google Analytics ─────────────────────────────────── 2026-04-14 by JHkim ──
+# https://analytics.google.com → 관리 → 데이터 스트림 → 측정 ID (G-XXXXXXXXXX)
+[services]
+  [services.googleAnalytics]
+    ID = "G-XXXXXXXXXX"   # TODO: 실제 GA4 측정 ID로 교체
 
 [params]
   mainSections = ["post"]
@@ -17,38 +23,119 @@ hasCJKLanguage = true
     published = "2006-01-02"
     lastUpdated = "2006-01-02 15:04 MST"
 
+  # ─── 다크모드 토글 ──────────────────────────────────────── 2026-04-14 by JHkim ──
+  # 사이드바 하단에 라이트/다크 전환 버튼이 자동으로 표시됩니다.
+  [params.colorScheme]
+    toggle  = true      # true = 토글 버튼 표시
+    default = "auto"    # "auto" | "light" | "dark"
+
   [params.sidebar]
-    emoji = "🤖"
-    subtitle = "AI · Dev · Tools"
+    emoji    = "👋"
+    subtitle = "흔한 개발자의 기술블로그"
+    # ─── avatar ───────────────────────────────────────────── 2026-04-14 by JHkim ──
+    avatar = "img/avatar.png"
 
   [params.article]
-    math = false
-    toc = true
+    math        = false
+    toc         = true
     readingTime = true
 
   [params.article.license]
     enabled = false
     default = ""
 
+  # ─── 검색 위젯 ─────────────────────────────────────────── 2026-04-14 by JHkim ──
+  # homepage 위젯 목록. type 은 themes/stack/layouts/_partials/widget/ 파일명과 일치시켜야 함.
+  # 사용 가능: search, archives, tag-cloud, categories, toc
+  [params.widgets]
+    homepage = [
+      { type = "search" },
+      { type = "archives", params = { limit = 5 } },
+      { type = "tag-cloud", params = { limit = 10 } },
+    ]
+
+  # ─── Giscus 댓글 + 이모지 반응 ─────────────────────────── 2026-04-14 by JHkim ──
+  # 설정 순서:
+  #   1. 리포지토리 Settings → Features → Discussions 체크
+  #   2. https://github.com/apps/giscus 에서 앱 설치 (해당 리포 선택)
+  #   3. https://giscus.app/ko 에서 리포 입력 → repoID, categoryID 복사
   [params.comments]
-    enabled = false
+    enabled  = true
+    provider = "giscus"
+
+  [params.comments.giscus]
+    repo             = "Jonghwan-dev/Jonghwan-dev.github.io"
+    repoID           = "R_kgDOSB8O0Q"
+    category         = "Announcements"
+    categoryID       = "DIC_kwDOSB8O0c4C6zRB"
+    mapping          = "pathname"
+    lightTheme       = "light"
+    darkTheme        = "dark_dimmed"
+    reactionsEnabled = 1           # 이모지 활성화 by JHKim
+    emitMetadata     = 0
+    inputPosition    = "bottom"
+    lang             = "ko"
+    strict           = 0
+    loading          = "lazy"
 
 [menu]
+  # ─── 메인 메뉴 ─────────────────────────────────────────── 2026-04-14 by JHkim ──
   [[menu.main]]
     identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 1
+    name       = "Home"
+    url        = "/"
+    weight     = 1
+    params     = { icon = "home" }
+
   [[menu.main]]
     identifier = "archives"
-    name = "Archives"
-    url = "/archives"
-    weight = 2
+    name       = "Archives"
+    url        = "/archives"
+    weight     = 2
+    params     = { icon = "archives" }
+
   [[menu.main]]
     identifier = "tags"
-    name = "Tags"
-    url = "/tags"
-    weight = 3
+    name       = "Tags"
+    url        = "/tags"
+    weight     = 3
+    params     = { icon = "tag" }
+
+  [[menu.main]]
+    identifier = "search"
+    name       = "Search"
+    url        = "/search"
+    weight     = 4
+    params     = { icon = "search" }
+
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about"
+    weight     = 5
+    params     = { icon = "user" }
+
+  # ─── SNS 링크 (사이드바 아바타 아래에 아이콘으로 표시) ─── 2026-04-14 by JHkim ──
+  [[menu.social]]
+    identifier = "github"
+    name       = "GitHub"
+    url        = "https://github.com/Jonghwan-dev"
+    weight     = 1
+    params     = { icon = "brand-github", newTab = true }
+
+  [[menu.social]]
+    identifier = "gmail"
+    name       = "Gmail"
+    url        = "mailto:kjh00012120@gmail.com"
+    weight     = 2
+    params     = { icon = "brand-gmail", newTab = false }
+
+  [[menu.social]]
+    identifier = "linkedin"
+    name       = "LinkedIn"
+    url        = "https://www.linkedin.com/in/jonghwankim8880/"
+    weight     = 3
+    params     = { icon = "brand-linkedin", newTab = true }
 
 [markup]
   [markup.goldmark]

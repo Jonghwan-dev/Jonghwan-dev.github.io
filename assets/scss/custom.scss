@@ -1,0 +1,42 @@
+// ─── 커스텀 색상 & 폰트 ─────────────────────────── 2026-04-14 by JHkim ──
+//
+// 이 파일은 themes/stack/assets/scss/style.scss 의 마지막에 import 됩니다.
+// 테마의 기본 변수를 덮어쓰거나 추가 스타일을 자유롭게 작성하세요.
+// 변수 목록 참고: themes/stack/assets/scss/variables.scss
+//
+// ────────────────────────────────────────────────────────────────────────────
+
+// ── 폰트 (Google Fonts에서 가져온 Noto Sans KR + 기본 영문 폰트) ──────────
+// layouts/_partials/head/custom.html 에서 @import 대신 <link> 로 로드합니다.
+
+:root {
+    // ── 한국어 가독성을 위한 폰트 패밀리 재정의 ─────────────────────────
+    --base-font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+
+    // ── Accent 색상 (라이트 모드) ────────────────────────────────────────
+    // 기본값: #34495e (진한 회청색)
+    // 아래 주석을 해제하고 원하는 색으로 변경하세요.
+    // --accent-color:        #2563eb;   // 파란색 계열
+    // --accent-color-darker: #1d4ed8;
+    // --accent-color-text:   #ffffff;
+
+    // ── 본문 배경색 (라이트 모드) ────────────────────────────────────────
+    // --body-background: #f9fafb;
+}
+
+// ── 다크 모드 색상 재정의 ────────────────────────────────────────────────
+:root[data-scheme="dark"] {
+    // --accent-color:        #60a5fa;
+    // --accent-color-darker: #3b82f6;
+    // --accent-color-text:   #000000;
+    // --body-background:     #1a1a2e;
+}
+
+// ── 카드 스타일 미세 조정 (선택 사항) ────────────────────────────────────
+// .article-list article {
+//     transition: transform 0.2s ease;
+// }
+// .article-list article:hover {
+//     transform: translateY(-2px);
+// }

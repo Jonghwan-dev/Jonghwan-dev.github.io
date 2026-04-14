@@ -1,0 +1,6 @@
+# ─── Google AdSense ads.txt ───────────────────────────── 2026-04-14 by JHkim ──
+# AdSense 승인 후 아래 내용을 Google AdSense 대시보드 → 사이트 → ads.txt 에서
+# 복사해 이 파일에 붙여넣으세요.
+#
+# 형식 예시:
+# google.com, pub-XXXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
