@@ -15,9 +15,7 @@
         "Segoe UI", sans-serif;
 
     // ── Accent 색상 (라이트 모드) ────────────────────────────────────────
-    // 기본값: #34495e (진한 회청색)
-    // 아래 주석을 해제하고 원하는 색으로 변경하세요.
-    // --accent-color:        #2563eb;   // 파란색 계열
+    // --accent-color:        #2563eb;
     // --accent-color-darker: #1d4ed8;
     // --accent-color-text:   #ffffff;
 
@@ -34,44 +32,173 @@
 }
 
 // ── 카드 스타일 미세 조정 (선택 사항) ────────────────────────────────────
-// .article-list article {
-//     transition: transform 0.2s ease;
-// }
-// .article-list article:hover {
-//     transform: translateY(-2px);
-// }
+// .article-list article { transition: transform 0.2s ease; }
+// .article-list article:hover { transform: translateY(-2px); }
 
-// ─── 다크모드 토글 → 우측 상단 고정 FAB ─────────────────────────────────
+
+// ─── 2026-05-08_JHKim : 다크모드 토글 — pill 버튼, 우측 상단 고정, 텍스트 포함 ──
 #dark-mode-toggle {
     position: fixed;
-    top: 1.25rem;
-    right: 1.5rem;
+    top: 1rem;
+    right: 1rem;
     z-index: 1000;
 
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    padding: 0;
+    gap: 0.45rem;
+    padding: 0.5rem 1rem;
 
     background: var(--card-background);
     border: none;
-    border-radius: 50%;
+    border-radius: 2rem;
     box-shadow: var(--shadow-l2);
     cursor: pointer;
-    transition: filter 0.15s ease;
+    color: var(--card-text-color-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: filter 0.15s ease, box-shadow 0.15s ease;
 
-    &:hover { filter: brightness(0.92); }
+    &:hover {
+        filter: brightness(0.94);
+        box-shadow: var(--shadow-l3, var(--shadow-l2));
+    }
 
     .icon {
-        width: 1.2rem;
-        height: 1.2rem;
+        width: 1.3rem;
+        height: 1.3rem;
+        flex-shrink: 0;
+    }
+
+    .dark-mode-label {
+        font-size: 0.875rem;
+        letter-spacing: -0.01em;
+    }
+}
+
+
+// ─── 2026-05-08_JHKim : 사이드바 조회수 표시 ──────────────────────────────
+.sidebar-pv {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.55rem 1.25rem;
+    font-size: 0.8rem;
+    color: var(--card-text-color-tertiary);
+
+    svg {
+        width: 0.95rem;
+        height: 0.95rem;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
         flex-shrink: 0;
     }
 }
 
-// ─── 조회수 배지 (.pv-count) ─────────────────────────────────────────────
+
+// ─── 2026-05-08_JHKim : 사이드바 섹션 (카테고리 / 태그) 공통 ─────────────
+.sidebar-section {
+    padding: 0 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.sidebar-section-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--card-text-color-tertiary);
+    margin: 0 0 0.6rem 0.3rem;
+}
+
+
+// ─── 2026-05-08_JHKim : 카테고리 목록 ────────────────────────────────────
+.sidebar-category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.6rem;
+        border-radius: 0.5rem;
+        color: var(--card-text-color-secondary);
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: background 0.15s ease;
+
+        &:hover {
+            background: var(--card-background-selected);
+            color: var(--card-text-color-main);
+        }
+
+        .icon {
+            width: 1rem;
+            height: 1rem;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        .category-name { flex: 1; }
+    }
+}
+
+.category-count {
+    font-size: 0.72rem;
+    color: var(--card-text-color-tertiary);
+    background: var(--body-background);
+    padding: 0.1rem 0.45rem;
+    border-radius: 1rem;
+    min-width: 1.4rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+
+// ─── 2026-05-08_JHKim : 태그 클라우드 (사이드바) ─────────────────────────
+.sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0 0.25rem;
+}
+
+.sidebar-tag {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.1rem;
+    padding: 0.2rem 0.6rem;
+    background: var(--body-background);
+    border-radius: 1rem;
+    font-size: 0.78rem;
+    color: var(--card-text-color-secondary);
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    &:hover {
+        background: var(--accent-color);
+        color: var(--accent-color-text);
+
+        sup { color: inherit; }
+    }
+
+    sup {
+        font-size: 0.62rem;
+        color: var(--card-text-color-tertiary);
+        margin-left: 0.1rem;
+    }
+}
+
+
+// ─── 조회수 배지 (아티클 내) ─────────────────────────────────────────────
 .article-time .pv-count {
     display: inline-flex;
     align-items: center;

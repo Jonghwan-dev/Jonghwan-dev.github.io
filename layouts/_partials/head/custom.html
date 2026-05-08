@@ -12,19 +12,14 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
 
 {{- /* ── Google AdSense ───────────────────────────────────────────────────── */ -}}
-{{- /* 활성화 방법:                                                             */ -}}
-{{- /*   1. https://adsense.google.com 에서 사이트 등록                         */ -}}
-{{- /*   2. 아래 주석을 해제하고 ca-pub-XXXXXXXXXXXXXXXXX 를 본인 ID로 교체      */ -}}
-{{- /*   3. static/ads.txt 파일의 내용도 AdSense 대시보드에서 복사해 붙여넣기    */ -}}
-
-{{- /* TODO: AdSense 활성화 시 아래 주석 해제
+{{- /* TODO: AdSense 활성화 시 아래 주석 해제 후 ca-pub-XXXXXXXXXXXXXXXXX 교체
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX"
      crossorigin="anonymous"></script>
 */ -}}
 
-{{- /* ── 조회수 카운터 (Busuanzi) — 단일 포스트 페이지에만 로드 ───────────── */ -}}
-{{ if .IsPage }}
+{{- /* 2026-05-08_JHKim : Busuanzi 전체 페이지 로드 — 사이드바 사이트 총 조회수 + 아티클 페이지뷰 모두 지원 */ -}}
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+{{ if .IsPage }}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var footer = document.querySelector('.article-time');
