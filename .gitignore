@@ -21,3 +21,6 @@ Thumbs.db
 
 # Node (만약 npm 사용 시)
 node_modules/
+
+# Claude Code
+CLAUDE.md
