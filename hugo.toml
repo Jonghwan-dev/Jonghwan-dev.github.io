@@ -28,8 +28,12 @@ hasCJKLanguage = true
     default = "auto"    # "auto" | "light" | "dark"
 
   [params.google]
-    siteVerification = "GLB174ggtv69Dkosu23msmQLolVh8aj5k9fQ-kuSSKE"
-    adsensePublisherID = "" # ca-pub-XXXXXXXXXXXXXXXX
+    siteVerification  = "GLB174ggtv69Dkosu23msmQLolVh8aj5k9fQ-kuSSKE"
+    adsensePublisherID = "" # ca-pub-XXXXXXXXXXXXXXXX : AdSense 승인 후 입력
+
+  # 2026-05-08_JHKim : 네이버 서치어드바이저 소유권 인증 코드
+  [params.naver]
+    siteVerification = "" # 네이버 서치어드바이저에서 발급받은 인증 코드
 
   [params.sidebar]
     emoji    = "👋"

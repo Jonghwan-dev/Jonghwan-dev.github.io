@@ -1,5 +1,9 @@
+{{- /* 2026-05-08_JHKim : 검색 엔진 소유권 인증 — hugo.toml params.google / params.naver 에서 관리 */ -}}
 {{ with .Site.Params.google.siteVerification }}
 <meta name="google-site-verification" content="{{ . }}" />
+{{ end }}
+{{ with .Site.Params.naver.siteVerification }}
+<meta name="naver-site-verification" content="{{ . }}" />
 {{ end }}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
