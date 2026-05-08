@@ -3,10 +3,7 @@ name: Deploy Hugo
 on:
   push:
     branches: [main]
-
-# 2026-05-08_JHKim : Node.js 20 deprecation 대응 — 모든 액션을 Node.js 24로 강제 실행
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -28,11 +25,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-hugo-
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: 'latest'
-          extended: true
+      # 2026-05-08_JHKim : peaceiris/actions-hugo 제거 (내부 GitHub API 호출 실패로 exit 1 발생)
+      #                     GITHUB_TOKEN 인증 API로 최신 Hugo extended 버전 직접 설치
+      - name: Install Hugo Extended
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          HUGO_VERSION=$(curl -fsSL \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            https://api.github.com/repos/gohugoio/hugo/releases/latest \
+            | grep '"tag_name"' \
+            | sed -E 's/.*"v([^"]+)".*/\1/')
+          echo "Hugo ${HUGO_VERSION} 설치 중..."
+          curl -fsSL -o hugo.tar.gz \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          tar -xzf hugo.tar.gz hugo
+          sudo mv hugo /usr/local/bin/
+          hugo version
 
       - name: Build
         run: hugo --minify
