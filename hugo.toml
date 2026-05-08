@@ -1,5 +1,6 @@
 baseURL = "https://jonghwan-dev.github.io/"
-languageCode = "ko-KR"
+# 2026-05-08_JHKim : languageCode → locale (Hugo v0.158 deprecated)
+locale = "ko-KR"
 title = "ArmyKim_space"
 theme = "stack"
 paginate = 10
