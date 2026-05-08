@@ -3,13 +3,16 @@ locale = "ko-KR"
 title = "ArmyKim_space"
 theme = "stack"
 hasCJKLanguage = true
+# 2026-05-08_JHKim : robots.txt 자동 생성 (Sitemap URL 포함) — 구글 사이트맵 인식 오류 해결
+enableRobotsTxt = true
 
 [pagination]
   pagerSize = 10
 
 [services]
+  # 2026-05-08_JHKim : GA4 측정 ID — Stack 테마 내장 지원, 빌드 시 자동으로 gtag.js 삽입
   [services.googleAnalytics]
-    ID = "" # GA4 measurement ID, e.g. G-XXXXXXXXXX
+    ID = "G-09ZRY73S9F"
 
 [params]
   mainSections = ["post"]
@@ -33,7 +36,7 @@ hasCJKLanguage = true
 
   # 2026-05-08_JHKim : 네이버 서치어드바이저 소유권 인증 코드
   [params.naver]
-    siteVerification = "" # 네이버 서치어드바이저에서 발급받은 인증 코드
+    siteVerification = "0214843e2f6c14abe5c721027a85147a1ad61fc6"
 
   [params.sidebar]
     emoji    = "👋"
