@@ -1,0 +1,95 @@
+{{ define "body-class" }}template-search{{ end }}
+{{ define "head" }}
+    {{- with .OutputFormats.Get "json" -}}
+        <link rel="preload" href="{{ .RelPermalink }}" as="fetch" crossorigin="anonymous">
+    {{- end -}}
+{{ end }}
+{{ define "main" }}
+<form action="{{ .RelPermalink }}" class="search-form"{{ with .OutputFormats.Get "json" -}} data-json="{{ .RelPermalink }}"{{- end }}>
+    <div class="search-input-row">
+        <label>{{ T "search.title" }}</label>
+        <input id="searchInput" name="keyword" placeholder="{{ T `search.placeholder` }}" />
+        <button class="search-filter-toggle" type="button" title="Tag filter" aria-expanded="false" aria-controls="searchTagPanel">
+            {{ partial "helper/icon" "filter" }}
+        </button>
+        <button class="search-submit-button" type="submit" title="{{ T `search.title` }}">
+            {{ partial "helper/icon" "search" }}
+        </button>
+    </div>
+
+</form>
+
+{{ if .Site.Taxonomies.tags }}
+    <div id="searchTagPanel" class="search-tag-panel" hidden>
+        <section class="search-tag-board" aria-label="Tag filters">
+            <div class="search-tag-board-header">
+                {{ partial "helper/icon" "tag" }}
+                <span>Tags</span>
+            </div>
+            <div class="search-tag-grid">
+                {{ range .Site.Taxonomies.tags.ByCount }}
+                    <button type="button" class="search-tag" data-tag="{{ .Page.Title }}">
+                        {{ partial "helper/icon" "tag" }}
+                        <span>{{ .Page.Title }}</span>
+                        <sup>{{ .Count }}</sup>
+                    </button>
+                {{ end }}
+            </div>
+        </section>
+    </div>
+{{ end }}
+
+<div class="search-result hidden">
+    <h3 class="search-result--title section-title"></h3>
+    <div class="search-result--list article-list--compact"></div>
+</div>
+
+<script>
+    window.searchResultTitleTemplate = "{{ T `search.resultTitle` }}"
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.querySelector('.search-filter-toggle');
+        var panel = document.getElementById('searchTagPanel');
+        var input = document.getElementById('searchInput');
+
+        if (toggle && panel) {
+            toggle.addEventListener('click', function () {
+                var expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                panel.hidden = expanded;
+            });
+        }
+
+        var tagButtons = document.querySelectorAll('.search-tag');
+
+        function syncActiveTag() {
+            if (!input) return;
+            var keyword = input.value.trim().toLowerCase();
+            tagButtons.forEach(function (button) {
+                var tag = (button.getAttribute('data-tag') || '').trim().toLowerCase();
+                button.classList.toggle('is-active', keyword !== '' && tag === keyword);
+            });
+        }
+
+        tagButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                if (!input) return;
+                input.value = button.getAttribute('data-tag') || '';
+                input.dispatchEvent(new Event('input', { bubbles: true }));
+                syncActiveTag();
+                input.focus();
+            });
+        });
+
+        if (input) {
+            input.addEventListener('input', syncActiveTag);
+            syncActiveTag();
+        }
+    });
+</script>
+
+{{- $opts := dict "minify" hugo.IsProduction "JSXFactory" "createElement" -}}
+{{- $searchScript := resources.Get "ts/search.tsx" | js.Build $opts -}}
+<script type="text/javascript" src="{{ $searchScript.RelPermalink }}" defer></script>
+
+{{ partialCached "footer/footer" . }}
+{{ end }}

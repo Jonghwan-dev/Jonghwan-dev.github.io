@@ -1,9 +1,7 @@
-{{- /* ─── 커스텀 <head> 삽입 ────────────────────────── 2026-04-14 by JHkim ── */ -}}
+{{ with .Site.Params.google.siteVerification }}
+<meta name="google-site-verification" content="{{ . }}" />
+{{ end }}
 
-{{- /* ── Google Search Console 소유권 인증 ───────────────────────────────── */ -}}
-<meta name="google-site-verification" content="GLB174ggtv69Dkosu23msmQLolVh8aj5k9fQ-kuSSKE" />
-
-{{- /* ── 한국어 폰트 (Noto Sans KR) ──────────────────────────────────────── */ -}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style"
@@ -11,28 +9,10 @@
 <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
 
-{{- /* ── Google AdSense ───────────────────────────────────────────────────── */ -}}
-{{- /* TODO: AdSense 활성화 시 아래 주석 해제 후 ca-pub-XXXXXXXXXXXXXXXXX 교체
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX"
+{{ with .Site.Params.google.adsensePublisherID }}
+{{ if not (in . "XXXXXXXXXXXXXXXX") }}
+<meta name="google-adsense-account" content="{{ . }}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}"
      crossorigin="anonymous"></script>
-*/ -}}
-
-{{- /* 2026-05-08_JHKim : Busuanzi 전체 페이지 로드 — 사이드바 사이트 총 조회수 + 아티클 페이지뷰 모두 지원 */ -}}
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-{{ if .IsPage }}
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var footer = document.querySelector('.article-time');
-    if (!footer) return;
-    var div = document.createElement('div');
-    div.className = 'pv-count';
-    div.innerHTML =
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
-            '<circle cx="12" cy="12" r="2"/>' +
-            '<path d="M22 12c-2.667 4.667-6 7-10 7s-7.333-2.333-10-7c2.667-4.667 6-7 10-7s7.333 2.333 10 7"/>' +
-        '</svg>' +
-        '<span id="busuanzi_value_page_pv">…</span>';
-    footer.appendChild(div);
-});
-</script>
+{{ end }}
 {{ end }}

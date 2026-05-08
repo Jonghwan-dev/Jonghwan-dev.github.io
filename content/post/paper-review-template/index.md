@@ -6,6 +6,13 @@ description: "논문 리뷰 포스트 템플릿 — 이 파일을 복사해 사�
 image: ""
 tags: ["paper-review"]
 categories: ["Paper Review"]
+robots: "noindex, nofollow"
+build:
+  render: never
+  list: never
+  publishResources: false
+sitemap:
+  disable: true
 ---
 
 ## 논문 정보

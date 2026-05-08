@@ -1,0 +1,39 @@
+{{ define "main" }}
+    <header>
+        <h3 class="section-title">{{ .Title }}</h3>
+    </header>
+
+    {{ if eq .Data.Plural "categories" }}
+        <section class="taxonomy-category-list">
+            {{ range .Data.Terms.ByCount }}
+                <details class="taxonomy-category" open>
+                    <summary>
+                        <span class="taxonomy-category-caret">{{ partial "helper/icon" "chevron-right" }}</span>
+                        {{ partial "helper/icon" "folder" }}
+                        <span>{{ .Page.Title }}</span>
+                        <span class="taxonomy-category-count">{{ .Count }}</span>
+                    </summary>
+                    <ol class="taxonomy-category-posts">
+                        {{ range .Pages.ByDate.Reverse }}
+                            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                        {{ end }}
+                    </ol>
+                </details>
+            {{ end }}
+        </section>
+    {{ else }}
+        <section class="tagCloud">
+            <div class="tagCloud-tags">
+                {{ range .Data.Terms.ByCount }}
+                    <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <sup>{{ .Count }}</sup></a>
+                {{ end }}
+            </div>
+        </section>
+    {{ end }}
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

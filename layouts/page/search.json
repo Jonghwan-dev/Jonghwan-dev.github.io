@@ -1,0 +1,24 @@
+{{- $pages := partial "helper/pages.html" .Site.Home -}}
+{{- $result := slice -}}
+
+{{- range $pages -}}
+    {{- $terms := slice -}}
+    {{- with .Params.tags -}}
+        {{- range . -}}{{- $terms = $terms | append . -}}{{- end -}}
+    {{- end -}}
+    {{- with .Params.categories -}}
+        {{- range . -}}{{- $terms = $terms | append . -}}{{- end -}}
+    {{- end -}}
+
+    {{- $content := printf "%s\n%s" .Plain (delimit $terms " ") -}}
+    {{- $data := dict "title" .Title "date" .Date "permalink" .RelPermalink "content" $content -}}
+
+    {{- $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+    {{- if $image -}}
+        {{- $data = merge $data (dict "image" $image.Permalink) -}}
+    {{- end -}}
+
+    {{- $result = $result | append $data -}}
+{{- end -}}
+
+{{ jsonify $result }}
