@@ -95,24 +95,31 @@ hasCJKLanguage = true
     params     = { icon = "archives" }
 
   [[menu.main]]
+    identifier = "categories"
+    name       = "Categories"
+    url        = "/categories/"
+    weight     = 3
+    params     = { icon = "folder" }
+
+  [[menu.main]]
     identifier = "tags"
     name       = "Tags"
     url        = "/tags/"
-    weight     = 3
+    weight     = 4
     params     = { icon = "tag" }
 
   [[menu.main]]
     identifier = "search"
     name       = "Search"
     url        = "/search/"
-    weight     = 4
+    weight     = 5
     params     = { icon = "search" }
 
   [[menu.main]]
     identifier = "about"
     name       = "About"
     url        = "/about/"
-    weight     = 5
+    weight     = 6
     params     = { icon = "user" }
 
   # ─── SNS 링크 (사이드바 아바타 아래에 아이콘으로 표시) ─── 2026-04-14 by JHkim ──

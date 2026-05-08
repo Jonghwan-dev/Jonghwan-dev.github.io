@@ -63,34 +63,32 @@
             </a>
         </li>
         {{ end }}
+        {{ if hugo.IsMultilingual }}
         <li class="menu-bottom-section">
             <ol class="menu">
                 {{- $currentLanguageCode := .Language.Lang -}}
-                {{ if hugo.IsMultilingual }}
-                    <li id="i18n-switch">
-                        {{ partial "helper/icon" "language" }}
-                        <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
-                            {{ range .Site.Home.AllTranslations }}
-                                {{ $target := . }}
-                                {{ range $.AllTranslations }}
-                                    {{ if eq .Language.Lang $target.Language.Lang }}
-                                        {{ $target = . }}
-                                    {{ end }}
+                <li id="i18n-switch">
+                    {{ partial "helper/icon" "language" }}
+                    <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        {{ range .Site.Home.AllTranslations }}
+                            {{ $target := . }}
+                            {{ range $.AllTranslations }}
+                                {{ if eq .Language.Lang $target.Language.Lang }}
+                                    {{ $target = . }}
                                 {{ end }}
-                                <option value="{{ $target.RelPermalink }}" {{ if eq $target.Language.Lang $currentLanguageCode }}selected{{ end }}>{{ .Language.LanguageName }}</option>
                             {{ end }}
-                        </select>
-                    </li>
-                {{ end }}
-
-                {{ if .Site.Params.colorScheme.toggle }}
-                    <li id="dark-mode-toggle">
-                        {{ partial "helper/icon" "toggle-left" }}
-                        {{ partial "helper/icon" "toggle-right" }}
-                        <span>{{ T "darkMode" }}</span>
-                    </li>
-                {{ end }}
+                            <option value="{{ $target.RelPermalink }}" {{ if eq $target.Language.Lang $currentLanguageCode }}selected{{ end }}>{{ .Language.LanguageName }}</option>
+                        {{ end }}
+                    </select>
+                </li>
             </ol>
         </li>
+        {{ end }}
     </ol>
 </aside>
+{{ if .Site.Params.colorScheme.toggle }}
+<button id="dark-mode-toggle" aria-label="{{ T `darkMode` }}">
+    {{ partial "helper/icon" "toggle-left" }}
+    {{ partial "helper/icon" "toggle-right" }}
+</button>
+{{ end }}
