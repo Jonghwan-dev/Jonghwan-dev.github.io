@@ -1,5 +1,5 @@
 ---
 title: "Tools"
-description: "LaTeX · Git · Docker · Linux — 개발 & 논문 작성에 쓰이는 툴 모음"
+description: "LaTeX · Git · Docker · Linux — 연구 & 개발 툴 사용법 기록"
 image: ""
 ---
