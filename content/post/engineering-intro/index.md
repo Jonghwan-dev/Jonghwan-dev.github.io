@@ -5,7 +5,7 @@ draft: true
 description: "학습된 모델을 프로덕션에 배포하고 관리하는 기본 파이프라인"
 image: ""
 tags: ["mlops", "docker", "fastapi", "monitoring"]
-categories: ["Engineering"]
+categories: ["Tools"]
 ---
 
 ## 개요
