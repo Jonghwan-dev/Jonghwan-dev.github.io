@@ -1,18 +1,18 @@
 ---
-title: "LaTeX 기초 문법 치트시트: 매번 찾아보는 명령어 사전"
+title: "LaTeX를 처음 쓸 때 자주 막히는 문법 정리"
 date: 2026-05-08
 draft: false
-description: "LaTeX를 처음 쓰거나 문법이 기억나지 않을 때 빠르게 확인할 수 있도록 문서 구조, 수식, 그림, 표, 참조, BibTeX 기초 명령어를 정리한 치트시트입니다."
+description: "LaTeX를 처음 쓰거나 문법이 기억나지 않을 때 다시 확인할 수 있도록 문서 구조, 수식, 그림, 표, 참조, BibTeX 기초 명령어를 정리합니다."
 image: ""
-tags: ["latex", "cheatsheet", "overleaf", "bibtex", "research-tools"]
+tags: ["latex", "overleaf", "bibtex", "research-tools"]
 categories: ["Tools"]
 ---
 
-LaTeX는 문서를 **명령어로 조판**하는 도구입니다. 처음에는 `\begin`, `\section`, `\label` 같은 문법이 낯설지만, 몇 번 쓰다 보면 반복되는 패턴이 거의 정해져 있다는 것을 알게 됩니다. 이 글은 LaTeX를 완벽히 설명하는 튜토리얼이 아니라, 문법이 기억나지 않을 때 바로 돌아와 확인하는 **기초 명령어 사전**입니다.
+LaTeX는 문서를 **명령어로 조판**하는 도구입니다. 처음에는 `\begin`, `\section`, `\label` 같은 문법이 낯설지만, 실제로 자주 쓰는 패턴은 생각보다 반복됩니다. LaTeX Project가 설명하듯 LaTeX는 문서의 구조와 표현을 분리해 고품질 조판을 돕는 시스템이며, Overleaf 역시 기본 구조를 익히면 브라우저에서 빠르게 문서를 작성하고 컴파일할 수 있는 학습 자료를 제공합니다.[^latex-project] [^overleaf-learn]
 
-논문 작성법이나 글쓰기 전략은 여기서 다루지 않습니다. 이 글의 목적은 명확합니다. LaTeX에서 자주 쓰는 용어와 명령어를 빠르게 찾고, 필요한 예제를 복사해서 바로 수정할 수 있게 만드는 것입니다.
+이 글은 LaTeX를 깊게 이론적으로 설명하기 위한 글이 아닙니다. 문법이 기억나지 않을 때 다시 들어와서 확인하고, 필요한 예제를 복사해 바로 수정할 수 있도록 자주 쓰는 용어와 명령어를 한곳에 정리한 기술 블로그용 기초 노트입니다.
 
-## 빠른 검색 표
+## 빠르게 찾아보기
 
 아래 표는 이 글에서 다루는 LaTeX 기초 항목을 한 번에 찾기 위한 색인입니다. 원하는 작업이 생기면 왼쪽 열에서 먼저 찾고, 오른쪽 예제를 기준으로 본문을 확인하면 됩니다.
 
@@ -56,7 +56,7 @@ Hello, LaTeX.
 
 ## 2. preamble에서 자주 쓰는 패키지
 
-패키지는 LaTeX의 기능을 확장합니다. 수식, 그림, 표, 링크, 참고문헌처럼 자주 쓰는 기능은 패키지로 불러온 뒤 사용합니다.
+패키지는 LaTeX의 기능을 확장합니다. 수식, 그림, 표, 링크, 참고문헌처럼 자주 쓰는 기능은 패키지로 불러온 뒤 사용합니다. 예를 들어 `amsmath`는 LaTeX에서 수학식 작성 기능을 확장하는 대표 패키지이고, `graphicx`는 이미지 삽입, `hyperref`는 링크와 PDF 메타 정보를 다룰 때 자주 사용됩니다.[^ctan-amsmath] [^ctan-graphicx] [^ctan-hyperref]
 
 ```latex
 \documentclass{article}
@@ -639,4 +639,8 @@ LaTeX는 처음부터 모든 명령어를 외우는 도구가 아닙니다. 자�
 
 ## 참고 자료
 
+[^latex-project]: [LaTeX Project, "LaTeX — A document preparation system"](https://www.latex-project.org/)
 [^overleaf-learn]: [Overleaf Documentation, "Learn LaTeX in 30 minutes"](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+[^ctan-amsmath]: [CTAN, "amsmath – AMS mathematical facilities for LaTeX"](https://ctan.org/pkg/amsmath)
+[^ctan-graphicx]: [CTAN, "graphicx – Enhanced support for graphics"](https://ctan.org/pkg/graphicx)
+[^ctan-hyperref]: [CTAN, "hyperref – Extensive support for hypertext in LaTeX"](https://ctan.org/pkg/hyperref)
