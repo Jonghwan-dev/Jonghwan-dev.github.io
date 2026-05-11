@@ -1,35 +1,40 @@
 ---
-title: "LaTeX와 IEEE 논문 작성: 처음부터 실전 제출까지 정리한 가이드"
+title: "LaTeX 기초 문법 치트시트: 매번 찾아보는 명령어 사전"
 date: 2026-05-08
 draft: false
-description: "LaTeX 기본 문법, IEEEtran 템플릿, 수식·그림·표·참고문헌 작성법을 논문 제출 흐름에 맞춰 정리한 실전 기술 가이드입니다."
+description: "LaTeX를 처음 쓰거나 문법이 기억나지 않을 때 빠르게 확인할 수 있도록 문서 구조, 수식, 그림, 표, 참조, BibTeX 기초 명령어를 정리한 치트시트입니다."
 image: ""
-tags: ["latex", "ieee", "논문작성", "research", "overleaf", "bibtex"]
+tags: ["latex", "cheatsheet", "overleaf", "bibtex", "research-tools"]
 categories: ["Tools"]
 ---
 
-LaTeX는 처음 접하면 문법이 낯설지만, 논문처럼 구조가 명확하고 반복 수정이 많은 문서를 작성할 때 강력한 도구가 됩니다. 특히 IEEE 형식의 논문은 제목, 초록, Index Terms, 수식 번호, 그림·표 캡션, 참고문헌 형식까지 규칙이 엄격하므로 Word처럼 눈으로 맞추는 방식보다 LaTeX 템플릿을 기준으로 관리하는 편이 안정적입니다.
+LaTeX는 문서를 **명령어로 조판**하는 도구입니다. 처음에는 `\begin`, `\section`, `\label` 같은 문법이 낯설지만, 몇 번 쓰다 보면 반복되는 패턴이 거의 정해져 있다는 것을 알게 됩니다. 이 글은 LaTeX를 완벽히 설명하는 튜토리얼이 아니라, 문법이 기억나지 않을 때 바로 돌아와 확인하는 **기초 명령어 사전**입니다.
 
-이 글은 LaTeX를 막 시작한 연구자나 개발자가 **IEEE 논문 초안**을 작성할 때 필요한 내용을 하나의 흐름으로 정리한 가이드입니다. 단순 명령어 목록보다 실제 작성 순서에 맞춰 설명하며, 복사해서 바로 실험할 수 있는 최소 예제를 함께 제공합니다. Google이 검색 결과 스니펫을 만들 때 페이지별 `meta description`을 활용할 수 있다고 설명하듯이, 기술 글도 제목과 요약만으로 글의 범위가 분명해야 독자가 빠르게 판단할 수 있습니다.[^google-snippet]
+논문 작성법이나 글쓰기 전략은 여기서 다루지 않습니다. 이 글의 목적은 명확합니다. LaTeX에서 자주 쓰는 용어와 명령어를 빠르게 찾고, 필요한 예제를 복사해서 바로 수정할 수 있게 만드는 것입니다.
 
-## 이 글에서 다루는 범위
+## 빠른 검색 표
 
-LaTeX에는 문서 조판, 수식, 그림, 참고문헌, 패키지 생태계가 모두 포함되어 있습니다. 따라서 처음부터 모든 명령어를 외우려 하기보다, 논문 한 편을 완성하는 데 필요한 핵심 개념을 순서대로 익히는 것이 좋습니다.
+아래 표는 이 글에서 다루는 LaTeX 기초 항목을 한 번에 찾기 위한 색인입니다. 원하는 작업이 생기면 왼쪽 열에서 먼저 찾고, 오른쪽 예제를 기준으로 본문을 확인하면 됩니다.
 
-| 단계 | 핵심 질문 | 이 글에서 제공하는 내용 |
+| 하고 싶은 작업 | 먼저 볼 명령어·환경 | 예시 |
 |---|---|---|
-| 문서 뼈대 만들기 | LaTeX 문서는 어디서 시작하고 끝나는가 | `\documentclass`, `\usepackage`, `document` 환경 |
-| 본문 구조화 | 섹션과 문단은 어떻게 나누는가 | `\section`, `\subsection`, 제목 계층 |
-| 수식 작성 | 번호가 있는 수식과 여러 줄 수식은 어떻게 쓰는가 | `equation`, `align`, `IEEEeqnarray` |
-| 그림·표 삽입 | 캡션과 라벨은 어디에 두어야 하는가 | `figure`, `table`, `\caption`, `\label` |
-| 참고문헌 관리 | IEEE 스타일 인용은 어떻게 정리하는가 | `\cite`, `thebibliography`, BibTeX 흐름 |
-| IEEE 제출 준비 | 일반 LaTeX와 IEEEtran의 차이는 무엇인가 | `IEEEtran`, `ieeecolor`, Index Terms, 체크리스트 |
+| 문서 시작하기 | `\documentclass`, `\begin{document}` | `\documentclass{article}` |
+| 패키지 불러오기 | `\usepackage{}` | `\usepackage{amsmath}` |
+| 제목 만들기 | `\title`, `\author`, `\date`, `\maketitle` | `\maketitle` |
+| 섹션 나누기 | `\section`, `\subsection` | `\section{Introduction}` |
+| 굵게·기울임 | `\textbf`, `\textit`, `\emph` | `\textbf{bold}` |
+| 인라인 수식 | `$...$` | `$x_i^2$` |
+| 번호 있는 수식 | `equation`, `\label`, `\eqref` | `\begin{equation}` |
+| 여러 줄 수식 | `align` | `\begin{align}` |
+| 그림 넣기 | `figure`, `\includegraphics` | `\includegraphics[width=...]` |
+| 표 만들기 | `table`, `tabular`, `booktabs` | `\toprule` |
+| 번호 참조 | `\label`, `\ref`, `\eqref` | `Figure~\ref{fig:sample}` |
+| 인용하기 | `\cite`, BibTeX | `\cite{kim2026}` |
+| 특수문자 쓰기 | `\%`, `\_`, `\&` | `100\%` |
 
-> 이 글의 원칙은 명확합니다. **본문에서는 구조를 먼저 잡고, 세부 서식은 템플릿과 패키지에 맡깁니다.** 논문 작성의 품질은 예쁜 화면보다 재현 가능한 구조와 일관된 참조에서 결정됩니다.
+## 1. 최소 문서 구조
 
-## 1. LaTeX 문서의 최소 구조
-
-LaTeX 문서는 크게 두 영역으로 나뉩니다. 첫 번째는 문서 클래스와 패키지를 선언하는 **preamble**이고, 두 번째는 실제 내용이 들어가는 **document 환경**입니다. 가장 작은 문서는 다음처럼 구성됩니다.
+LaTeX 문서는 보통 **preamble**과 **document 환경**으로 나뉩니다. preamble에는 문서 클래스와 패키지를 선언하고, document 환경에는 실제 본문을 작성합니다.
 
 ```latex
 \documentclass{article}
@@ -39,23 +44,24 @@ Hello, LaTeX.
 \end{document}
 ```
 
-논문을 작성할 때는 문서 클래스가 중요합니다. 일반 보고서라면 `article`로 충분하지만, IEEE 저널 또는 컨퍼런스 양식을 맞춰야 한다면 `IEEEtran` 계열 클래스를 사용해야 합니다. IEEEtran은 IEEE 논문 레이아웃을 위한 대표적인 LaTeX 클래스이며, CTAN에서 배포되는 버전은 v1.8b입니다.[^ctan-ieeetran]
+`\documentclass`는 문서의 전체 형식을 정합니다. 가장 기본적인 문서는 `article`로 시작하면 충분합니다. IEEE 형식이 필요할 때는 `IEEEtran` 같은 별도 클래스를 사용할 수 있지만, 처음 LaTeX 문법을 익힐 때는 `article`이 가장 단순합니다.
 
-| 문서 클래스 | 주 사용처 | 비고 |
+| 문서 클래스 | 용도 | 메모 |
 |---|---|---|
-| `article` | 짧은 논문, 보고서 | LaTeX 기본 클래스 |
-| `report` | 장문의 보고서, 학위논문 | 장과 절 구조에 적합 |
-| `book` | 단행본 | 책 구성에 적합 |
-| `beamer` | 발표 슬라이드 | 프레젠테이션 전용 |
-| `IEEEtran` | IEEE 논문 | IEEE 저널·컨퍼런스 양식에 적합 |
-| `ieeecolor` | 일부 IEEE 컬러 저널 템플릿 | 저널별 템플릿 지침 확인 필요 |
+| `article` | 짧은 글, 보고서, 논문 초안 | 가장 기본적으로 쓰기 좋음 |
+| `report` | 장문 보고서 | `chapter` 구조 사용 가능 |
+| `book` | 책 | 장·절 단위의 긴 문서 |
+| `beamer` | 발표 자료 | 슬라이드 제작용 |
+| `IEEEtran` | IEEE 양식 문서 | IEEE 템플릿 기반 문서에 사용 |
 
-## 2. 논문용 기본 패키지 구성
+## 2. preamble에서 자주 쓰는 패키지
 
-LaTeX 패키지는 필요한 기능만 추가하는 방식으로 관리하는 것이 좋습니다. 처음부터 많은 패키지를 넣으면 충돌 원인을 찾기 어렵습니다. 아래 구성은 수식, 그림, 표, 링크, IEEE 인용에 자주 쓰이는 기본 조합입니다.
+패키지는 LaTeX의 기능을 확장합니다. 수식, 그림, 표, 링크, 참고문헌처럼 자주 쓰는 기능은 패키지로 불러온 뒤 사용합니다.
 
 ```latex
-% 수식과 수학 기호
+\documentclass{article}
+
+% 수식
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -64,315 +70,573 @@ LaTeX 패키지는 필요한 기능만 추가하는 방식으로 관리하는 �
 \usepackage{graphicx}
 \usepackage{booktabs}
 
-% IEEE 다중 그림
-\usepackage{subfig}
-
-% 알고리즘
-\usepackage{algorithm}
-\usepackage{algorithmic}
-
-% 링크와 인용
+% 링크
 \usepackage{hyperref}
 \hypersetup{hidelinks=true}
-\usepackage{cite}
+
+\begin{document}
+...
+\end{document}
 ```
 
-IEEEtran을 사용할 때는 특히 캡션 관련 패키지에 주의해야 합니다. `subcaption`은 내부적으로 `caption` 패키지에 의존하므로 IEEEtran과 충돌할 수 있습니다. IEEE 형식에서 다중 그림을 다룰 때는 보통 `subfig`를 사용하는 편이 안전합니다.
+| 패키지 | 역할 | 자주 쓰는 이유 |
+|---|---|---|
+| `amsmath` | 수식 환경 확장 | `align`, `gather`, `split` 사용 |
+| `amssymb` | 수학 기호 추가 | `\mathbb`, `\therefore` 등 |
+| `amsfonts` | 수학 폰트 추가 | 집합 기호 표현에 유용 |
+| `graphicx` | 이미지 삽입 | `\includegraphics` 사용 |
+| `booktabs` | 깔끔한 표 선 | `\toprule`, `\midrule`, `\bottomrule` 사용 |
+| `hyperref` | 링크와 PDF 북마크 | URL, 참조 링크 처리 |
+| `cite` | 숫자 인용 정리 | `[1]--[3]` 같은 인용 압축 |
 
-## 3. 제목, 섹션, 문단 구조 잡기
+## 3. 제목과 기본 메타 정보
 
-LaTeX 문서에서 제목 계층은 HTML의 heading과 비슷합니다. 가장 큰 단위는 `\section`, 그 아래는 `\subsection`, 그 아래는 `\subsubsection`입니다. 논문에서는 제목 계층이 너무 깊어지면 독자가 흐름을 놓치기 쉬우므로, 보통 `subsection` 수준까지를 중심으로 설계하는 것이 좋습니다.
+문서 제목은 `\title`, 작성자는 `\author`, 날짜는 `\date`로 적습니다. 실제로 제목을 출력하려면 본문에서 `\maketitle`을 호출해야 합니다.
+
+```latex
+\documentclass{article}
+
+\title{My First LaTeX Document}
+\author{Jonghwan Kim}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+본문을 여기에 작성합니다.
+\end{document}
+```
+
+날짜를 비우고 싶다면 `\date{}`처럼 작성합니다. `\today`는 컴파일 시점의 날짜를 자동으로 출력합니다.
+
+## 4. 섹션과 문단
+
+LaTeX에서 문서 구조는 제목 명령어로 나눕니다. 가장 자주 쓰는 것은 `\section`, `\subsection`, `\subsubsection`입니다.
 
 ```latex
 \section{Introduction}
-\subsection{Motivation}
-\subsection{Contribution}
-\section{Method}
-\subsection{Model Architecture}
-\section{Experiments}
-\section{Conclusion}
+본문입니다.
+
+\subsection{Background}
+하위 주제입니다.
+
+\subsubsection{Notation}
+더 작은 단위의 주제입니다.
 ```
 
-기술 블로그 글도 마찬가지입니다. 제목은 글의 약속이고, 각 섹션은 그 약속을 단계적으로 증명해야 합니다. LaTeX 논문에서는 대체로 **Introduction → Related Work → Method → Experiments → Results → Conclusion** 흐름이 많이 사용됩니다.
+문단은 빈 줄로 구분합니다. 줄을 바꾸기 위해 매번 `\\`를 쓰기보다, 문단이 바뀌는 지점에 빈 줄을 넣는 방식이 자연스럽습니다.
 
-## 4. 수식 작성: `equation`, `align`, `IEEEeqnarray`
+| 명령어 | 의미 | 번호 표시 여부 |
+|---|---|---|
+| `\section{}` | 큰 절 | 표시 |
+| `\subsection{}` | 하위 절 | 표시 |
+| `\subsubsection{}` | 더 작은 하위 절 | 표시 |
+| `\section*{}` | 번호 없는 큰 절 | 표시 안 함 |
+| `\paragraph{}` | 짧은 소제목 | 문단형 제목 |
 
-LaTeX를 쓰는 가장 큰 이유 중 하나는 수식 조판입니다. 짧은 인라인 수식은 `$...$`로 작성하고, 독립된 수식은 `equation` 또는 `align` 환경을 사용합니다.
+## 5. 텍스트 서식
+
+본문에서 자주 쓰는 텍스트 서식은 아래 정도만 기억해도 충분합니다.
 
 ```latex
-텍스트 안에서는 $E = mc^2$처럼 인라인 수식을 작성합니다.
+\textbf{굵은 글씨}
+\textit{기울임 글씨}
+\emph{강조}
+\texttt{monospace}
+\underline{밑줄}
+```
+
+| 명령어 | 출력 의미 | 사용 예 |
+|---|---|---|
+| `\textbf{}` | 굵게 | 핵심 용어 강조 |
+| `\textit{}` | 기울임 | 외래어, 변수명 설명 |
+| `\emph{}` | 문맥상 강조 | 강조 스타일은 클래스에 따라 달라질 수 있음 |
+| `\texttt{}` | 고정폭 글꼴 | 코드, 파일명, 명령어 |
+| `\underline{}` | 밑줄 | 일반 문서에서는 과하게 쓰지 않는 편이 좋음 |
+
+## 6. 특수문자
+
+LaTeX에는 명령어에 쓰이는 특수문자가 있습니다. 본문에 그대로 쓰면 오류가 나거나 의도와 다르게 해석될 수 있으므로, 아래처럼 이스케이프해서 입력합니다.
+
+| 쓰고 싶은 문자 | LaTeX 입력 | 메모 |
+|---|---|---|
+| `%` | `\%` | `%` 뒤는 주석으로 처리됨 |
+| `$` | `\$` | 수식 모드 기호 |
+| `&` | `\&` | 표 정렬 문자 |
+| `#` | `\#` | 매크로 인자 기호 |
+| `_` | `\_` | 수식 첨자 기호 |
+| `{` | `\{` | 그룹 시작 |
+| `}` | `\}` | 그룹 종료 |
+| `\` | `\textbackslash{}` | 백슬래시 출력 |
+
+```latex
+정확도는 95\%입니다.
+파일명은 model\_v1.py입니다.
+A \& B 조건을 비교합니다.
+```
+
+## 7. 수식 기초
+
+짧은 수식은 문장 안에서 `$...$`로 작성합니다. 문장과 분리해서 가운데에 배치하려면 `equation` 환경을 사용합니다.
+
+```latex
+텍스트 안의 인라인 수식은 $E = mc^2$처럼 작성합니다.
 
 \begin{equation}
-  E = mc^2.
+  E = mc^2
   \label{eq:energy}
 \end{equation}
 ```
 
-여러 줄로 정렬해야 하는 수식에는 `align`이 편리합니다.
-
-```latex
-\begin{align}
-  f(x) &= ax^2 + bx + c \\
-       &= a(x + 1)^2 + c - a.
-  \label{eq:quadratic}
-\end{align}
-```
-
-IEEEtran 문서에서는 `IEEEeqnarray`도 자주 사용됩니다. 등호 정렬과 번호 제어가 필요한 경우 IEEE 스타일에 더 적합한 선택이 될 수 있습니다.
-
-```latex
-\begin{IEEEeqnarray}{rCl}
-  a &=& b + c \nonumber \\
-  x &=& y + z.
-  \label{eq:system}
-\end{IEEEeqnarray}
-```
-
-반대로 `eqnarray`는 사용하지 않는 것이 좋습니다. 등호 주변 간격이 부정확하고, 현대 LaTeX 문서에서는 `align` 또는 `IEEEeqnarray`로 대체하는 것이 일반적입니다.
-
-## 5. 그림 삽입: 캡션과 라벨 순서가 중요하다
-
-논문에서 그림은 단순한 장식이 아니라 결과를 설명하는 핵심 근거입니다. LaTeX에서는 그림을 `figure` 환경 안에 넣고, `\caption` 뒤에 `\label`을 배치해야 참조 번호가 올바르게 연결됩니다.
-
-```latex
-\begin{figure}[!t]
-  \centering
-  \includegraphics[width=\columnwidth]{fig1.png}
-  \caption{Proposed model architecture.}
-  \label{fig:model}
-\end{figure}
-```
-
-| 위치 옵션 | 의미 | 실무 메모 |
+| 목적 | 입력 | 메모 |
 |---|---|---|
-| `h` | 현재 위치 | LaTeX가 반드시 지키지는 않음 |
-| `t` | 페이지 상단 | IEEE 문서에서 자주 사용 |
-| `b` | 페이지 하단 | 그림 흐름에 따라 사용 |
-| `p` | 별도 float 페이지 | 큰 그림이 많을 때 사용 |
-| `!` | 배치 제한 완화 | `!t`처럼 함께 사용 가능 |
+| 인라인 수식 | `$x + y$` | 문장 안에 들어감 |
+| 번호 있는 수식 | `equation` | `\label`과 함께 사용 |
+| 번호 없는 수식 | `\[ x + y \]` | 간단한 표시 수식 |
+| 수식 참조 | `\eqref{eq:name}` | 괄호 포함 번호 참조 |
 
-다중 그림을 넣을 때는 `subfig`의 `\subfloat`를 사용할 수 있습니다.
+## 8. 자주 쓰는 수학 기호
 
-```latex
-\begin{figure}[!t]
-  \centering
-  \subfloat[Case A]{%
-    \includegraphics[width=1.6in]{fig_a}%
-    \label{fig:case-a}}
-  \hfil
-  \subfloat[Case B]{%
-    \includegraphics[width=1.6in]{fig_b}%
-    \label{fig:case-b}}
-  \caption{Comparison of two experimental settings.}
-  \label{fig:comparison}
-\end{figure}
-```
+수식은 한 번에 외우기 어렵기 때문에, 자주 쓰는 기호를 표로 모아두고 필요할 때 확인하는 편이 좋습니다.
 
-## 6. 표 작성: `booktabs`로 가독성 확보하기
-
-표는 결과를 정리하는 데 매우 유용하지만, 선을 많이 넣을수록 오히려 읽기 어려워집니다. `booktabs` 패키지의 `\toprule`, `\midrule`, `\bottomrule`을 사용하면 논문에 적합한 깔끔한 표를 만들 수 있습니다.
-
-```latex
-\begin{table}[!t]
-  \centering
-  \caption{Performance comparison.}
-  \label{tab:performance}
-  \begin{tabular}{lcc}
-    \toprule
-    Method & Accuracy & Latency \\
-    \midrule
-    Baseline & 91.7\% & 18 ms \\
-    Proposed & 94.2\% & 23 ms \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-```
-
-그림 캡션은 보통 그림 아래에 오고, 표 캡션은 표 위에 옵니다. 또한 본문에서 표를 언급할 때는 `Table \ref{tab:performance}`처럼 자동 참조를 사용해야 합니다.
-
-## 7. 상호 참조: 직접 숫자를 쓰지 않는다
-
-LaTeX 문서에서 수식, 그림, 표, 섹션 번호를 직접 입력하면 수정 과정에서 번호가 틀어지기 쉽습니다. 따라서 항상 `\label`과 `\ref`를 사용해야 합니다.
-
-```latex
-\section{Method}
-\label{sec:method}
-
-\begin{equation}
-  y = Wx + b.
-  \label{eq:linear}
-\end{equation}
-
-As shown in Section~\ref{sec:method}, the model is defined by Eq.~\eqref{eq:linear}.
-```
-
-가장 흔한 오류는 `\label`을 `\caption` 앞에 두는 것입니다. 그림과 표에서는 반드시 `\caption`이 번호를 생성한 다음 `\label`을 붙여야 합니다.
-
-## 8. 참고문헌과 인용 관리
-
-IEEE 논문에서 인용은 대괄호 번호 형식으로 표시됩니다. 수동으로 `thebibliography`를 사용할 수도 있고, 규모가 커지면 BibTeX 또는 BibLaTeX 기반으로 관리할 수 있습니다.
-
-```latex
-Prior work reported similar behavior \cite{smith2024}.
-
-\begin{thebibliography}{99}
-\bibitem{smith2024}
-J. Smith and A. Kim, ``A sample paper title,''
-{\it IEEE Transactions on Example}, vol. 1, no. 2, pp. 10--20, 2024.
-\end{thebibliography}
-```
-
-IEEE 스타일에서는 저자명, 논문 제목, 저널명, 권·호·페이지, 연도, DOI 표기까지 일정한 형식이 요구됩니다. 제출 전에는 IEEE Author Center 또는 목표 저널의 공식 템플릿을 확인하는 것이 안전합니다.[^ieee-author-center]
-
-## 9. IEEE 템플릿의 기본 골격
-
-IEEE 논문 초안을 시작할 때는 빈 파일에서 모든 것을 만들기보다 공식 템플릿을 기준으로 줄여 나가는 방식이 좋습니다. 아래는 IEEE 스타일 문서의 기본 골격입니다.
-
-```latex
-\documentclass[journal]{IEEEtran}
-
-\usepackage{cite}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
-\usepackage{graphicx}
-\usepackage{textcomp}
-
-\begin{document}
-
-\title{Paper Title in Title Case}
-
-\author{First A. Author, Second B. Author, and Third C. Author}
-
-\maketitle
-
-\begin{abstract}
-This paper presents ...
-\end{abstract}
-
-\begin{IEEEkeywords}
-Deep learning, medical imaging, segmentation.
-\end{IEEEkeywords}
-
-\section{Introduction}
-\IEEEPARstart{T}{his} paper ...
-
-\section{Conclusion}
-
-\end{document}
-```
-
-초록은 논문의 문제, 방법, 결과, 의의를 압축해서 보여주는 부분입니다. IEEE 문서에서는 초록 안에 각주, 참조 번호, 복잡한 수식, 표를 넣지 않는 것이 일반적입니다. `IEEEkeywords`에는 검색과 분류에 도움이 되는 Index Terms를 넣습니다.
-
-## 10. IEEE 논문 작성 체크리스트
-
-논문을 제출하기 전에는 문법보다 **일관성**을 먼저 점검해야 합니다. 아래 항목은 초안 단계에서 자주 발견되는 문제를 줄이는 데 도움이 됩니다.
-
-| 구분 | 확인할 항목 | 권장 방식 |
+| 의미 | LaTeX 입력 | 예시 |
 |---|---|---|
-| 수식 | 번호 참조 | `\eqref{}` 사용 |
-| 그림 | 라벨 위치 | `\caption` 뒤에 `\label` 배치 |
-| 표 | 캡션 위치 | 표 위에 캡션 배치 |
-| 인용 | 번호 직접 입력 | `\cite{}` 사용 |
-| 단위 | 시간 단위 | `sec`보다 `s` 사용 |
-| 범위 | 페이지·수치 범위 | `1--10`처럼 엔 대시 사용 |
-| 문체 | 수동태 남용 | 가능한 경우 명확한 능동태 사용 |
-| 패키지 | 캡션 충돌 | IEEEtran에서는 `caption`, `subcaption` 사용 주의 |
-
-## 11. 자주 발생하는 오류와 해결 방법
-
-LaTeX 오류 메시지는 처음에는 어렵게 보이지만, 대부분 원인은 반복됩니다. 특히 괄호가 닫히지 않았거나, 패키지 충돌이 있거나, 라벨과 참조가 맞지 않는 경우가 많습니다.
-
-| 증상 | 원인 | 해결 |
-|---|---|---|
-| 수식 번호가 건너뜀 | 빈 `subequations` 환경이 남아 있음 | 사용하지 않는 환경 삭제 |
-| 그림 참조 번호가 이상함 | `\label`이 `\caption` 앞에 있음 | `\caption{...}\label{...}` 순서로 수정 |
-| Table IV-B3 같은 참조가 나옴 | 섹션과 표에 같은 라벨 사용 | `sec:`, `fig:`, `tab:`, `eq:` 접두사로 구분 |
-| 그림이 원하는 위치에 안 나옴 | float 배치 알고리즘 때문 | `[!t]`, `[htbp]` 등을 조정하고 본문 흐름 재검토 |
-| 다중 그림 캡션이 깨짐 | `subcaption`과 IEEEtran 충돌 | `subfig` 사용 검토 |
-
-## 12. 자주 쓰는 LaTeX 명령어 모음
-
-아래 명령어는 논문 작성 중 자주 사용됩니다. 처음부터 모두 외울 필요는 없고, 필요한 순간에 검색해서 반복적으로 사용하면 자연스럽게 익숙해집니다.
+| 첨자 | `x_i` | $x_i$ |
+| 위첨자 | `x^2` | $x^2$ |
+| 분수 | `\frac{a}{b}` | $a/b$ |
+| 제곱근 | `\sqrt{x}` | $\sqrt{x}$ |
+| 합 | `\sum_{i=1}^{n}` | 합 기호 |
+| 적분 | `\int_a^b` | 적분 기호 |
+| 극한 | `\lim_{n \to \infty}` | 극한 |
+| 곱 | `\prod_{i=1}^{n}` | 곱 기호 |
+| 실수 집합 | `\mathbb{R}` | `amssymb` 필요 |
+| 원소 | `\in` | 집합 원소 |
+| 부분집합 | `\subseteq` | 부분집합 |
+| 화살표 | `\rightarrow`, `\Rightarrow` | 방향·함의 |
+| 대략 같음 | `\approx` | 근사 |
+| 같지 않음 | `\neq` | 부등 |
 
 ```latex
-% 텍스트
-\textbf{bold}
-\textit{italic}
-\texttt{monospace}
-\emph{emphasis}
-
-% 특수문자
-\%  \$  \&  \#  \_  \{  \}
-
-% 줄과 페이지
-\\
-\newpage
-\clearpage
-\noindent
-
-% 공백
-\,
-\quad
-\qquad
-\hfill
-
-% 대시와 따옴표
---       % en dash
----      % em dash
-``큰따옴표''
-`작은따옴표'
-```
-
-수학 기호는 다음처럼 작성합니다.
-
-```latex
-% 첨자와 분수
 x_i^2
 \frac{a}{b}
 \sqrt{x}
-
-% 합, 적분, 극한
 \sum_{i=1}^{n} x_i
 \int_a^b f(x)\,dx
-\lim_{n \to \infty}
+\lim_{n \to \infty} a_n
+\mathbb{R}^{n \times m}
+```
 
-% 집합과 화살표
-\mathbb{R}
-\in
-\subseteq
-\Rightarrow
-\Leftrightarrow
+## 9. 여러 줄 수식과 정렬
 
-% 행렬
+수식을 여러 줄로 정렬할 때는 `amsmath` 패키지의 `align` 환경을 사용합니다. 정렬 기준이 되는 위치에 `&`를 넣고, 줄 끝에는 `\\`를 넣습니다.
+
+```latex
+\begin{align}
+  y &= ax + b \\
+    &= a(x - x_0) + y_0.
+\end{align}
+```
+
+번호가 필요 없는 줄에는 `\notag` 또는 `\nonumber`를 사용할 수 있습니다.
+
+```latex
+\begin{align}
+  L &= \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \notag \\
+    &= \|y - \hat{y}\|_2^2.
+\end{align}
+```
+
+| 환경 | 용도 | 메모 |
+|---|---|---|
+| `equation` | 한 줄 번호 수식 | 가장 기본 |
+| `align` | 여러 줄 정렬 수식 | `&`로 정렬 위치 지정 |
+| `gather` | 여러 수식을 가운데 정렬 | 정렬점이 필요 없을 때 |
+| `split` | 하나의 번호 안에서 줄 나눔 | `equation` 내부에서 자주 사용 |
+| `cases` | 조건별 정의 | piecewise 함수 표현 |
+
+## 10. 행렬과 괄호
+
+행렬은 `bmatrix`, `pmatrix`, `matrix` 환경을 자주 사용합니다. 열은 `&`로 나누고, 행은 `\\`로 나눕니다.
+
+```latex
 \begin{bmatrix}
   a & b \\
   c & d
 \end{bmatrix}
 ```
 
-## 13. Overleaf로 시작할 때의 권장 흐름
-
-로컬 LaTeX 환경을 직접 구성하는 것도 가능하지만, 처음에는 Overleaf 같은 웹 기반 편집기를 사용하면 패키지 설치 문제를 줄일 수 있습니다. Overleaf는 LaTeX 프로젝트를 온라인에서 작성·컴파일할 수 있는 환경을 제공하며, 공식 문서에서 수식과 참고문헌 작성 예제를 제공하고 있습니다.[^overleaf-amsmath]
-
-실전에서는 다음 순서가 효율적입니다.
-
-| 순서 | 작업 | 이유 |
+| 환경 | 괄호 모양 | 예시 용도 |
 |---|---|---|
-| 1 | 목표 저널 또는 학회 템플릿 다운로드 | 제출 형식을 처음부터 맞추기 위해 |
-| 2 | 예제 본문을 지우기 전에 구조 확인 | 어떤 명령이 필요한지 파악하기 위해 |
-| 3 | 제목·초록·섹션 제목만 먼저 작성 | 논문의 논리 구조를 먼저 고정하기 위해 |
-| 4 | 그림·표·수식을 라벨과 함께 추가 | 나중에 참조 오류를 줄이기 위해 |
-| 5 | 참고문헌을 마지막에 정리하지 말고 작성 중 관리 | 누락 인용을 줄이기 위해 |
+| `matrix` | 없음 | 내부 구조만 필요할 때 |
+| `pmatrix` | 소괄호 | 벡터, 행렬 |
+| `bmatrix` | 대괄호 | 행렬 표현 |
+| `Bmatrix` | 중괄호 | 집합형 행렬 |
+| `vmatrix` | 세로선 | determinant |
+| `Vmatrix` | 이중 세로선 | norm 표현 |
 
-## 마치며
+크기가 자동으로 늘어나는 괄호는 `\left`와 `\right`를 사용합니다.
 
-LaTeX와 IEEE 템플릿은 처음에는 복잡해 보이지만, 실제로는 몇 가지 원칙을 반복해서 적용하는 작업입니다. 문서 클래스와 패키지는 최소한으로 시작하고, 모든 번호는 `\label`과 `\ref`로 관리하며, 그림과 표는 캡션과 라벨 순서를 지키고, IEEE 제출 전에는 공식 템플릿과 저널별 지침을 확인하면 됩니다.
+```latex
+\left( \frac{a}{b} \right)
+\left[ \sum_{i=1}^{n} x_i \right]
+```
 
-가장 중요한 것은 글을 쓰기 전에 구조를 먼저 정하는 것입니다. 논문도 기술 블로그도 독자에게 전달해야 할 문제, 방법, 결과가 명확할수록 읽기 쉬워집니다. LaTeX는 그 구조를 흔들리지 않게 유지해 주는 도구로 생각하면 됩니다.
+## 11. 그림 넣기
+
+그림은 `graphicx` 패키지를 불러온 뒤 `figure` 환경과 `\includegraphics`로 삽입합니다. `\label`은 보통 `\caption` 뒤에 둡니다.
+
+```latex
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/sample.png}
+  \caption{Sample figure.}
+  \label{fig:sample}
+\end{figure}
+```
+
+| 옵션 | 의미 | 메모 |
+|---|---|---|
+| `h` | here | 가능한 현재 위치 |
+| `t` | top | 페이지 상단 |
+| `b` | bottom | 페이지 하단 |
+| `p` | page | float 전용 페이지 |
+| `!` | 제한 완화 | `!t`, `!htbp`처럼 사용 |
+
+그림 크기는 `width`로 조절하는 경우가 많습니다. 한 단 너비에는 `\linewidth`, 두 단 논문에서 한 column 너비에는 `\columnwidth`, 전체 페이지 폭에는 `\textwidth`를 자주 씁니다.
+
+```latex
+\includegraphics[width=\linewidth]{image.png}
+\includegraphics[width=0.5\textwidth]{image.png}
+```
+
+## 12. 표 만들기
+
+가장 기본적인 표는 `tabular` 환경으로 만듭니다. `l`, `c`, `r`은 각각 왼쪽, 가운데, 오른쪽 정렬을 의미합니다.
+
+```latex
+\begin{table}[htbp]
+  \centering
+  \caption{Example table.}
+  \label{tab:example}
+  \begin{tabular}{lcc}
+    \hline
+    Method & Accuracy & Time \\
+    \hline
+    A & 91.2\% & 10 ms \\
+    B & 94.5\% & 12 ms \\
+    \hline
+  \end{tabular}
+\end{table}
+```
+
+`booktabs`를 쓰면 더 깔끔한 표를 만들 수 있습니다.
+
+```latex
+\begin{table}[htbp]
+  \centering
+  \caption{Example table with booktabs.}
+  \label{tab:booktabs}
+  \begin{tabular}{lcc}
+    \toprule
+    Method & Accuracy & Time \\
+    \midrule
+    A & 91.2\% & 10 ms \\
+    B & 94.5\% & 12 ms \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+```
+
+| 정렬 문자 | 의미 | 예시 |
+|---|---|---|
+| `l` | left | 왼쪽 정렬 |
+| `c` | center | 가운데 정렬 |
+| `r` | right | 오른쪽 정렬 |
+| `p{3cm}` | fixed-width paragraph | 폭이 정해진 열 |
+| `|` | vertical line | 세로선, 과하게 쓰지 않는 편이 좋음 |
+
+## 13. label과 ref
+
+LaTeX에서 번호를 직접 쓰면 나중에 순서가 바뀔 때 문제가 생깁니다. 섹션, 그림, 표, 수식에는 `\label`을 붙이고, 본문에서는 `\ref` 또는 `\eqref`로 참조합니다.
+
+```latex
+\section{Method}
+\label{sec:method}
+
+\begin{equation}
+  y = Wx + b
+  \label{eq:linear}
+\end{equation}
+
+As shown in Section~\ref{sec:method}, the model is defined in Eq.~\eqref{eq:linear}.
+```
+
+| 대상 | 권장 label 접두사 | 참조 예시 |
+|---|---|---|
+| 섹션 | `sec:` | `Section~\ref{sec:method}` |
+| 그림 | `fig:` | `Figure~\ref{fig:model}` |
+| 표 | `tab:` | `Table~\ref{tab:result}` |
+| 수식 | `eq:` | `Eq.~\eqref{eq:loss}` |
+| 알고리즘 | `alg:` | `Algorithm~\ref{alg:train}` |
+
+그림과 표에서는 `\caption`이 번호를 만든 뒤 `\label`을 붙이는 것이 안전합니다.
+
+```latex
+\caption{Result examples.}
+\label{fig:result}
+```
+
+## 14. BibTeX 인용 기초
+
+참고문헌을 파일로 관리할 때는 `.bib` 파일을 만들고, 본문에서는 `\cite{}`로 인용합니다.
+
+```bibtex
+@article{kim2026sample,
+  author  = {Kim, Jonghwan},
+  title   = {A Sample Paper Title},
+  journal = {Journal of Examples},
+  year    = {2026},
+  volume  = {1},
+  number  = {1},
+  pages   = {1--10}
+}
+```
+
+본문에서는 다음처럼 사용합니다.
+
+```latex
+Previous work introduced a similar method~\cite{kim2026sample}.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+```
+
+| 명령어 | 의미 | 메모 |
+|---|---|---|
+| `\cite{key}` | 문헌 인용 | BibTeX key를 사용 |
+| `\bibliographystyle{}` | 참고문헌 스타일 | `IEEEtran`, `plain`, `unsrt` 등 |
+| `\bibliography{}` | `.bib` 파일 연결 | 확장자 `.bib`는 쓰지 않음 |
+| `@article` | 저널 논문 | article entry |
+| `@inproceedings` | 학회 논문 | conference entry |
+| `@book` | 책 | book entry |
+| `@misc` | 기타 자료 | 웹페이지, 문서 등 |
+
+## 15. 알고리즘 환경
+
+알고리즘을 문서에 넣을 때는 프로젝트나 템플릿에 따라 `algorithm`, `algorithmic`, `algorithm2e`, `algpseudocode` 등을 사용합니다. 아래는 기본적인 `algorithm`과 `algorithmic` 예시입니다.
+
+```latex
+\usepackage{algorithm}
+\usepackage{algorithmic}
+```
+
+```latex
+\begin{algorithm}[htbp]
+\caption{Training procedure}
+\label{alg:training}
+\begin{algorithmic}[1]
+\STATE Initialize model parameters
+\FOR{each epoch}
+  \STATE Update parameters using mini-batch data
+\ENDFOR
+\RETURN Trained model
+\end{algorithmic}
+\end{algorithm}
+```
+
+| 명령어 | 의미 |
+|---|---|
+| `\STATE` | 한 줄 명령 |
+| `\FOR ... \ENDFOR` | 반복문 |
+| `\IF ... \ENDIF` | 조건문 |
+| `\RETURN` | 반환 |
+| `[1]` | 줄 번호 표시 |
+
+## 16. 주석과 임시 메모
+
+LaTeX에서 `%` 뒤의 내용은 주석입니다. 컴파일 결과에는 보이지 않지만, 원문에는 남아 있습니다.
+
+```latex
+% 이 줄은 컴파일 결과에 보이지 않습니다.
+본문은 출력됩니다. % 여기부터 줄 끝까지 주석입니다.
+```
+
+여러 줄을 임시로 막고 싶다면 에디터의 주석 단축키를 쓰거나, `comment` 패키지를 사용할 수 있습니다.
+
+```latex
+\usepackage{comment}
+
+\begin{comment}
+이 영역은 출력되지 않습니다.
+여러 줄을 한 번에 숨길 수 있습니다.
+\end{comment}
+```
+
+## 17. 줄바꿈, 공백, 페이지 나누기
+
+LaTeX는 공백을 자동으로 정리합니다. 그래서 시각적으로 줄을 맞추려고 스페이스를 많이 넣어도 결과에는 그대로 반영되지 않습니다.
+
+| 명령어 | 의미 | 사용 상황 |
+|---|---|---|
+| 빈 줄 | 새 문단 | 가장 자연스러운 문단 구분 |
+| `\\` | 강제 줄바꿈 | 표, 주소, 짧은 줄바꿈 |
+| `\noindent` | 문단 들여쓰기 제거 | 특정 문단 시작 |
+| `\newpage` | 새 페이지 | 바로 다음 페이지로 이동 |
+| `\clearpage` | float 처리 후 새 페이지 | 그림·표를 먼저 출력 |
+| `\quad` | 큰 공백 | 수식 안에서 자주 사용 |
+| `\,` | 작은 공백 | 적분식 `dx` 앞에 자주 사용 |
+| `~` | 줄바꿈 없는 공백 | `Figure~\ref{...}` |
+
+```latex
+첫 번째 문단입니다.
+
+두 번째 문단입니다.
+
+Figure~\ref{fig:sample}에서 결과를 확인할 수 있습니다.
+```
+
+## 18. 파일 구조 추천
+
+처음에는 하나의 `.tex` 파일로 시작해도 충분합니다. 문서가 길어지면 그림 폴더와 참고문헌 파일을 분리하면 관리가 쉬워집니다.
+
+```text
+project/
+├── main.tex
+├── references.bib
+├── figures/
+│   ├── architecture.png
+│   └── result.png
+└── sections/
+    ├── intro.tex
+    ├── method.tex
+    └── experiments.tex
+```
+
+본문을 여러 파일로 나눌 때는 `\input{}`을 사용할 수 있습니다.
+
+```latex
+\input{sections/intro}
+\input{sections/method}
+\input{sections/experiments}
+```
+
+| 명령어 | 의미 | 메모 |
+|---|---|---|
+| `\input{file}` | 다른 `.tex` 파일 삽입 | 가장 자주 사용 |
+| `\include{file}` | 페이지 단위 포함 | 큰 문서에서 사용 |
+| `\includeonly{}` | 일부 include만 컴파일 | 긴 문서 디버깅에 유용 |
+
+## 19. 자주 나는 오류
+
+LaTeX 오류는 대부분 반복됩니다. 아래 표는 처음 사용할 때 자주 만나는 증상과 확인할 부분입니다.
+
+| 오류·증상 | 자주 있는 원인 | 먼저 확인할 것 |
+|---|---|---|
+| `Undefined control sequence` | 명령어 오타 또는 패키지 누락 | 명령어 철자, `\usepackage` |
+| `Missing $ inserted` | 수식 명령어를 텍스트 모드에서 사용 | `$...$` 안에 넣었는지 확인 |
+| `File not found` | 그림·입력 파일 경로 오류 | 파일명, 폴더 위치, 확장자 |
+| `Label(s) may have changed` | 참조 번호 갱신 필요 | 한 번 더 컴파일 |
+| `Citation undefined` | BibTeX key 오류 또는 컴파일 순서 문제 | `.bib` key, BibTeX 실행 |
+| 그림 위치가 이상함 | float 배치 규칙 때문 | `[htbp]`, `[!t]` 옵션 조정 |
+| 표가 페이지 밖으로 나감 | 열이 너무 많거나 폭이 큼 | 글자 크기, 열 폭, 표 분리 |
+
+## 20. Overleaf에서 빠르게 확인할 것
+
+처음 LaTeX를 쓸 때는 로컬 설치보다 Overleaf 같은 웹 기반 편집기가 편할 수 있습니다. Overleaf는 브라우저에서 LaTeX 문서를 작성하고 컴파일할 수 있는 환경과 기본 문서 예제를 제공합니다.[^overleaf-learn]
+
+| 확인 위치 | 볼 내용 | 이유 |
+|---|---|---|
+| Recompile 버튼 | 컴파일 실행 | 수정 결과 확인 |
+| Logs and output files | 오류 로그 | 에러 줄 번호 확인 |
+| Menu | Compiler 설정 | pdfLaTeX, XeLaTeX 등 선택 |
+| 파일 트리 | 이미지·bib 파일 위치 | 경로 오류 방지 |
+| Templates | 기본 양식 | 처음 구조 잡을 때 유용 |
+
+## 21. 한 번에 복사해서 시작하는 기본 템플릿
+
+아래 템플릿은 기초 문법을 확인하기 위한 최소 예제입니다. 수식, 그림, 표, 참조, 참고문헌의 위치를 한 번에 볼 수 있도록 구성했습니다.
+
+```latex
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{hidelinks=true}
+
+\title{My LaTeX Note}
+\author{Jonghwan Kim}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+This is a short LaTeX example. Inline math looks like $x_i^2$.
+
+\section{Equation}
+\label{sec:equation}
+
+\begin{equation}
+  y = Wx + b
+  \label{eq:linear}
+\end{equation}
+
+Equation~\eqref{eq:linear} shows a simple linear model.
+
+\section{Table}
+\label{sec:table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Simple result table.}
+  \label{tab:result}
+  \begin{tabular}{lcc}
+    \toprule
+    Method & Accuracy & Time \\
+    \midrule
+    A & 91.2\% & 10 ms \\
+    B & 94.5\% & 12 ms \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Table~\ref{tab:result} summarizes the result.
+
+\section{Figure}
+\label{sec:figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{figures/sample.png}
+  \caption{Sample figure.}
+  \label{fig:sample}
+\end{figure}
+
+Figure~\ref{fig:sample} is an example figure.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
+```
+
+## 22. 마지막으로 기억할 규칙
+
+LaTeX는 처음부터 모든 명령어를 외우는 도구가 아닙니다. 자주 쓰는 패턴을 저장해 두고, 문서를 작성할 때마다 필요한 부분을 찾아서 반복하는 방식이 가장 빠릅니다.
+
+| 규칙 | 이유 |
+|---|---|
+| 번호는 직접 쓰지 말고 `\label`과 `\ref`를 쓴다 | 수정해도 번호가 자동으로 맞춰짐 |
+| 그림·표의 `\label`은 `\caption` 뒤에 둔다 | 올바른 번호가 연결됨 |
+| 패키지는 필요한 것부터 최소한으로 추가한다 | 충돌 원인을 줄일 수 있음 |
+| 파일명에는 공백과 한글을 피한다 | 경로 문제를 줄일 수 있음 |
+| 오류가 나면 첫 번째 에러부터 본다 | 뒤쪽 에러는 연쇄 오류일 수 있음 |
+| 긴 문서는 파일을 나눈다 | 유지보수가 쉬워짐 |
 
 ## 참고 자료
 
-[^google-snippet]: [Google Search Central, "메타 설명 작성 방법"](https://developers.google.com/search/docs/appearance/snippet)
-[^ctan-ieeetran]: [CTAN, "IEEEtran – Document class for IEEE Transactions journals and conferences"](https://ctan.org/pkg/ieeetran)
-[^ieee-author-center]: [IEEE Author Center, "Authoring Tools and Templates"](https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/create-the-text-of-your-article/ieee-article-templates/)
-[^overleaf-amsmath]: [Overleaf Documentation, "Aligning equations with amsmath"](https://www.overleaf.com/learn/latex/Aligning_equations_with_amsmath)
+[^overleaf-learn]: [Overleaf Documentation, "Learn LaTeX in 30 minutes"](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
