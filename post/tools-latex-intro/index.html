@@ -1,6 +1,6 @@
-<!doctype html><html lang=ko-KR dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="LaTeX 기초 문법부터 IEEE Transactions 논문 양식까지, 최신 공식 문서 기반으로 검증한 실전 요약집"><title>LaTeX & IEEE 논문 작성 완벽 가이드 — 검증된 문법 요약집</title><link rel=canonical href=https://jonghwan-dev.github.io/post/tools-latex-intro/><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"><link rel=stylesheet href=/scss/style.min.d1dab08467a915e0aebee447c46cc0abd9286989619ebb63dc60a2d5007a1282.css><meta property='og:title' content="LaTeX & IEEE 논문 작성 완벽 가이드 — 검증된 문법 요약집"><meta property='og:description' content="LaTeX 기초 문법부터 IEEE Transactions 논문 양식까지, 최신 공식 문서 기반으로 검증한 실전 요약집"><meta property='og:url' content='https://jonghwan-dev.github.io/post/tools-latex-intro/'><meta property='og:site_name' content='ArmyKim_space'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='latex'><meta property='article:tag' content='ieee'><meta property='article:tag' content='논문작성'><meta property='article:tag' content='research'><meta property='article:tag' content='tools'><meta property='article:published_time' content='2026-05-08T00:00:00+00:00'><meta property='article:modified_time' content='2026-05-08T00:00:00+00:00'><meta name=twitter:title content="LaTeX & IEEE 논문 작성 완벽 가이드 — 검증된 문법 요약집"><meta name=twitter:description content="LaTeX 기초 문법부터 IEEE Transactions 논문 양식까지, 최신 공식 문서 기반으로 검증한 실전 요약집"><script async src="https://www.googletagmanager.com/gtag/js?id=G-09ZRY73S9F"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-09ZRY73S9F")}</script><meta name=google-site-verification content="GLB174ggtv69Dkosu23msmQLolVh8aj5k9fQ-kuSSKE"><meta name=naver-site-verification content="0214843e2f6c14abe5c721027a85147a1ad61fc6"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<!doctype html><html lang=ko-KR dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="LaTeX 기본 문법, IEEEtran 템플릿, 수식·그림·표·참고문헌 작성법을 논문 제출 흐름에 맞춰 정리한 실전 기술 가이드입니다."><title>LaTeX와 IEEE 논문 작성: 처음부터 실전 제출까지 정리한 가이드</title><link rel=canonical href=https://jonghwan-dev.github.io/post/tools-latex-intro/><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"><link rel=stylesheet href=/scss/style.min.d1dab08467a915e0aebee447c46cc0abd9286989619ebb63dc60a2d5007a1282.css><meta property='og:title' content="LaTeX와 IEEE 논문 작성: 처음부터 실전 제출까지 정리한 가이드"><meta property='og:description' content="LaTeX 기본 문법, IEEEtran 템플릿, 수식·그림·표·참고문헌 작성법을 논문 제출 흐름에 맞춰 정리한 실전 기술 가이드입니다."><meta property='og:url' content='https://jonghwan-dev.github.io/post/tools-latex-intro/'><meta property='og:site_name' content='ArmyKim_space'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='latex'><meta property='article:tag' content='ieee'><meta property='article:tag' content='논문작성'><meta property='article:tag' content='research'><meta property='article:tag' content='overleaf'><meta property='article:tag' content='bibtex'><meta property='article:published_time' content='2026-05-08T00:00:00+00:00'><meta property='article:modified_time' content='2026-05-08T00:00:00+00:00'><meta name=twitter:title content="LaTeX와 IEEE 논문 작성: 처음부터 실전 제출까지 정리한 가이드"><meta name=twitter:description content="LaTeX 기본 문법, IEEEtran 템플릿, 수식·그림·표·참고문헌 작성법을 논문 제출 흐름에 맞춰 정리한 실전 기술 가이드입니다."><script async src="https://www.googletagmanager.com/gtag/js?id=G-09ZRY73S9F"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-09ZRY73S9F")}</script><meta name=google-site-verification content="GLB174ggtv69Dkosu23msmQLolVh8aj5k9fQ-kuSSKE"><meta name=naver-site-verification content="0214843e2f6c14abe5c721027a85147a1ad61fc6"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
 <span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/about/><img src=/img/avatar.png width=160 height=160 class=site-logo loading=lazy alt=Avatar>
-</a><span class=emoji>👋</span></figure><div class=site-meta><h1 class=site-name><a href=/>ArmyKim_space</a></h1><h2 class=site-description>흔한 개발자의 기술블로그</h2></div></header><ol class=menu-social><li><a href=https://github.com/jonghwan-dev target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=mailto:kjh00012120@gmail.com title=Gmail rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a></li><li><a href=https://www.linkedin.com/in/jonghwankim8880/ target=_blank title=LinkedIn rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></li><li id=dark-mode-toggle title="Dark Mode" aria-label="Dark Mode"><span class=dark-mode-switch><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+</a><span class=emoji>👋</span></figure><div class=site-meta><div class=site-name><a href=/>ArmyKim_space</a></div><h2 class=site-description>흔한 개발자의 기술블로그</h2></div></header><ol class=menu-social><li><a href=https://github.com/jonghwan-dev target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=mailto:kjh00012120@gmail.com title=Gmail rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a></li><li><a href=https://www.linkedin.com/in/jonghwankim8880/ target=_blank title=LinkedIn rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></li><li id=dark-mode-toggle title="Dark Mode" aria-label="Dark Mode"><span class=dark-mode-switch><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
 <svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
 <span class="dark-mode-symbol dark-mode-sun"><svg class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 8a4 4 0 100 8 4 4 0 000-8"/><path d="M3 12h1"/><path d="M20 12h1"/><path d="M12 3v1"/><path d="M12 20v1"/><path d="M5.6 5.6l.7.7"/><path d="M17.7 17.7l.7.7"/><path d="M18.4 5.6l-.7.7"/><path d="M6.3 17.7l-.7.7"/></svg>
 </span><span class="dark-mode-symbol dark-mode-moon"><svg class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.1.0.2.0.3.0a7.5 7.5.0 008.7 8.7A9 9 0 1112 3"/></svg></span></span></li></ol><ol class=menu id=main-menu><li><a href=/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
@@ -12,435 +12,188 @@
 <span>Tools</span>
 <strong>1</strong></a></li></ol></li><li><a href=/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
 <span>Search</span></a></li><li><a href=/about/><svg class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
-<span>About</span></a></li></ol></aside><script>document.addEventListener("DOMContentLoaded",function(){var e=document.querySelector(".menu-category-toggle"),t=document.getElementById("sidebar-category-board");if(!e||!t)return;e.addEventListener("click",function(){var n=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",n?"false":"true"),t.hidden=n})})</script><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/tools/ style=background-color:#c8beef;color:#180f3d>Tools</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/post/tools-latex-intro/>LaTeX & IEEE 논문 작성 완벽 가이드 — 검증된 문법 요약집</a></h2><h3 class=article-subtitle>LaTeX 기초 문법부터 IEEE Transactions 논문 양식까지, 최신 공식 문서 기반으로 검증한 실전 요약집</h3></div><footer class=article-meta><div class=inline-meta><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<span>About</span></a></li></ol></aside><script>document.addEventListener("DOMContentLoaded",function(){var e=document.querySelector(".menu-category-toggle"),t=document.getElementById("sidebar-category-board");if(!e||!t)return;e.addEventListener("click",function(){var n=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",n?"false":"true"),t.hidden=n})})</script><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/categories/tools/ style=background-color:#c8beef;color:#180f3d>Tools</a></header><div class=article-title-wrapper><h1 class=article-title><a href=/post/tools-latex-intro/>LaTeX와 IEEE 논문 작성: 처음부터 실전 제출까지 정리한 가이드</a></h1><h3 class=article-subtitle>LaTeX 기본 문법, IEEEtran 템플릿, 수식·그림·표·참고문헌 작성법을 논문 제출 흐름에 맞춰 정리한 실전 기술 가이드입니다.</h3></div><footer class=article-meta><div class=inline-meta><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
 <time class=article-time--published datetime=2026-05-08T00:00:00Z>2026-05-08</time>
 <svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
-<time class=article-time--reading>10 minutes read</time></div></footer></div></header><section class=article-content><blockquote><p><strong>검증 기준</strong></p><ul><li>IEEEtran.cls <strong>v1.8b</strong> (CTAN 현행 최신)</li><li><strong>IEEE Editorial Style Manual</strong> (Updated 25 March 2025)</li><li>IEEE Author Center 공식 가이드라인</li><li>amsmath 공식 문서 / Overleaf 공식 가이드</li></ul></blockquote><hr><h2 id=목차>목차</h2><ol><li><a class=link href=#1-latex-%eb%ac%b8%ec%84%9c-%ea%b8%b0%eb%b3%b8-%ea%b5%ac%ec%a1%b0>LaTeX 문서 기본 구조</a></li><li><a class=link href=#2-%ed%95%84%ec%88%98-%ed%8c%a8%ed%82%a4%ec%a7%80>필수 패키지</a></li><li><a class=link href=#3-%ed%85%8d%ec%8a%a4%ed%8a%b8-%ec%84%9c%ec%8b%9d>텍스트 서식</a></li><li><a class=link href=#4-%ec%84%b9%ec%85%98-%ea%b5%ac%ec%a1%b0>섹션 구조</a></li><li><a class=link href=#5-%ec%88%98%ec%8b%9d-%ec%9e%91%ec%84%b1%eb%b2%95>수식 작성법</a></li><li><a class=link href=#6-%ea%b7%b8%eb%a6%bc-%ec%82%bd%ec%9e%85>그림 삽입</a></li><li><a class=link href=#7-%ed%91%9c-%ec%9e%91%ec%84%b1>표 작성</a></li><li><a class=link href=#8-%ec%83%81%ed%98%b8-%ec%b0%b8%ec%a1%b0>상호 참조</a></li><li><a class=link href=#9-%ec%b0%b8%ea%b3%a0%eb%ac%b8%ed%97%8c>참고문헌</a></li><li><a class=link href=#10-ieee-%ec%a0%84%ec%9a%a9-%ec%84%a4%ec%a0%95>IEEE 전용 설정</a></li><li><a class=link href=#11-ieee-%ea%b7%b8%eb%a6%bc--%ed%91%9c-%ea%b7%9c%ec%b9%99>IEEE 그림 & 표 규칙</a></li><li><a class=link href=#12-ieee-%ec%b0%b8%ea%b3%a0%eb%ac%b8%ed%97%8c-%ed%98%95%ec%8b%9d>IEEE 참고문헌 형식</a></li><li><a class=link href=#13-ieee-%ec%8a%a4%ed%83%80%ec%9d%bc-%ec%b2%b4%ed%81%ac%eb%a6%ac%ec%8a%a4%ed%8a%b8>IEEE 스타일 체크리스트</a></li><li><a class=link href=#14-%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98-%ec%9e%91%ec%84%b1>알고리즘 작성</a></li><li><a class=link href=#15-%ec%a0%80%ec%9e%90-%ec%95%bd%eb%a0%a5>저자 약력</a></li><li><a class=link href=#16-%eb%b2%84%ec%a0%84%eb%b3%84-%eb%b3%80%ea%b2%bd%ec%82%ac%ed%95%ad--%ed%8c%a8%ed%82%a4%ec%a7%80-%ec%b6%a9%eb%8f%8c-%ec%a3%bc%ec%9d%98>버전별 변경사항 & 패키지 충돌 주의</a></li></ol><hr><h2 id=1-latex-문서-기본-구조>1. LaTeX 문서 기본 구조</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\documentclass</span><span class=na>[옵션]</span><span class=nb>{</span>클래스<span class=nb>}</span>   <span class=c>% 문서 유형 선언
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>패키지명<span class=nb>}</span>           <span class=c>% 필요한 패키지 불러오기
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>                <span class=c>% 본문 시작
-</span></span></span><span class=line><span class=cl>  내용
-</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>                  <span class=c>% 본문 끝
-</span></span></span></code></pre></div><h3 id=주요-문서-클래스>주요 문서 클래스</h3><div class=table-wrapper><table><thead><tr><th>클래스</th><th>용도</th></tr></thead><tbody><tr><td><code>article</code></td><td>일반 논문, 보고서</td></tr><tr><td><code>report</code></td><td>긴 보고서, 학위논문</td></tr><tr><td><code>book</code></td><td>단행본</td></tr><tr><td><code>beamer</code></td><td>프레젠테이션 슬라이드</td></tr><tr><td><code>IEEEtran</code></td><td><strong>IEEE 논문 표준 클래스</strong></td></tr><tr><td><code>ieeecolor</code></td><td>IEEE 컬러 저널용 (추가 패키지 필요)</td></tr></tbody></table></div><hr><h2 id=2-필수-패키지>2. 필수 패키지</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% ── 수학/기호 ─────────────────────────────────
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>amsmath<span class=nb>}</span>       <span class=c>% 수식 환경 확장 (align, gather 등)
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>amssymb<span class=nb>}</span>       <span class=c>% 수학 기호 (∈, ℝ 등)
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>amsfonts<span class=nb>}</span>      <span class=c>% 수학 폰트 (\mathbb, \mathcal 등)
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% ── 그림/표 ──────────────────────────────────
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>graphicx<span class=nb>}</span>      <span class=c>% 이미지 삽입
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>booktabs<span class=nb>}</span>      <span class=c>% 고품질 표 (toprule/midrule/bottomrule)
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% ── 다중 그림 (IEEEtran 공식 지원) ─────────────
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>subfig<span class=nb>}</span>        <span class=c>% \subfloat 명령. subcaption 아님!
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% ── 알고리즘 ─────────────────────────────────
+<time class=article-time--reading>9 minutes read</time></div></footer></div></header><section class=article-content><p>LaTeX는 처음 접하면 문법이 낯설지만, 논문처럼 구조가 명확하고 반복 수정이 많은 문서를 작성할 때 강력한 도구가 됩니다. 특히 IEEE 형식의 논문은 제목, 초록, Index Terms, 수식 번호, 그림·표 캡션, 참고문헌 형식까지 규칙이 엄격하므로 Word처럼 눈으로 맞추는 방식보다 LaTeX 템플릿을 기준으로 관리하는 편이 안정적입니다.</p><p>이 글은 LaTeX를 막 시작한 연구자나 개발자가 <strong>IEEE 논문 초안</strong>을 작성할 때 필요한 내용을 하나의 흐름으로 정리한 가이드입니다. 단순 명령어 목록보다 실제 작성 순서에 맞춰 설명하며, 복사해서 바로 실험할 수 있는 최소 예제를 함께 제공합니다. Google이 검색 결과 스니펫을 만들 때 페이지별 <code>meta description</code>을 활용할 수 있다고 설명하듯이, 기술 글도 제목과 요약만으로 글의 범위가 분명해야 독자가 빠르게 판단할 수 있습니다.<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p><h2 id=이-글에서-다루는-범위>이 글에서 다루는 범위</h2><p>LaTeX에는 문서 조판, 수식, 그림, 참고문헌, 패키지 생태계가 모두 포함되어 있습니다. 따라서 처음부터 모든 명령어를 외우려 하기보다, 논문 한 편을 완성하는 데 필요한 핵심 개념을 순서대로 익히는 것이 좋습니다.</p><div class=table-wrapper><table><thead><tr><th>단계</th><th>핵심 질문</th><th>이 글에서 제공하는 내용</th></tr></thead><tbody><tr><td>문서 뼈대 만들기</td><td>LaTeX 문서는 어디서 시작하고 끝나는가</td><td><code>\documentclass</code>, <code>\usepackage</code>, <code>document</code> 환경</td></tr><tr><td>본문 구조화</td><td>섹션과 문단은 어떻게 나누는가</td><td><code>\section</code>, <code>\subsection</code>, 제목 계층</td></tr><tr><td>수식 작성</td><td>번호가 있는 수식과 여러 줄 수식은 어떻게 쓰는가</td><td><code>equation</code>, <code>align</code>, <code>IEEEeqnarray</code></td></tr><tr><td>그림·표 삽입</td><td>캡션과 라벨은 어디에 두어야 하는가</td><td><code>figure</code>, <code>table</code>, <code>\caption</code>, <code>\label</code></td></tr><tr><td>참고문헌 관리</td><td>IEEE 스타일 인용은 어떻게 정리하는가</td><td><code>\cite</code>, <code>thebibliography</code>, BibTeX 흐름</td></tr><tr><td>IEEE 제출 준비</td><td>일반 LaTeX와 IEEEtran의 차이는 무엇인가</td><td><code>IEEEtran</code>, <code>ieeecolor</code>, Index Terms, 체크리스트</td></tr></tbody></table></div><blockquote><p>이 글의 원칙은 명확합니다. <strong>본문에서는 구조를 먼저 잡고, 세부 서식은 템플릿과 패키지에 맡깁니다.</strong> 논문 작성의 품질은 예쁜 화면보다 재현 가능한 구조와 일관된 참조에서 결정됩니다.</p></blockquote><h2 id=1-latex-문서의-최소-구조>1. LaTeX 문서의 최소 구조</h2><p>LaTeX 문서는 크게 두 영역으로 나뉩니다. 첫 번째는 문서 클래스와 패키지를 선언하는 <strong>preamble</strong>이고, 두 번째는 실제 내용이 들어가는 <strong>document 환경</strong>입니다. 가장 작은 문서는 다음처럼 구성됩니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\documentclass</span><span class=nb>{</span>article<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+</span></span><span class=line><span class=cl>Hello, LaTeX.
+</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</span></span></code></pre></div><p>논문을 작성할 때는 문서 클래스가 중요합니다. 일반 보고서라면 <code>article</code>로 충분하지만, IEEE 저널 또는 컨퍼런스 양식을 맞춰야 한다면 <code>IEEEtran</code> 계열 클래스를 사용해야 합니다. IEEEtran은 IEEE 논문 레이아웃을 위한 대표적인 LaTeX 클래스이며, CTAN에서 배포되는 버전은 v1.8b입니다.<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup></p><div class=table-wrapper><table><thead><tr><th>문서 클래스</th><th>주 사용처</th><th>비고</th></tr></thead><tbody><tr><td><code>article</code></td><td>짧은 논문, 보고서</td><td>LaTeX 기본 클래스</td></tr><tr><td><code>report</code></td><td>장문의 보고서, 학위논문</td><td>장과 절 구조에 적합</td></tr><tr><td><code>book</code></td><td>단행본</td><td>책 구성에 적합</td></tr><tr><td><code>beamer</code></td><td>발표 슬라이드</td><td>프레젠테이션 전용</td></tr><tr><td><code>IEEEtran</code></td><td>IEEE 논문</td><td>IEEE 저널·컨퍼런스 양식에 적합</td></tr><tr><td><code>ieeecolor</code></td><td>일부 IEEE 컬러 저널 템플릿</td><td>저널별 템플릿 지침 확인 필요</td></tr></tbody></table></div><h2 id=2-논문용-기본-패키지-구성>2. 논문용 기본 패키지 구성</h2><p>LaTeX 패키지는 필요한 기능만 추가하는 방식으로 관리하는 것이 좋습니다. 처음부터 많은 패키지를 넣으면 충돌 원인을 찾기 어렵습니다. 아래 구성은 수식, 그림, 표, 링크, IEEE 인용에 자주 쓰이는 기본 조합입니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 수식과 수학 기호
+</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>amsmath<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>amssymb<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>amsfonts<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>% 그림과 표
+</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>graphicx<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>booktabs<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>% IEEE 다중 그림
+</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>subfig<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>% 알고리즘
 </span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>algorithm<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>algorithmic<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% ── 링크/참조 ────────────────────────────────
+</span></span><span class=line><span class=cl><span class=c>% 링크와 인용
 </span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>hyperref<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\hypersetup</span><span class=nb>{</span>hidelinks=true<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>cite<span class=nb>}</span>          <span class=c>% 참고문헌 자동 정렬
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% ── 기타 ─────────────────────────────────────
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>textcomp<span class=nb>}</span>
-</span></span></code></pre></div><blockquote><p>⚠️ <strong>IEEEtran 사용 시 주의</strong><br><code>subcaption</code> 패키지는 <code>caption</code> 패키지에 의존하며 IEEEtran과 <strong>충돌 가능</strong>.<br>다중 그림은 반드시 <code>subfig</code> 패키지 사용.</p></blockquote><hr><h2 id=3-텍스트-서식>3. 텍스트 서식</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\textbf</span><span class=nb>{</span>굵게<span class=nb>}</span>              <span class=c>% Bold
-</span></span></span><span class=line><span class=cl><span class=k>\textit</span><span class=nb>{</span>기울임꼴<span class=nb>}</span>           <span class=c>% Italic
-</span></span></span><span class=line><span class=cl><span class=k>\underline</span><span class=nb>{</span>밑줄<span class=nb>}</span>            <span class=c>% Underline
-</span></span></span><span class=line><span class=cl><span class=k>\texttt</span><span class=nb>{</span>고정폭 폰트<span class=nb>}</span>         <span class=c>% 코드/경로
-</span></span></span><span class=line><span class=cl><span class=k>\emph</span><span class=nb>{</span>강조<span class=nb>}</span>                 <span class=c>% 문맥에 따라 이탤릭/로만 자동 전환
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 크기 (작은 것 → 큰 것 순서)
-</span></span></span><span class=line><span class=cl><span class=nb>{</span><span class=k>\tiny</span><span class=nb>}</span>  <span class=nb>{</span><span class=k>\scriptsize</span><span class=nb>}</span>  <span class=nb>{</span><span class=k>\footnotesize</span><span class=nb>}</span>  <span class=nb>{</span><span class=k>\small</span><span class=nb>}</span>  <span class=nb>{</span><span class=k>\normalsize</span><span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=nb>{</span><span class=k>\large</span><span class=nb>}</span>  <span class=nb>{</span><span class=k>\Large</span><span class=nb>}</span>  <span class=nb>{</span><span class=k>\LARGE</span><span class=nb>}</span>  <span class=nb>{</span><span class=k>\huge</span><span class=nb>}</span>  <span class=nb>{</span><span class=k>\Huge</span><span class=nb>}</span>
-</span></span></code></pre></div><hr><h2 id=4-섹션-구조>4. 섹션 구조</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>제목<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\subsection</span><span class=nb>{</span>제목<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\subsubsection</span><span class=nb>{</span>제목<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\paragraph</span><span class=nb>{</span>제목<span class=nb>}</span>        <span class=c>% 인라인
-</span></span></span><span class=line><span class=cl><span class=k>\subparagraph</span><span class=nb>{</span>제목<span class=nb>}</span>     <span class=c>% 인라인
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>\section*</span><span class=nb>{</span>번호 없는 섹션<span class=nb>}</span>   <span class=c>% Acknowledgment, References 등
-</span></span></span></code></pre></div><hr><h2 id=5-수식-작성법>5. 수식 작성법</h2><h3 id=인라인--독립-수식>인라인 / 독립 수식</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 인라인
-</span></span></span><span class=line><span class=cl>텍스트 안에 <span class=s>$</span><span class=nb>E </span><span class=o>=</span><span class=nb> mc^</span><span class=m>2</span><span class=s>$</span> 수식.
+</span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>cite<span class=nb>}</span>
+</span></span></code></pre></div><p>IEEEtran을 사용할 때는 특히 캡션 관련 패키지에 주의해야 합니다. <code>subcaption</code>은 내부적으로 <code>caption</code> 패키지에 의존하므로 IEEEtran과 충돌할 수 있습니다. IEEE 형식에서 다중 그림을 다룰 때는 보통 <code>subfig</code>를 사용하는 편이 안전합니다.</p><h2 id=3-제목-섹션-문단-구조-잡기>3. 제목, 섹션, 문단 구조 잡기</h2><p>LaTeX 문서에서 제목 계층은 HTML의 heading과 비슷합니다. 가장 큰 단위는 <code>\section</code>, 그 아래는 <code>\subsection</code>, 그 아래는 <code>\subsubsection</code>입니다. 논문에서는 제목 계층이 너무 깊어지면 독자가 흐름을 놓치기 쉬우므로, 보통 <code>subsection</code> 수준까지를 중심으로 설계하는 것이 좋습니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>Introduction<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\subsection</span><span class=nb>{</span>Motivation<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\subsection</span><span class=nb>{</span>Contribution<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>Method<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\subsection</span><span class=nb>{</span>Model Architecture<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>Experiments<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>Conclusion<span class=nb>}</span>
+</span></span></code></pre></div><p>기술 블로그 글도 마찬가지입니다. 제목은 글의 약속이고, 각 섹션은 그 약속을 단계적으로 증명해야 합니다. LaTeX 논문에서는 대체로 <strong>Introduction → Related Work → Method → Experiments → Results → Conclusion</strong> 흐름이 많이 사용됩니다.</p><h2 id=4-수식-작성-equation-align-ieeeeqnarray>4. 수식 작성: <code>equation</code>, <code>align</code>, <code>IEEEeqnarray</code></h2><p>LaTeX를 쓰는 가장 큰 이유 중 하나는 수식 조판입니다. 짧은 인라인 수식은 <code>$...$</code>로 작성하고, 독립된 수식은 <code>equation</code> 또는 <code>align</code> 환경을 사용합니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl>텍스트 안에서는 <span class=s>$</span><span class=nb>E </span><span class=o>=</span><span class=nb> mc^</span><span class=m>2</span><span class=s>$</span>처럼 인라인 수식을 작성합니다.
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 독립 — 번호 없음
-</span></span></span><span class=line><span class=cl><span class=sb>\[</span><span class=nb>
-</span></span></span><span class=line><span class=cl><span class=nb>  </span><span class=nv>\int</span><span class=nb>_{</span><span class=o>-</span><span class=nv>\infty</span><span class=nb>}^{</span><span class=nv>\infty</span><span class=nb>} e^{</span><span class=o>-</span><span class=nb>x^</span><span class=m>2</span><span class=nb>}</span><span class=nv>\,</span><span class=nb>dx </span><span class=o>=</span><span class=nb> </span><span class=nv>\sqrt</span><span class=nb>{</span><span class=nv>\pi</span><span class=nb>}
-</span></span></span><span class=line><span class=cl><span class=s>\]</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 독립 — 번호 있음 (IEEE 주로 사용)
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>equation<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  E = mc<span class=nb>^</span>2.        <span class=c>% 문장의 일부면 구두점 포함
-</span></span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>eq:energy<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>equation<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  E = mc<span class=nb>^</span>2.
+</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>eq:energy<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>equation<span class=nb>}</span>
-</span></span></code></pre></div><h3 id=정렬-수식-여러-줄>정렬 수식 (여러 줄)</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% ── align (amsmath) ────────────────────────
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>align<span class=nb>}</span>
+</span></span></code></pre></div><p>여러 줄로 정렬해야 하는 수식에는 <code>align</code>이 편리합니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>align<span class=nb>}</span>
 </span></span><span class=line><span class=cl>  f(x) <span class=nb>&amp;</span>= ax<span class=nb>^</span>2 + bx + c <span class=k>\\</span>
-</span></span><span class=line><span class=cl>       <span class=nb>&amp;</span>= a(x+1)<span class=nb>^</span>2 + c - a
+</span></span><span class=line><span class=cl>       <span class=nb>&amp;</span>= a(x + 1)<span class=nb>^</span>2 + c - a.
+</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>eq:quadratic<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>align<span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 번호 없음
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>align*<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  2x - 5y <span class=nb>&amp;</span>= 8 <span class=k>\\</span>
-</span></span><span class=line><span class=cl>  3x + 9y <span class=nb>&amp;</span>= -12
-</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>align*<span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% ── IEEEeqnarray (IEEE 권장, IEEEtran 내장) ──
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>IEEEeqnarray<span class=nb>}{</span>rCl<span class=nb>}</span>
+</span></span></code></pre></div><p>IEEEtran 문서에서는 <code>IEEEeqnarray</code>도 자주 사용됩니다. 등호 정렬과 번호 제어가 필요한 경우 IEEE 스타일에 더 적합한 선택이 될 수 있습니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>IEEEeqnarray<span class=nb>}{</span>rCl<span class=nb>}</span>
 </span></span><span class=line><span class=cl>  a <span class=nb>&amp;</span>=<span class=nb>&amp;</span> b + c <span class=k>\nonumber</span> <span class=k>\\</span>
-</span></span><span class=line><span class=cl>  x <span class=nb>&amp;</span>=<span class=nb>&amp;</span> y + z <span class=k>\label</span><span class=nb>{</span>eq:sys<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  x <span class=nb>&amp;</span>=<span class=nb>&amp;</span> y + z.
+</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>eq:system<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>IEEEeqnarray<span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% ── equation 안에서 줄 나누기 (split) ────────
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>equation<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\begin</span><span class=nb>{</span>split<span class=nb>}</span>
-</span></span><span class=line><span class=cl>    A <span class=nb>&amp;</span>= <span class=k>\frac</span><span class=nb>{</span><span class=k>\pi</span> r<span class=nb>^</span>2<span class=nb>}{</span>2<span class=nb>}</span> <span class=k>\\</span>
-</span></span><span class=line><span class=cl>      <span class=nb>&amp;</span>= <span class=k>\frac</span><span class=nb>{</span>1<span class=nb>}{</span>2<span class=nb>}</span><span class=k>\pi</span> r<span class=nb>^</span>2
-</span></span><span class=line><span class=cl>  <span class=k>\end</span><span class=nb>{</span>split<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>eq:area<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>equation<span class=nb>}</span>
-</span></span></code></pre></div><h3 id=subequations--ab-번호>subequations — (a)(b) 번호</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>subequations<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>eq:maxwell<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\begin</span><span class=nb>{</span>align<span class=nb>}</span>
-</span></span><span class=line><span class=cl>    <span class=k>\nabla</span> <span class=k>\cdot</span>  <span class=k>\mathbf</span><span class=nb>{</span>E<span class=nb>}</span> <span class=nb>&amp;</span>= <span class=k>\rho</span>/<span class=k>\epsilon</span><span class=nb>_</span>0 <span class=k>\label</span><span class=nb>{</span>eq:ma<span class=nb>}</span> <span class=k>\\</span>
-</span></span><span class=line><span class=cl>    <span class=k>\nabla</span> <span class=k>\times</span> <span class=k>\mathbf</span><span class=nb>{</span>B<span class=nb>}</span> <span class=nb>&amp;</span>= <span class=k>\mu</span><span class=nb>_</span>0<span class=k>\mathbf</span><span class=nb>{</span>J<span class=nb>}</span> <span class=k>\label</span><span class=nb>{</span>eq:mb<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\end</span><span class=nb>{</span>align<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>subequations<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=c>% 결과: (1a), (1b)
-</span></span></span></code></pre></div><blockquote><p>⚠️ <code>subequations</code> 환경은 내부에 수식이 없어도 메인 카운터를 증가시킴.<br>빈 블록 실수로 남기면 번호가 건너뜀.</p></blockquote><blockquote><p>❌ <strong><code>eqnarray</code> 절대 금지</strong>: 등호 공백 불균일, 공식 obsolete 환경.<br>✅ <strong>IEEE 논문 권장 순서</strong>: <code>IEEEeqnarray</code> → <code>align</code></p></blockquote><h3 id=자주-쓰는-수학-기호>자주 쓰는 수학 기호</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 위·아래첨자
-</span></span></span><span class=line><span class=cl>x<span class=nb>^{</span>2<span class=nb>}</span>   x<span class=nb>_{</span>i<span class=nb>}</span>   A<span class=nb>_{</span>ij<span class=nb>}^{</span>k<span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 분수
-</span></span></span><span class=line><span class=cl><span class=k>\frac</span><span class=nb>{</span>분자<span class=nb>}{</span>분모<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\dfrac</span><span class=nb>{</span>분자<span class=nb>}{</span>분모<span class=nb>}</span>   <span class=c>% 인라인에서도 디스플레이 크기 강제
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 루트
-</span></span></span><span class=line><span class=cl><span class=k>\sqrt</span><span class=nb>{</span>x<span class=nb>}</span>    <span class=k>\sqrt</span><span class=na>[n]</span><span class=nb>{</span>x<span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 합/곱/적분
-</span></span></span><span class=line><span class=cl><span class=k>\sum</span><span class=nb>_{</span>i=1<span class=nb>}^{</span>n<span class=nb>}</span>    <span class=k>\prod</span><span class=nb>_{</span>k=0<span class=nb>}^{</span>N<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\int</span><span class=nb>_{</span>a<span class=nb>}^{</span>b<span class=nb>}</span> f(x)<span class=k>\,</span>dx     <span class=c>% \, : 미소 공백 (관례)
-</span></span></span><span class=line><span class=cl><span class=k>\oint</span>    <span class=k>\iint</span>    <span class=k>\iiint</span>   <span class=c>% amsmath 필요
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 극한
-</span></span></span><span class=line><span class=cl><span class=k>\lim</span><span class=nb>_{</span>n <span class=k>\to</span> <span class=k>\infty</span><span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 행렬 (amsmath)
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>pmatrix<span class=nb>}</span> a <span class=nb>&amp;</span> b <span class=k>\\</span> c <span class=nb>&amp;</span> d <span class=k>\end</span><span class=nb>{</span>pmatrix<span class=nb>}</span>  <span class=c>% ( )
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>bmatrix<span class=nb>}</span> a <span class=nb>&amp;</span> b <span class=k>\\</span> c <span class=nb>&amp;</span> d <span class=k>\end</span><span class=nb>{</span>bmatrix<span class=nb>}</span>  <span class=c>% [ ]
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>vmatrix<span class=nb>}</span> a <span class=nb>&amp;</span> b <span class=k>\\</span> c <span class=nb>&amp;</span> d <span class=k>\end</span><span class=nb>{</span>vmatrix<span class=nb>}</span>  <span class=c>% | |
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 굵은 기호
-</span></span></span><span class=line><span class=cl><span class=k>\mathbf</span><span class=nb>{</span>A<span class=nb>}</span>            <span class=c>% 굵은 로마체 (벡터/행렬)
-</span></span></span><span class=line><span class=cl><span class=k>\boldsymbol</span><span class=nb>{</span><span class=k>\alpha</span><span class=nb>}</span>   <span class=c>% 굵은 그리스 문자 (amsmath)
-</span></span></span><span class=line><span class=cl><span class=k>\mathbb</span><span class=nb>{</span>R<span class=nb>}</span>            <span class=c>% 블랙보드 볼드
-</span></span></span><span class=line><span class=cl><span class=k>\mathcal</span><span class=nb>{</span>L<span class=nb>}</span>           <span class=c>% 캘리그래피
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 그리스 문자 (소문자)
-</span></span></span><span class=line><span class=cl><span class=k>\alpha</span>  <span class=k>\beta</span>  <span class=k>\gamma</span>  <span class=k>\delta</span>  <span class=k>\epsilon</span>  <span class=k>\varepsilon</span>
-</span></span><span class=line><span class=cl><span class=k>\zeta</span>   <span class=k>\eta</span>   <span class=k>\theta</span>  <span class=k>\vartheta</span>  <span class=k>\kappa</span>  <span class=k>\lambda</span>
-</span></span><span class=line><span class=cl><span class=k>\mu</span>     <span class=k>\nu</span>    <span class=k>\xi</span>     <span class=k>\pi</span>     <span class=k>\sigma</span>   <span class=k>\varsigma</span>
-</span></span><span class=line><span class=cl><span class=k>\tau</span>    <span class=k>\phi</span>   <span class=k>\varphi</span> <span class=k>\chi</span>    <span class=k>\psi</span>     <span class=k>\omega</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 그리스 문자 (대문자)
-</span></span></span><span class=line><span class=cl><span class=k>\Gamma</span> <span class=k>\Delta</span> <span class=k>\Theta</span> <span class=k>\Lambda</span> <span class=k>\Xi</span> <span class=k>\Pi</span> <span class=k>\Sigma</span> <span class=k>\Upsilon</span> <span class=k>\Phi</span> <span class=k>\Psi</span> <span class=k>\Omega</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 연산자
-</span></span></span><span class=line><span class=cl><span class=k>\times</span>  <span class=k>\div</span>  <span class=k>\pm</span>  <span class=k>\mp</span>  <span class=k>\cdot</span>  <span class=k>\leq</span>  <span class=k>\geq</span>  <span class=k>\neq</span>
-</span></span><span class=line><span class=cl><span class=k>\approx</span>  <span class=k>\equiv</span>  <span class=k>\sim</span>  <span class=k>\ll</span>  <span class=k>\gg</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 집합
-</span></span></span><span class=line><span class=cl><span class=k>\in</span>  <span class=k>\notin</span>  <span class=k>\cup</span>  <span class=k>\cap</span>  <span class=k>\subset</span>  <span class=k>\subseteq</span>  <span class=k>\setminus</span>
-</span></span><span class=line><span class=cl><span class=k>\emptyset</span>  <span class=k>\varnothing</span>
-</span></span><span class=line><span class=cl><span class=k>\mathbb</span><span class=nb>{</span>N<span class=nb>}</span>  <span class=k>\mathbb</span><span class=nb>{</span>Z<span class=nb>}</span>  <span class=k>\mathbb</span><span class=nb>{</span>Q<span class=nb>}</span>  <span class=k>\mathbb</span><span class=nb>{</span>R<span class=nb>}</span>  <span class=k>\mathbb</span><span class=nb>{</span>C<span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 화살표
-</span></span></span><span class=line><span class=cl><span class=k>\to</span>  <span class=k>\leftarrow</span>  <span class=k>\rightarrow</span>  <span class=k>\leftrightarrow</span>
-</span></span><span class=line><span class=cl><span class=k>\Rightarrow</span>  <span class=k>\Leftarrow</span>  <span class=k>\Leftrightarrow</span>  <span class=k>\mapsto</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 기타
-</span></span></span><span class=line><span class=cl><span class=k>\infty</span>  <span class=k>\partial</span>  <span class=k>\nabla</span>  <span class=k>\forall</span>  <span class=k>\exists</span>
-</span></span><span class=line><span class=cl><span class=k>\therefore</span>  <span class=k>\because</span>
-</span></span><span class=line><span class=cl><span class=k>\ldots</span>  <span class=k>\cdots</span>  <span class=k>\vdots</span>  <span class=k>\ddots</span>
-</span></span><span class=line><span class=cl><span class=k>\|</span>  <span class=k>\langle</span>  <span class=k>\rangle</span>  <span class=k>\lfloor</span>  <span class=k>\rfloor</span>  <span class=k>\lceil</span>  <span class=k>\rceil</span>
-</span></span></code></pre></div><hr><h2 id=6-그림-삽입>6. 그림 삽입</h2><h3 id=기본-그림>기본 그림</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>figure<span class=nb>}</span>[htbp]
+</span></span></code></pre></div><p>반대로 <code>eqnarray</code>는 사용하지 않는 것이 좋습니다. 등호 주변 간격이 부정확하고, 현대 LaTeX 문서에서는 <code>align</code> 또는 <code>IEEEeqnarray</code>로 대체하는 것이 일반적입니다.</p><h2 id=5-그림-삽입-캡션과-라벨-순서가-중요하다>5. 그림 삽입: 캡션과 라벨 순서가 중요하다</h2><p>논문에서 그림은 단순한 장식이 아니라 결과를 설명하는 핵심 근거입니다. LaTeX에서는 그림을 <code>figure</code> 환경 안에 넣고, <code>\caption</code> 뒤에 <code>\label</code>을 배치해야 참조 번호가 올바르게 연결됩니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>figure<span class=nb>}</span>[!t]
 </span></span><span class=line><span class=cl>  <span class=k>\centering</span>
-</span></span><span class=line><span class=cl>  <span class=k>\includegraphics</span><span class=na>[width=0.8\columnwidth]</span><span class=nb>{</span>파일명.png<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>그림 설명<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>fig:이름<span class=nb>}</span>    <span class=c>% 반드시 \caption 뒤에!
-</span></span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>figure<span class=nb>}</span>
-</span></span></code></pre></div><h3 id=위치-옵션>위치 옵션</h3><div class=table-wrapper><table><thead><tr><th>옵션</th><th>의미</th></tr></thead><tbody><tr><td><code>h</code></td><td>현재 위치</td></tr><tr><td><code>t</code></td><td>페이지 상단 (IEEE 권장)</td></tr><tr><td><code>b</code></td><td>페이지 하단</td></tr><tr><td><code>p</code></td><td>별도 float 페이지</td></tr><tr><td><code>!</code></td><td>LaTeX 배치 제한 완화</td></tr></tbody></table></div><h3 id=크기-옵션>크기 옵션</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl>width=0.8<span class=k>\textwidth</span>     <span class=c>% 텍스트 너비의 80%
-</span></span></span><span class=line><span class=cl>width=<span class=k>\columnwidth</span>       <span class=c>% 컬럼 너비
-</span></span></span><span class=line><span class=cl>height=5cm              <span class=c>% 고정 높이
-</span></span></span><span class=line><span class=cl>scale=0.7               <span class=c>% 원본의 70%
-</span></span></span><span class=line><span class=cl>keepaspectratio         <span class=c>% 비율 유지
-</span></span></span></code></pre></div><h3 id=다중-그림--ieee-공식-방식-subfig>다중 그림 — IEEE 공식 방식 (<code>subfig</code>)</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>subfig<span class=nb>}</span>   <span class=c>% ← subcaption 아님! IEEEtran 공식 지원
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 1컬럼 다중 그림
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>figure<span class=nb>}</span>[!t]
-</span></span><span class=line><span class=cl>  <span class=k>\centering</span>
-</span></span><span class=line><span class=cl>  <span class=k>\subfloat</span><span class=na>[케이스 A]</span><span class=nb>{</span><span class=k>\includegraphics</span><span class=na>[width=1.6in]</span><span class=nb>{</span>fig<span class=nb>_</span>a<span class=nb>}</span><span class=c>%
-</span></span></span><span class=line><span class=cl>    <span class=k>\label</span><span class=nb>{</span>fig:a<span class=nb>}}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\hfil</span>
-</span></span><span class=line><span class=cl>  <span class=k>\subfloat</span><span class=na>[케이스 B]</span><span class=nb>{</span><span class=k>\includegraphics</span><span class=na>[width=1.6in]</span><span class=nb>{</span>fig<span class=nb>_</span>b<span class=nb>}</span><span class=c>%
-</span></span></span><span class=line><span class=cl>    <span class=k>\label</span><span class=nb>{</span>fig:b<span class=nb>}}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>전체 캡션<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>fig:multi<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\includegraphics</span><span class=na>[width=\columnwidth]</span><span class=nb>{</span>fig1.png<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>Proposed model architecture.<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>fig:model<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>figure<span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 2컬럼 전체 너비
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>figure*<span class=nb>}</span>[!t]
+</span></span></code></pre></div><div class=table-wrapper><table><thead><tr><th>위치 옵션</th><th>의미</th><th>실무 메모</th></tr></thead><tbody><tr><td><code>h</code></td><td>현재 위치</td><td>LaTeX가 반드시 지키지는 않음</td></tr><tr><td><code>t</code></td><td>페이지 상단</td><td>IEEE 문서에서 자주 사용</td></tr><tr><td><code>b</code></td><td>페이지 하단</td><td>그림 흐름에 따라 사용</td></tr><tr><td><code>p</code></td><td>별도 float 페이지</td><td>큰 그림이 많을 때 사용</td></tr><tr><td><code>!</code></td><td>배치 제한 완화</td><td><code>!t</code>처럼 함께 사용 가능</td></tr></tbody></table></div><p>다중 그림을 넣을 때는 <code>subfig</code>의 <code>\subfloat</code>를 사용할 수 있습니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>figure<span class=nb>}</span>[!t]
 </span></span><span class=line><span class=cl>  <span class=k>\centering</span>
-</span></span><span class=line><span class=cl>  <span class=k>\subfloat</span><span class=na>[케이스 A]</span><span class=nb>{</span><span class=k>\includegraphics</span><span class=na>[width=2.5in]</span><span class=nb>{</span>fig<span class=nb>_</span>a<span class=nb>}</span><span class=k>\label</span><span class=nb>{</span>fig:wa<span class=nb>}}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\subfloat</span><span class=na>[Case A]</span><span class=nb>{</span><span class=c>%
+</span></span></span><span class=line><span class=cl>    <span class=k>\includegraphics</span><span class=na>[width=1.6in]</span><span class=nb>{</span>fig<span class=nb>_</span>a<span class=nb>}</span><span class=c>%
+</span></span></span><span class=line><span class=cl>    <span class=k>\label</span><span class=nb>{</span>fig:case-a<span class=nb>}}</span>
 </span></span><span class=line><span class=cl>  <span class=k>\hfil</span>
-</span></span><span class=line><span class=cl>  <span class=k>\subfloat</span><span class=na>[케이스 B]</span><span class=nb>{</span><span class=k>\includegraphics</span><span class=na>[width=2.5in]</span><span class=nb>{</span>fig<span class=nb>_</span>b<span class=nb>}</span><span class=k>\label</span><span class=nb>{</span>fig:wb<span class=nb>}}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>2컬럼 전체 너비 그림 캡션<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>fig:wide<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>figure*<span class=nb>}</span>
-</span></span></code></pre></div><blockquote><p><strong>실무 팁</strong>: 많은 IEEE 저널이 서브캡션 없이 메인 캡션에서<br>&ldquo;(a) &mldr;, (b) &mldr;&rdquo; 방식 설명을 선호. 서브캡션 불필요 시 <code>\subfloat[]</code> (빈 대괄호).</p></blockquote><hr><h2 id=7-표-작성>7. 표 작성</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>table<span class=nb>}</span>[htbp]
+</span></span><span class=line><span class=cl>  <span class=k>\subfloat</span><span class=na>[Case B]</span><span class=nb>{</span><span class=c>%
+</span></span></span><span class=line><span class=cl>    <span class=k>\includegraphics</span><span class=na>[width=1.6in]</span><span class=nb>{</span>fig<span class=nb>_</span>b<span class=nb>}</span><span class=c>%
+</span></span></span><span class=line><span class=cl>    <span class=k>\label</span><span class=nb>{</span>fig:case-b<span class=nb>}}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>Comparison of two experimental settings.<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>fig:comparison<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>figure<span class=nb>}</span>
+</span></span></code></pre></div><h2 id=6-표-작성-booktabs로-가독성-확보하기>6. 표 작성: <code>booktabs</code>로 가독성 확보하기</h2><p>표는 결과를 정리하는 데 매우 유용하지만, 선을 많이 넣을수록 오히려 읽기 어려워집니다. <code>booktabs</code> 패키지의 <code>\toprule</code>, <code>\midrule</code>, <code>\bottomrule</code>을 사용하면 논문에 적합한 깔끔한 표를 만들 수 있습니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>table<span class=nb>}</span>[!t]
 </span></span><span class=line><span class=cl>  <span class=k>\centering</span>
-</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>표 제목 — 표는 캡션이 위에, 그림은 아래<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>tab:이름<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>Performance comparison.<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>tab:performance<span class=nb>}</span>
 </span></span><span class=line><span class=cl>  <span class=k>\begin</span><span class=nb>{</span>tabular<span class=nb>}{</span>lcc<span class=nb>}</span>
 </span></span><span class=line><span class=cl>    <span class=k>\toprule</span>
-</span></span><span class=line><span class=cl>    항목 <span class=nb>&amp;</span> 방법 A <span class=nb>&amp;</span> 방법 B <span class=k>\\</span>
+</span></span><span class=line><span class=cl>    Method <span class=nb>&amp;</span> Accuracy <span class=nb>&amp;</span> Latency <span class=k>\\</span>
 </span></span><span class=line><span class=cl>    <span class=k>\midrule</span>
-</span></span><span class=line><span class=cl>    정확도 <span class=nb>&amp;</span> 94.2<span class=k>\%</span> <span class=nb>&amp;</span> 91.7<span class=k>\%</span> <span class=k>\\</span>
-</span></span><span class=line><span class=cl>    속도   <span class=nb>&amp;</span> 23 ms  <span class=nb>&amp;</span> 18 ms  <span class=k>\\</span>
+</span></span><span class=line><span class=cl>    Baseline <span class=nb>&amp;</span> 91.7<span class=k>\%</span> <span class=nb>&amp;</span> 18 ms <span class=k>\\</span>
+</span></span><span class=line><span class=cl>    Proposed <span class=nb>&amp;</span> 94.2<span class=k>\%</span> <span class=nb>&amp;</span> 23 ms <span class=k>\\</span>
 </span></span><span class=line><span class=cl>    <span class=k>\bottomrule</span>
 </span></span><span class=line><span class=cl>  <span class=k>\end</span><span class=nb>{</span>tabular<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>table<span class=nb>}</span>
-</span></span></code></pre></div><h3 id=컬럼-지정자>컬럼 지정자</h3><div class=table-wrapper><table><thead><tr><th>기호</th><th>의미</th></tr></thead><tbody><tr><td><code>l</code></td><td>왼쪽 정렬</td></tr><tr><td><code>c</code></td><td>가운데 정렬</td></tr><tr><td><code>r</code></td><td>오른쪽 정렬</td></tr><tr><td><code>p{폭}</code></td><td>고정 너비, 자동 줄바꿈</td></tr><tr><td><code>|</code></td><td>세로 구분선</td></tr></tbody></table></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 셀 병합
-</span></span></span><span class=line><span class=cl><span class=k>\multicolumn</span><span class=nb>{</span>3<span class=nb>}{</span>c<span class=nb>}{</span>가로 3칸 병합<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\multirow</span><span class=nb>{</span>2<span class=nb>}{</span>*<span class=nb>}{</span>세로 2칸 병합<span class=nb>}</span>   <span class=c>% multirow 패키지 필요
-</span></span></span></code></pre></div><hr><h2 id=8-상호-참조>8. 상호 참조</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 라벨 붙이기
-</span></span></span><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>서론<span class=nb>}</span> <span class=k>\label</span><span class=nb>{</span>sec:intro<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>equation<span class=nb>}</span>...<span class=k>\end</span><span class=nb>{</span>equation<span class=nb>}</span> <span class=k>\label</span><span class=nb>{</span>eq:main<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\caption</span><span class=nb>{</span>설명<span class=nb>}</span> <span class=k>\label</span><span class=nb>{</span>fig:result<span class=nb>}</span>   <span class=c>% \caption 뒤에!
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 참조
-</span></span></span><span class=line><span class=cl><span class=k>\ref</span><span class=nb>{</span>sec:intro<span class=nb>}</span>       <span class=c>% → &#34;1&#34;
-</span></span></span><span class=line><span class=cl><span class=k>\eqref</span><span class=nb>{</span>eq:main<span class=nb>}</span>       <span class=c>% → &#34;(1)&#34;  수식 전용, 괄호 자동
-</span></span></span><span class=line><span class=cl><span class=k>\pageref</span><span class=nb>{</span>fig:result<span class=nb>}</span>  <span class=c>% → 페이지 번호
-</span></span></span></code></pre></div><blockquote><p>⚠️ <strong>흔한 실수 두 가지</strong></p><ol><li><code>\label</code>을 <code>\caption</code> 앞에 두면 잘못된 번호 참조</li><li>같은 라벨을 서브섹션과 표에 동시 사용 → &ldquo;Table IV-B3&rdquo; 같은 오류</li></ol></blockquote><hr><h2 id=9-참고문헌>9. 참고문헌</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 본문 인용 — 구두점 안쪽
-</span></span></span><span class=line><span class=cl>결과가 나타났다 [1].
-</span></span><span class=line><span class=cl><span class=k>\cite</span><span class=nb>{</span>bib1<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\cite</span><span class=nb>{</span>bib1, bib2<span class=nb>}</span>   <span class=c>% cite 패키지가 자동 정렬
-</span></span></span><span class=line><span class=cl>
+</span></span></code></pre></div><p>그림 캡션은 보통 그림 아래에 오고, 표 캡션은 표 위에 옵니다. 또한 본문에서 표를 언급할 때는 <code>Table \ref{tab:performance}</code>처럼 자동 참조를 사용해야 합니다.</p><h2 id=7-상호-참조-직접-숫자를-쓰지-않는다>7. 상호 참조: 직접 숫자를 쓰지 않는다</h2><p>LaTeX 문서에서 수식, 그림, 표, 섹션 번호를 직접 입력하면 수정 과정에서 번호가 틀어지기 쉽습니다. 따라서 항상 <code>\label</code>과 <code>\ref</code>를 사용해야 합니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>Method<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\label</span><span class=nb>{</span>sec:method<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>equation<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  y = Wx + b.
+</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>eq:linear<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>equation<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>As shown in Section~<span class=k>\ref</span><span class=nb>{</span>sec:method<span class=nb>}</span>, the model is defined by Eq.~<span class=k>\eqref</span><span class=nb>{</span>eq:linear<span class=nb>}</span>.
+</span></span></code></pre></div><p>가장 흔한 오류는 <code>\label</code>을 <code>\caption</code> 앞에 두는 것입니다. 그림과 표에서는 반드시 <code>\caption</code>이 번호를 생성한 다음 <code>\label</code>을 붙여야 합니다.</p><h2 id=8-참고문헌과-인용-관리>8. 참고문헌과 인용 관리</h2><p>IEEE 논문에서 인용은 대괄호 번호 형식으로 표시됩니다. 수동으로 <code>thebibliography</code>를 사용할 수도 있고, 규모가 커지면 BibTeX 또는 BibLaTeX 기반으로 관리할 수 있습니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl>Prior work reported similar behavior <span class=k>\cite</span><span class=nb>{</span>smith2024<span class=nb>}</span>.
+</span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>thebibliography<span class=nb>}{</span>99<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\bibitem</span><span class=nb>{</span>bib1<span class=nb>}</span>
-</span></span><span class=line><span class=cl>    J. Smith, ``논문 제목,&#39;&#39; <span class=nb>{</span><span class=k>\it</span> IEEE Trans. Signal Process.<span class=nb>}</span>,
-</span></span><span class=line><span class=cl>    vol. 68, pp. 1--10, 2020.
+</span></span><span class=line><span class=cl><span class=k>\bibitem</span><span class=nb>{</span>smith2024<span class=nb>}</span>
+</span></span><span class=line><span class=cl>J. Smith and A. Kim, ``A sample paper title,&#39;&#39;
+</span></span><span class=line><span class=cl><span class=nb>{</span><span class=k>\it</span> IEEE Transactions on Example<span class=nb>}</span>, vol. 1, no. 2, pp. 10--20, 2024.
 </span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>thebibliography<span class=nb>}</span>
-</span></span></code></pre></div><hr><h2 id=10-ieee-전용-설정>10. IEEE 전용 설정</h2><h3 id=문서-선언부>문서 선언부</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\documentclass</span><span class=na>[journal,twoside,web]</span><span class=nb>{</span>ieeecolor<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>generic<span class=nb>}</span>
+</span></span></code></pre></div><p>IEEE 스타일에서는 저자명, 논문 제목, 저널명, 권·호·페이지, 연도, DOI 표기까지 일정한 형식이 요구됩니다. 제출 전에는 IEEE Author Center 또는 목표 저널의 공식 템플릿을 확인하는 것이 안전합니다.<sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></p><h2 id=9-ieee-템플릿의-기본-골격>9. IEEE 템플릿의 기본 골격</h2><p>IEEE 논문 초안을 시작할 때는 빈 파일에서 모든 것을 만들기보다 공식 템플릿을 기준으로 줄여 나가는 방식이 좋습니다. 아래는 IEEE 스타일 문서의 기본 골격입니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\documentclass</span><span class=na>[journal]</span><span class=nb>{</span>IEEEtran<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>cite<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>amsmath,amssymb,amsfonts<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>algorithmic<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>graphicx<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>subfig<span class=nb>}</span>        <span class=c>% 다중 그림용
-</span></span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>algorithm,algorithmic<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>hyperref<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\hypersetup</span><span class=nb>{</span>hidelinks=true<span class=nb>}</span>
 </span></span><span class=line><span class=cl><span class=k>\usepackage</span><span class=nb>{</span>textcomp<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>\markboth</span><span class=nb>{</span><span class=k>\hskip</span>25pc IEEE TRANSACTIONS AND JOURNALS TEMPLATE<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=nb>{</span>Author <span class=k>\MakeLowercase</span><span class=nb>{</span><span class=k>\textit</span><span class=nb>{</span>et al.<span class=nb>}}</span>: Title<span class=nb>}</span>
-</span></span></code></pre></div><h3 id=제목--저자>제목 & 저자</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\title</span><span class=nb>{</span>논문 제목 (대소문자 혼용 / 전체 대문자 금지 / 수식 기호 금지)<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>\author</span><span class=nb>{</span>
-</span></span><span class=line><span class=cl>  First A. Author, <span class=k>\IEEEmembership</span><span class=nb>{</span>Fellow, IEEE<span class=nb>}</span>,
-</span></span><span class=line><span class=cl>  Second B. Author, and Third C. Author Jr., <span class=k>\IEEEmembership</span><span class=nb>{</span>Member, IEEE<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\thanks</span><span class=nb>{</span>연구비 지원 정보<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\thanks</span><span class=nb>{</span>First A. Author is with 소속기관, 주소 (e-mail: ...)<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\thanks</span><span class=nb>{</span>Second B. Author is with ...<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\title</span><span class=nb>{</span>Paper Title in Title Case<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>\author</span><span class=nb>{</span>First A. Author, Second B. Author, and Third C. Author<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>\maketitle</span>
-</span></span></code></pre></div><h3 id=abstract--index-terms>Abstract & Index Terms</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>abstract<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=c>% ✅ 150~250 단어 (저널마다 다름 — 해당 저널 가이드 확인 필수)
-</span></span></span><span class=line><span class=cl>  <span class=c>% ✅ 한 단락, 자기완결적
-</span></span></span><span class=line><span class=cl>  <span class=c>% ❌ 약어 (보편적 IEEE, SI 등 제외), 각주, 참조 번호 금지
-</span></span></span><span class=line><span class=cl>  <span class=c>% ❌ 수식 번호, 표 금지
-</span></span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>abstract<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>abstract<span class=nb>}</span>
+</span></span><span class=line><span class=cl>This paper presents ...
+</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>abstract<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>IEEEkeywords<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=c>% IEEE 공식 명칭은 &#34;Keywords&#34;가 아닌 &#34;Index Terms&#34;
-</span></span></span><span class=line><span class=cl>  <span class=c>% ✅ 알파벳순, 첫 항목만 대문자
-</span></span></span><span class=line><span class=cl>  <span class=c>% ✅ 2025 IEEE Taxonomy 기반 표준 용어 사용 권장
-</span></span></span><span class=line><span class=cl>  Keyword one, keyword two, keyword three
+</span></span><span class=line><span class=cl>Deep learning, medical imaging, segmentation.
 </span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>IEEEkeywords<span class=nb>}</span>
-</span></span></code></pre></div><h3 id=첫-단락-드롭캡>첫 단락 드롭캡</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>Introduction<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\label</span><span class=nb>{</span>sec:introduction<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=k>\IEEEPARstart</span><span class=nb>{</span>T<span class=nb>}{</span>his<span class=nb>}</span> document is...
-</span></span><span class=line><span class=cl><span class=c>%              ↑첫글자  ↑나머지
-</span></span></span><span class=line><span class=cl><span class=c>% 최소 2줄 이상 단락이어야 드롭캡 정상 동작
-</span></span></span></code></pre></div><hr><h2 id=11-ieee-그림--표-규칙>11. IEEE 그림 & 표 규칙</h2><h3 id=그림-ieee-권장-방식>그림 (IEEE 권장 방식)</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>figure<span class=nb>}</span>[!t]
-</span></span><span class=line><span class=cl>  <span class=k>\centerline</span><span class=nb>{</span><span class=k>\includegraphics</span><span class=na>[width=\columnwidth]</span><span class=nb>{</span>fig1.png<span class=nb>}}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>그림 설명. 캡션에 그림의 의미를 충분히 설명.<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>fig1<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>figure<span class=nb>}</span>
-</span></span></code></pre></div><h3 id=해상도-요구사항-ieee-author-center-공식>해상도 요구사항 (IEEE Author Center 공식)</h3><div class=table-wrapper><table><thead><tr><th>유형</th><th>최소 해상도</th></tr></thead><tbody><tr><td>컬러 / 회색조 이미지</td><td><strong>300 DPI</strong></td></tr><tr><td>Black & white Line art</td><td><strong>600 DPI</strong></td></tr><tr><td>저자 사진</td><td><strong>300 DPI</strong></td></tr></tbody></table></div><blockquote><p>⚠️ 저널에 따라 다름 (일부는 컬러도 600 DPI). 제출 전 해당 저널 개별 확인 필수.</p></blockquote><h3 id=허용-포맷--크기>허용 포맷 & 크기</h3><pre tabindex=0><code>포맷:  .EPS / .PDF / .PS / .TIFF / .PNG / .MPS
-       벡터 포맷은 모든 폰트 임베드 필수
-
-크기:
-  1컬럼          →  3.5인치 / 88mm
-  2컬럼 전체 폭  →  7.16인치 / 181mm
-  최대 높이      →  8.5인치 / 216mm
-  저자 사진      →  1인치 × 1.25인치
-</code></pre><h3 id=파일-명명-규칙>파일 명명 규칙</h3><pre tabindex=0><code>그림:     성 앞 5글자 + 번호.확장자     ander1.tif
-표:       성 앞 5글자.t번호.확장자      ander.t1.tif
-저자 사진: 성 앞 5글자.확장자           oppen.tif
-동명이인: 겹치는 자리에 이니셜 대체     oppmi.tif / oppmo.tif
-</code></pre><hr><h2 id=12-ieee-참고문헌-형식>12. IEEE 참고문헌 형식</h2><h3 id=단행본>단행본</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl>G. O. Young, ``제목,&#39;&#39; in <span class=nb>{</span><span class=k>\it</span> 책 제목,<span class=nb>}</span> 2nd ed.,
-</span></span><span class=line><span class=cl>J. Peters, Ed. New York, NY, USA: McGraw-Hill, 1964, pp. 15--64.
-</span></span></code></pre></div><h3 id=저널-논문>저널 논문</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl>J. U. Duncombe, ``논문 제목,&#39;&#39; <span class=nb>{</span><span class=k>\it</span> IEEE Trans. Electron Devices<span class=nb>}</span>,
-</span></span><span class=line><span class=cl>vol. ED-11, no. 1, pp. 34--39, Jan. 1959, doi: 10.1109/TED.2016.2628402.
-</span></span></code></pre></div><h3 id=컨퍼런스-논문>컨퍼런스 논문</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl>D. B. Payne and J. R. Stern, ``논문 제목,&#39;&#39;
-</span></span><span class=line><span class=cl>in <span class=nb>{</span><span class=k>\it</span> Proc. IOOC-ECOC,<span class=nb>}</span> Boston, MA, USA, 1985, pp. 585--590.
-</span></span></code></pre></div><h3 id=학위논문>학위논문</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 박사
-</span></span></span><span class=line><span class=cl>J. O. Williams, ``논문 제목,&#39;&#39; Ph.D. dissertation,
-</span></span><span class=line><span class=cl>Dept. Elect. Eng., Harvard Univ., Cambridge, MA, USA, 1993.
+</span></span><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>Introduction<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\IEEEPARstart</span><span class=nb>{</span>T<span class=nb>}{</span>his<span class=nb>}</span> paper ...
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 석사
-</span></span></span><span class=line><span class=cl>N. Kawasaki, ``논문 제목,&#39;&#39; M.S. thesis,
-</span></span><span class=line><span class=cl>Dept. Electron. Eng., Osaka Univ., Osaka, Japan, 1993.
-</span></span></code></pre></div><h3 id=특허--데이터셋--코드>특허 / 데이터셋 / 코드</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 특허
-</span></span></span><span class=line><span class=cl>G. Brandli and M. Dick, ``특허 제목,&#39;&#39; U.S. Patent 4 084 217, Nov. 4, 1978.
+</span></span><span class=line><span class=cl><span class=k>\section</span><span class=nb>{</span>Conclusion<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 데이터셋 (현행 IEEE 형식)
-</span></span></span><span class=line><span class=cl>U.S. Dept. of Health, Aug. 2013, ``데이터셋 제목,&#39;&#39;
-</span></span><span class=line><span class=cl>Publisher, doi: 10.3886/ICPSR30122.v2.
+</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span>
+</span></span></code></pre></div><p>초록은 논문의 문제, 방법, 결과, 의의를 압축해서 보여주는 부분입니다. IEEE 문서에서는 초록 안에 각주, 참조 번호, 복잡한 수식, 표를 넣지 않는 것이 일반적입니다. <code>IEEEkeywords</code>에는 검색과 분류에 도움이 되는 Index Terms를 넣습니다.</p><h2 id=10-ieee-논문-작성-체크리스트>10. IEEE 논문 작성 체크리스트</h2><p>논문을 제출하기 전에는 문법보다 <strong>일관성</strong>을 먼저 점검해야 합니다. 아래 항목은 초안 단계에서 자주 발견되는 문제를 줄이는 데 도움이 됩니다.</p><div class=table-wrapper><table><thead><tr><th>구분</th><th>확인할 항목</th><th>권장 방식</th></tr></thead><tbody><tr><td>수식</td><td>번호 참조</td><td><code>\eqref{}</code> 사용</td></tr><tr><td>그림</td><td>라벨 위치</td><td><code>\caption</code> 뒤에 <code>\label</code> 배치</td></tr><tr><td>표</td><td>캡션 위치</td><td>표 위에 캡션 배치</td></tr><tr><td>인용</td><td>번호 직접 입력</td><td><code>\cite{}</code> 사용</td></tr><tr><td>단위</td><td>시간 단위</td><td><code>sec</code>보다 <code>s</code> 사용</td></tr><tr><td>범위</td><td>페이지·수치 범위</td><td><code>1--10</code>처럼 엔 대시 사용</td></tr><tr><td>문체</td><td>수동태 남용</td><td>가능한 경우 명확한 능동태 사용</td></tr><tr><td>패키지</td><td>캡션 충돌</td><td>IEEEtran에서는 <code>caption</code>, <code>subcaption</code> 사용 주의</td></tr></tbody></table></div><h2 id=11-자주-발생하는-오류와-해결-방법>11. 자주 발생하는 오류와 해결 방법</h2><p>LaTeX 오류 메시지는 처음에는 어렵게 보이지만, 대부분 원인은 반복됩니다. 특히 괄호가 닫히지 않았거나, 패키지 충돌이 있거나, 라벨과 참조가 맞지 않는 경우가 많습니다.</p><div class=table-wrapper><table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>수식 번호가 건너뜀</td><td>빈 <code>subequations</code> 환경이 남아 있음</td><td>사용하지 않는 환경 삭제</td></tr><tr><td>그림 참조 번호가 이상함</td><td><code>\label</code>이 <code>\caption</code> 앞에 있음</td><td><code>\caption{...}\label{...}</code> 순서로 수정</td></tr><tr><td>Table IV-B3 같은 참조가 나옴</td><td>섹션과 표에 같은 라벨 사용</td><td><code>sec:</code>, <code>fig:</code>, <code>tab:</code>, <code>eq:</code> 접두사로 구분</td></tr><tr><td>그림이 원하는 위치에 안 나옴</td><td>float 배치 알고리즘 때문</td><td><code>[!t]</code>, <code>[htbp]</code> 등을 조정하고 본문 흐름 재검토</td></tr><tr><td>다중 그림 캡션이 깨짐</td><td><code>subcaption</code>과 IEEEtran 충돌</td><td><code>subfig</code> 사용 검토</td></tr></tbody></table></div><h2 id=12-자주-쓰는-latex-명령어-모음>12. 자주 쓰는 LaTeX 명령어 모음</h2><p>아래 명령어는 논문 작성 중 자주 사용됩니다. 처음부터 모두 외울 필요는 없고, 필요한 순간에 검색해서 반복적으로 사용하면 자연스럽게 익숙해집니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 텍스트
+</span></span></span><span class=line><span class=cl><span class=k>\textbf</span><span class=nb>{</span>bold<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\textit</span><span class=nb>{</span>italic<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\texttt</span><span class=nb>{</span>monospace<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\emph</span><span class=nb>{</span>emphasis<span class=nb>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 코드 (현행 IEEE 형식)
-</span></span></span><span class=line><span class=cl>T. D&#39;Martin and S. Soares, 2019, ``코드 제목 (Version 1.0),&#39;&#39;
-</span></span><span class=line><span class=cl>Code Ocean, doi: 10.24433/CO.7212286.v1.
-</span></span></code></pre></div><h3 id=핵심-규칙-요약>핵심 규칙 요약</h3><pre tabindex=0><code>✅ 저자명: 이니셜 먼저, 성 뒤  →  G. O. Young
-✅ 논문 제목: 첫 단어만 대문자 (고유명사, 원소 기호 제외)
-✅ 책/저널 제목: {\it 이탤릭체}
-✅ 범위: pp. 15--64  (엔 대시 --)
-❌ &#34;Ref.&#34; 사용 금지  (문장 시작 &#34;Reference [3] shows...&#34; 는 허용)
-</code></pre><hr><h2 id=13-ieee-스타일-체크리스트>13. IEEE 스타일 체크리스트</h2><h3 id=-반드시-해야-할-것>✅ 반드시 해야 할 것</h3><pre tabindex=0><code>□  소수점 앞 0:        0.25  (O)    /    .25  (X)
-□  범위 표기:          &#34;7 to 9&#34; 또는 &#34;7--9&#34;    /    &#34;7~9&#34; (X)
-□  부피 단위:          cm³  (O)    /    cc  (X)
-□  치수:               0.1 cm × 0.2 cm    /    0.1 × 0.2 cm²  (X)
-□  시간 단위:          s  (O)    /    sec  (X)
-□  수식 참조:          \eqref{}  (O)    /    &#34;Eq. (1)&#34;  (X)
-□  그림 참조:          Fig.  — 문장 시작 포함 항상 Fig.
-□  표 참조:            Table I  — 약어 금지, 로마 숫자
-□  약어 정의:          Abstract와 본문 각각 별도로 최초 사용 시 정의
-□  Serial comma:       &#34;A, B, and C&#34;    /    &#34;A, B and C&#34;  (X)
-□  수식 구두점:        문장 일부면 구두점 수식 안에 포함  $E=mc^2.$
-□  \label 위치:        항상 \caption 뒤에
-□  Index Terms:        알파벳순, 첫 항목만 대문자, 2025 IEEE Taxonomy 기반
-□  복합 단위:          가운데점  A$\cdot$m$^{2}$
-□  능동태:             &#34;We observed&#34; &gt; &#34;It was observed&#34;
-□  축약형 금지:        &#34;do not&#34;  (O)    /    &#34;don&#39;t&#34;  (X)
-</code></pre><h3 id=-하지-말아야-할-것>❌ 하지 말아야 할 것</h3><pre tabindex=0><code>□  제목 전체 대문자 금지
-□  제목에 &#34;(Invited)&#34; 표기 금지
-□  제목에 수식 기호 포함 금지  ← 2025 IEEE Author Center 권고
-□  Abstract에 약어·각주·참조 번호 금지
-□  Abstract에 수식 번호·표 금지
-□  \eqnarray 사용 금지  →  align 또는 IEEEeqnarray
-□  \nonumber를 array 환경 내부에서 사용 금지
-□  동일 라벨을 서브섹션과 표에 동시 사용 금지
-□  \label을 \caption 앞에 배치 금지
-□  그림 안에 캡션 포함 금지
-□  그림 외부에 테두리(border) 추가 금지
-□  SI + CGS 단위 혼용 금지
-□  subcaption 패키지 사용 주의  →  subfig 사용
-□  &#34;remnant/remnance&#34;  →  &#34;remanent/remanence&#34;
-□  &#34;micron&#34;  →  &#34;micrometer&#34;
-□  &#34;while&#34; (동시 사건 외)  →  &#34;whereas&#34;
-□  &#34;essentially&#34; (≈ 의미)  →  &#34;approximately&#34;
-□  &#34;issue&#34; (문제 의미)  →  &#34;problem&#34;
-□  자동 endnote 사용 금지
-□  &#34;Ref.&#34; 사용 금지  (문장 시작 제외)
-</code></pre><hr><h2 id=14-알고리즘-작성>14. 알고리즘 작성</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>algorithm<span class=nb>}</span>[H]
-</span></span><span class=line><span class=cl>  <span class=k>\caption</span><span class=nb>{</span>알고리즘 이름.<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\label</span><span class=nb>{</span>alg:name<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=k>\begin</span><span class=nb>{</span>algorithmic<span class=nb>}</span>
-</span></span><span class=line><span class=cl>    <span class=k>\STATE</span> <span class=nb>{</span><span class=k>\textsc</span><span class=nb>{</span>TRAIN<span class=nb>}}</span><span class=s>$</span><span class=o>(</span><span class=nv>\mathbf</span><span class=nb>{X}, </span><span class=nv>\mathbf</span><span class=nb>{T}</span><span class=o>)</span><span class=s>$</span>
-</span></span><span class=line><span class=cl>    <span class=k>\STATE</span> <span class=k>\hspace</span><span class=nb>{</span>0.5cm<span class=nb>}</span><span class=s>$</span><span class=nv>\textbf</span><span class=nb>{select randomly } W </span><span class=nv>\subset</span><span class=nb> </span><span class=nv>\mathbf</span><span class=nb>{X}</span><span class=s>$</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>\IF</span><span class=nb>{</span>조건<span class=nb>}</span>
-</span></span><span class=line><span class=cl>      <span class=k>\STATE</span> 실행문
-</span></span><span class=line><span class=cl>    <span class=k>\ELSIF</span><span class=nb>{</span>조건2<span class=nb>}</span>
-</span></span><span class=line><span class=cl>      <span class=k>\STATE</span> 실행문
-</span></span><span class=line><span class=cl>    <span class=k>\ELSE</span>
-</span></span><span class=line><span class=cl>      <span class=k>\STATE</span> 실행문
-</span></span><span class=line><span class=cl>    <span class=k>\ENDIF</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>\FOR</span><span class=nb>{</span><span class=s>$</span><span class=nb>i </span><span class=o>=</span><span class=nb> </span><span class=m>1</span><span class=s>$</span> <span class=k>\TO</span> <span class=s>$</span><span class=nb>N</span><span class=s>$</span><span class=nb>}</span>
-</span></span><span class=line><span class=cl>      <span class=k>\STATE</span> 반복 내용
-</span></span><span class=line><span class=cl>    <span class=k>\ENDFOR</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>\WHILE</span><span class=nb>{</span>조건<span class=nb>}</span>
-</span></span><span class=line><span class=cl>      <span class=k>\STATE</span> 반복 내용
-</span></span><span class=line><span class=cl>    <span class=k>\ENDWHILE</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=k>\STATE</span> <span class=k>\textbf</span><span class=nb>{</span>return<span class=nb>}</span> <span class=s>$</span><span class=nb>결과값</span><span class=s>$</span>
-</span></span><span class=line><span class=cl>  <span class=k>\end</span><span class=nb>{</span>algorithmic<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>algorithm<span class=nb>}</span>
-</span></span></code></pre></div><hr><h2 id=15-저자-약력>15. 저자 약력</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 사진 포함
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>IEEEbiography<span class=nb>}</span>[<span class=nb>{</span><span class=c>%
-</span></span></span><span class=line><span class=cl>  <span class=k>\includegraphics</span><span class=na>[width=1in,height=1.25in,clip,keepaspectratio]</span><span class=nb>{</span>photo.png<span class=nb>}</span>
-</span></span><span class=line><span class=cl><span class=nb>}</span>]<span class=nb>{</span>First A. Author<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  <span class=c>% 1단락: 생년월일/장소(선택), 학력
-</span></span></span><span class=line><span class=cl>  <span class=c>% 2단락: he/she 사용 (성 직접 언급 금지), 경력, 현 직책(위치 필수)
-</span></span></span><span class=line><span class=cl>  <span class=c>% 3단락: 직함+성, 전문학회 멤버십, 수상
-</span></span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>IEEEbiography<span class=nb>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 사진 없음
-</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>IEEEbiographynophoto<span class=nb>}{</span>Second B. Author<span class=nb>}</span>
-</span></span><span class=line><span class=cl>  photograph and biography not available at the time of publication.
-</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>IEEEbiographynophoto<span class=nb>}</span>
-</span></span></code></pre></div><hr><h2 id=16-버전별-변경사항--패키지-충돌-주의>16. 버전별 변경사항 & 패키지 충돌 주의</h2><h3 id=ieeetrancls-버전-히스토리>IEEEtran.cls 버전 히스토리</h3><div class=table-wrapper><table><thead><tr><th>버전</th><th>주요 변경</th></tr></thead><tbody><tr><td>v1.7 (2007)</td><td><code>\IEEEbiography</code>, <code>\IEEEkeywords</code>, <code>\IEEEPARstart</code> 등 IEEE 접두사 명령 도입. 구형 명령 사용 시 경고 출력 후 동작</td></tr><tr><td>v1.8 (2012)</td><td><code>\IEEEcompsoctitleabstractindextext</code> → <code>\IEEEtitleabstractindextext</code> 로 이름 변경. <code>transmag</code> 옵션 추가</td></tr><tr><td>v1.8a (2014)</td><td>Computer Society 포맷 전면 개편. <code>\IEEEraisesectionheading</code> 추가</td></tr><tr><td><strong>v1.8b (2015~현재)</strong></td><td><code>comsoc</code> 모드 추가. <strong>현재 CTAN 최신 버전</strong></td></tr></tbody></table></div><h3 id=패키지-호환성>패키지 호환성</h3><div class=table-wrapper><table><thead><tr><th>패키지</th><th>IEEEtran 상태</th><th>비고</th></tr></thead><tbody><tr><td><code>subfig</code></td><td>✅ 공식 지원</td><td>다중 그림 권장</td></tr><tr><td><code>subcaption</code></td><td>⚠️ 충돌 가능</td><td>caption 패키지 의존 문제</td></tr><tr><td><code>hyperref</code></td><td>✅ 호환</td><td><code>hidelinks=true</code> 권장</td></tr><tr><td><code>amsthm</code></td><td>⚠️ <code>\proof</code> 충돌 가능</td><td>v1.7+ 내부 처리</td></tr><tr><td><code>caption</code></td><td>⚠️ 충돌 가능</td><td>IEEEtran 기본 캡션 사용 권장</td></tr></tbody></table></div><h3 id=자주-발생하는-오류--해결>자주 발생하는 오류 & 해결</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 문제: 수식 번호 건너뜀 (예: (17) → (20))
-</span></span></span><span class=line><span class=cl><span class=c>% 원인: 빈 subequations 블록이 카운터를 증가시킴
-</span></span></span><span class=line><span class=cl><span class=c>% 해결: 사용하지 않는 subequations 블록 완전 삭제
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 문제: 그림/표 참조 번호 오류
-</span></span></span><span class=line><span class=cl><span class=c>% 원인: \label이 \caption 앞에 위치
-</span></span></span><span class=line><span class=cl><span class=c>% 해결: 항상 \caption{...} \label{...} 순서 준수
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 문제: Table IV-B3 같은 이상한 참조
-</span></span></span><span class=line><span class=cl><span class=c>% 원인: 서브섹션과 표에 동일 라벨 사용
-</span></span></span><span class=line><span class=cl><span class=c>% 해결: 라벨 이름 구분  \label{sec:xxx}  \label{tab:xxx}
-</span></span></span></code></pre></div><hr><h2 id=부록-유용한-명령어-모음>부록: 유용한 명령어 모음</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 줄바꿈 &amp; 페이지
-</span></span></span><span class=line><span class=cl><span class=k>\\</span>              <span class=c>% 줄바꿈
-</span></span></span><span class=line><span class=cl><span class=k>\newpage</span>        <span class=c>% 새 페이지
-</span></span></span><span class=line><span class=cl><span class=k>\clearpage</span>      <span class=c>% float 전부 출력 후 새 페이지
-</span></span></span><span class=line><span class=cl><span class=k>\noindent</span>       <span class=c>% 들여쓰기 없이
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 공백
-</span></span></span><span class=line><span class=cl><span class=k>\,</span>              <span class=c>% 얇은 공백 (수식 dx 앞 관례)
-</span></span></span><span class=line><span class=cl><span class=k>\quad</span>           <span class=c>% 1em
-</span></span></span><span class=line><span class=cl><span class=k>\qquad</span>          <span class=c>% 2em
-</span></span></span><span class=line><span class=cl><span class=k>\hspace</span><span class=nb>{</span>1cm<span class=nb>}</span>    <span class=c>% 수평 고정
-</span></span></span><span class=line><span class=cl><span class=k>\vspace</span><span class=nb>{</span>0.5cm<span class=nb>}</span>  <span class=c>% 수직 고정
-</span></span></span><span class=line><span class=cl><span class=k>\hfill</span>          <span class=c>% 남은 공간 채우기
-</span></span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>% 특수문자
-</span></span></span><span class=line><span class=cl><span class=k>\%</span>  <span class=k>\$</span>  <span class=k>\&amp;</span>  <span class=k>\#</span>  <span class=k>\_</span>  <span class=k>\{</span>  <span class=k>\}</span>  <span class=k>\^</span><span class=nb>{}</span>  <span class=k>\~</span><span class=nb>{}</span>
+</span></span></span><span class=line><span class=cl><span class=k>\%</span>  <span class=k>\$</span>  <span class=k>\&amp;</span>  <span class=k>\#</span>  <span class=k>\_</span>  <span class=k>\{</span>  <span class=k>\}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 따옴표 — 반드시 아래 방식
-</span></span></span><span class=line><span class=cl>``큰따옴표&#39;&#39;    <span class=c>% &#34; 직접 입력 금지
-</span></span></span><span class=line><span class=cl>`작은따옴표&#39;
+</span></span><span class=line><span class=cl><span class=c>% 줄과 페이지
+</span></span></span><span class=line><span class=cl><span class=k>\\</span>
+</span></span><span class=line><span class=cl><span class=k>\newpage</span>
+</span></span><span class=line><span class=cl><span class=k>\clearpage</span>
+</span></span><span class=line><span class=cl><span class=k>\noindent</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 대시
-</span></span></span><span class=line><span class=cl>--   <span class=c>% 엔 대시: 범위  pp. 1--10
-</span></span></span><span class=line><span class=cl>---  <span class=c>% 엠 대시: 문장 단절
-</span></span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=c>% 길이 변수
-</span></span></span><span class=line><span class=cl><span class=k>\textwidth</span>    <span class=c>% 전체 텍스트 너비
-</span></span></span><span class=line><span class=cl><span class=k>\columnwidth</span>  <span class=c>% 현재 컬럼 너비
-</span></span></span><span class=line><span class=cl><span class=k>\linewidth</span>    <span class=c>% 현재 줄 너비
-</span></span></span><span class=line><span class=cl><span class=k>\textheight</span>   <span class=c>% 텍스트 영역 높이
-</span></span></span></code></pre></div><hr><h2 id=마치며--핵심-원칙-6가지>마치며 — 핵심 원칙 6가지</h2><ol><li>하드코딩 숫자 대신 <code>\ref</code>, <code>\eqref</code>, <code>\cite</code> 사용</li><li><code>eqnarray</code> 절대 금지 → <code>align</code> 또는 <code>IEEEeqnarray</code></li><li><code>\label</code>은 항상 <code>\caption</code> <strong>뒤에</strong></li><li>IEEEtran에서 <code>subcaption</code> 대신 <code>subfig</code></li><li>Index Terms는 <strong>2025 IEEE Taxonomy</strong> 기반 표준 용어 사용</li><li>해상도·단어 수 등은 <strong>해당 저널 가이드 개별 확인</strong> 필수</li></ol><hr><p><em>검증 출처: IEEEtran.cls v1.8b changelog (CTAN), IEEE Editorial Style Manual (Updated 25 March 2025),<br>IEEE Author Center 공식 가이드, Overleaf amsmath 공식 문서, IEEE Author Center Magazines 가이드라인</em></p></section><footer class="article-meta article-footer"><section class=article-tags><a href=/tags/latex/>Latex</a>
+</span></span><span class=line><span class=cl><span class=c>% 공백
+</span></span></span><span class=line><span class=cl><span class=k>\,</span>
+</span></span><span class=line><span class=cl><span class=k>\quad</span>
+</span></span><span class=line><span class=cl><span class=k>\qquad</span>
+</span></span><span class=line><span class=cl><span class=k>\hfill</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>% 대시와 따옴표
+</span></span></span><span class=line><span class=cl>--       <span class=c>% en dash
+</span></span></span><span class=line><span class=cl>---      <span class=c>% em dash
+</span></span></span><span class=line><span class=cl>``큰따옴표&#39;&#39;
+</span></span><span class=line><span class=cl>`작은따옴표&#39;
+</span></span></code></pre></div><p>수학 기호는 다음처럼 작성합니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=line><span class=cl><span class=c>% 첨자와 분수
+</span></span></span><span class=line><span class=cl>x<span class=nb>_</span>i<span class=nb>^</span>2
+</span></span><span class=line><span class=cl><span class=k>\frac</span><span class=nb>{</span>a<span class=nb>}{</span>b<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\sqrt</span><span class=nb>{</span>x<span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>% 합, 적분, 극한
+</span></span></span><span class=line><span class=cl><span class=k>\sum</span><span class=nb>_{</span>i=1<span class=nb>}^{</span>n<span class=nb>}</span> x<span class=nb>_</span>i
+</span></span><span class=line><span class=cl><span class=k>\int</span><span class=nb>_</span>a<span class=nb>^</span>b f(x)<span class=k>\,</span>dx
+</span></span><span class=line><span class=cl><span class=k>\lim</span><span class=nb>_{</span>n <span class=k>\to</span> <span class=k>\infty</span><span class=nb>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>% 집합과 화살표
+</span></span></span><span class=line><span class=cl><span class=k>\mathbb</span><span class=nb>{</span>R<span class=nb>}</span>
+</span></span><span class=line><span class=cl><span class=k>\in</span>
+</span></span><span class=line><span class=cl><span class=k>\subseteq</span>
+</span></span><span class=line><span class=cl><span class=k>\Rightarrow</span>
+</span></span><span class=line><span class=cl><span class=k>\Leftrightarrow</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>% 행렬
+</span></span></span><span class=line><span class=cl><span class=k>\begin</span><span class=nb>{</span>bmatrix<span class=nb>}</span>
+</span></span><span class=line><span class=cl>  a <span class=nb>&amp;</span> b <span class=k>\\</span>
+</span></span><span class=line><span class=cl>  c <span class=nb>&amp;</span> d
+</span></span><span class=line><span class=cl><span class=k>\end</span><span class=nb>{</span>bmatrix<span class=nb>}</span>
+</span></span></code></pre></div><h2 id=13-overleaf로-시작할-때의-권장-흐름>13. Overleaf로 시작할 때의 권장 흐름</h2><p>로컬 LaTeX 환경을 직접 구성하는 것도 가능하지만, 처음에는 Overleaf 같은 웹 기반 편집기를 사용하면 패키지 설치 문제를 줄일 수 있습니다. Overleaf는 LaTeX 프로젝트를 온라인에서 작성·컴파일할 수 있는 환경을 제공하며, 공식 문서에서 수식과 참고문헌 작성 예제를 제공하고 있습니다.<sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup></p><p>실전에서는 다음 순서가 효율적입니다.</p><div class=table-wrapper><table><thead><tr><th>순서</th><th>작업</th><th>이유</th></tr></thead><tbody><tr><td>1</td><td>목표 저널 또는 학회 템플릿 다운로드</td><td>제출 형식을 처음부터 맞추기 위해</td></tr><tr><td>2</td><td>예제 본문을 지우기 전에 구조 확인</td><td>어떤 명령이 필요한지 파악하기 위해</td></tr><tr><td>3</td><td>제목·초록·섹션 제목만 먼저 작성</td><td>논문의 논리 구조를 먼저 고정하기 위해</td></tr><tr><td>4</td><td>그림·표·수식을 라벨과 함께 추가</td><td>나중에 참조 오류를 줄이기 위해</td></tr><tr><td>5</td><td>참고문헌을 마지막에 정리하지 말고 작성 중 관리</td><td>누락 인용을 줄이기 위해</td></tr></tbody></table></div><h2 id=마치며>마치며</h2><p>LaTeX와 IEEE 템플릿은 처음에는 복잡해 보이지만, 실제로는 몇 가지 원칙을 반복해서 적용하는 작업입니다. 문서 클래스와 패키지는 최소한으로 시작하고, 모든 번호는 <code>\label</code>과 <code>\ref</code>로 관리하며, 그림과 표는 캡션과 라벨 순서를 지키고, IEEE 제출 전에는 공식 템플릿과 저널별 지침을 확인하면 됩니다.</p><p>가장 중요한 것은 글을 쓰기 전에 구조를 먼저 정하는 것입니다. 논문도 기술 블로그도 독자에게 전달해야 할 문제, 방법, 결과가 명확할수록 읽기 쉬워집니다. LaTeX는 그 구조를 흔들리지 않게 유지해 주는 도구로 생각하면 됩니다.</p><h2 id=참고-자료>참고 자료</h2><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p><a class=link href=https://developers.google.com/search/docs/appearance/snippet target=_blank rel=noopener>Google Search Central, &ldquo;메타 설명 작성 방법&rdquo;</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p><a class=link href=https://ctan.org/pkg/ieeetran target=_blank rel=noopener>CTAN, &ldquo;IEEEtran – Document class for IEEE Transactions journals and conferences&rdquo;</a>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p><a class=link href=https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/create-the-text-of-your-article/ieee-article-templates/ target=_blank rel=noopener>IEEE Author Center, &ldquo;Authoring Tools and Templates&rdquo;</a>&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p><a class=link href=https://www.overleaf.com/learn/latex/Aligning_equations_with_amsmath target=_blank rel=noopener>Overleaf Documentation, &ldquo;Aligning equations with amsmath&rdquo;</a>&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></section><footer class="article-meta article-footer"><section class=article-tags><a href=/tags/latex/>Latex</a>
 <a href=/tags/ieee/>Ieee</a>
 <a href=/tags/%EB%85%BC%EB%AC%B8%EC%9E%91%EC%84%B1/>논문작성</a>
 <a href=/tags/research/>Research</a>
-<a href=/tags/tools/>Tools</a></section></footer></article><script src=https://giscus.app/client.js data-repo=jonghwan-dev/jonghwan-dev.github.io data-repo-id=R_kgDOSB8O0Q data-category=Announcements data-category-id=DIC_kwDOSB8O0c4C6zRB data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=light data-lang=ko data-loading=lazy crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"light":"dark_dimmed")}})()</script><footer class=site-footer><section class=copyright>&copy;
+<a href=/tags/overleaf/>Overleaf</a>
+<a href=/tags/bibtex/>Bibtex</a></section></footer></article><script src=https://giscus.app/client.js data-repo=jonghwan-dev/jonghwan-dev.github.io data-repo-id=R_kgDOSB8O0Q data-category=Announcements data-category-id=DIC_kwDOSB8O0c4C6zRB data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=light data-lang=ko data-loading=lazy crossorigin=anonymous async></script><script>function setGiscusTheme(e){let t=document.querySelector("iframe.giscus-frame");t&&t.contentWindow.postMessage({giscus:{setConfig:{theme:e}}},"https://giscus.app")}(function(){addEventListener("message",t=>{if(event.origin!=="https://giscus.app")return;e()}),window.addEventListener("onColorSchemeChange",e);function e(){setGiscusTheme(document.documentElement.dataset.scheme==="light"?"light":"dark_dimmed")}})()</script><footer class=site-footer><section class=copyright>&copy;
 2024 -
 2026 ArmyKim_space</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=4.0.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><script type=module>
     import gallery from '\/ts\/gallery.js';
