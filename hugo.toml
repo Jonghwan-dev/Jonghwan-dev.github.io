@@ -15,6 +15,7 @@ enableRobotsTxt = true
     ID = "G-09ZRY73S9F"
 
 [params]
+  description = "ArmyKim_space는 딥러닝, Medical AI, 연구 도구, 논문 작성 경험을 정리하는 개발자 기술 블로그입니다."
   mainSections = ["post"]
   featuredImageField = "image"
   rssFullContent = true

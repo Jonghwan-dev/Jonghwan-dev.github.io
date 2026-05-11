@@ -1,766 +1,378 @@
 ---
-title: "LaTeX & IEEE 논문 작성 완벽 가이드 — 검증된 문법 요약집"
+title: "LaTeX와 IEEE 논문 작성: 처음부터 실전 제출까지 정리한 가이드"
 date: 2026-05-08
 draft: false
-description: "LaTeX 기초 문법부터 IEEE Transactions 논문 양식까지, 최신 공식 문서 기반으로 검증한 실전 요약집"
+description: "LaTeX 기본 문법, IEEEtran 템플릿, 수식·그림·표·참고문헌 작성법을 논문 제출 흐름에 맞춰 정리한 실전 기술 가이드입니다."
 image: ""
-tags: ["latex", "ieee", "논문작성", "research", "tools"]
+tags: ["latex", "ieee", "논문작성", "research", "overleaf", "bibtex"]
 categories: ["Tools"]
 ---
 
-> **검증 기준**  
-> - IEEEtran.cls **v1.8b** (CTAN 현행 최신)  
-> - **IEEE Editorial Style Manual** (Updated 25 March 2025)  
-> - IEEE Author Center 공식 가이드라인  
-> - amsmath 공식 문서 / Overleaf 공식 가이드
+LaTeX는 처음 접하면 문법이 낯설지만, 논문처럼 구조가 명확하고 반복 수정이 많은 문서를 작성할 때 강력한 도구가 됩니다. 특히 IEEE 형식의 논문은 제목, 초록, Index Terms, 수식 번호, 그림·표 캡션, 참고문헌 형식까지 규칙이 엄격하므로 Word처럼 눈으로 맞추는 방식보다 LaTeX 템플릿을 기준으로 관리하는 편이 안정적입니다.
 
----
+이 글은 LaTeX를 막 시작한 연구자나 개발자가 **IEEE 논문 초안**을 작성할 때 필요한 내용을 하나의 흐름으로 정리한 가이드입니다. 단순 명령어 목록보다 실제 작성 순서에 맞춰 설명하며, 복사해서 바로 실험할 수 있는 최소 예제를 함께 제공합니다. Google이 검색 결과 스니펫을 만들 때 페이지별 `meta description`을 활용할 수 있다고 설명하듯이, 기술 글도 제목과 요약만으로 글의 범위가 분명해야 독자가 빠르게 판단할 수 있습니다.[^google-snippet]
 
-## 목차
+## 이 글에서 다루는 범위
 
-1. [LaTeX 문서 기본 구조](#1-latex-문서-기본-구조)
-2. [필수 패키지](#2-필수-패키지)
-3. [텍스트 서식](#3-텍스트-서식)
-4. [섹션 구조](#4-섹션-구조)
-5. [수식 작성법](#5-수식-작성법)
-6. [그림 삽입](#6-그림-삽입)
-7. [표 작성](#7-표-작성)
-8. [상호 참조](#8-상호-참조)
-9. [참고문헌](#9-참고문헌)
-10. [IEEE 전용 설정](#10-ieee-전용-설정)
-11. [IEEE 그림 & 표 규칙](#11-ieee-그림--표-규칙)
-12. [IEEE 참고문헌 형식](#12-ieee-참고문헌-형식)
-13. [IEEE 스타일 체크리스트](#13-ieee-스타일-체크리스트)
-14. [알고리즘 작성](#14-알고리즘-작성)
-15. [저자 약력](#15-저자-약력)
-16. [버전별 변경사항 & 패키지 충돌 주의](#16-버전별-변경사항--패키지-충돌-주의)
+LaTeX에는 문서 조판, 수식, 그림, 참고문헌, 패키지 생태계가 모두 포함되어 있습니다. 따라서 처음부터 모든 명령어를 외우려 하기보다, 논문 한 편을 완성하는 데 필요한 핵심 개념을 순서대로 익히는 것이 좋습니다.
 
----
+| 단계 | 핵심 질문 | 이 글에서 제공하는 내용 |
+|---|---|---|
+| 문서 뼈대 만들기 | LaTeX 문서는 어디서 시작하고 끝나는가 | `\documentclass`, `\usepackage`, `document` 환경 |
+| 본문 구조화 | 섹션과 문단은 어떻게 나누는가 | `\section`, `\subsection`, 제목 계층 |
+| 수식 작성 | 번호가 있는 수식과 여러 줄 수식은 어떻게 쓰는가 | `equation`, `align`, `IEEEeqnarray` |
+| 그림·표 삽입 | 캡션과 라벨은 어디에 두어야 하는가 | `figure`, `table`, `\caption`, `\label` |
+| 참고문헌 관리 | IEEE 스타일 인용은 어떻게 정리하는가 | `\cite`, `thebibliography`, BibTeX 흐름 |
+| IEEE 제출 준비 | 일반 LaTeX와 IEEEtran의 차이는 무엇인가 | `IEEEtran`, `ieeecolor`, Index Terms, 체크리스트 |
 
-## 1. LaTeX 문서 기본 구조
+> 이 글의 원칙은 명확합니다. **본문에서는 구조를 먼저 잡고, 세부 서식은 템플릿과 패키지에 맡깁니다.** 논문 작성의 품질은 예쁜 화면보다 재현 가능한 구조와 일관된 참조에서 결정됩니다.
+
+## 1. LaTeX 문서의 최소 구조
+
+LaTeX 문서는 크게 두 영역으로 나뉩니다. 첫 번째는 문서 클래스와 패키지를 선언하는 **preamble**이고, 두 번째는 실제 내용이 들어가는 **document 환경**입니다. 가장 작은 문서는 다음처럼 구성됩니다.
 
 ```latex
-\documentclass[옵션]{클래스}   % 문서 유형 선언
-\usepackage{패키지명}           % 필요한 패키지 불러오기
+\documentclass{article}
 
-\begin{document}                % 본문 시작
-  내용
-\end{document}                  % 본문 끝
+\begin{document}
+Hello, LaTeX.
+\end{document}
 ```
 
-### 주요 문서 클래스
+논문을 작성할 때는 문서 클래스가 중요합니다. 일반 보고서라면 `article`로 충분하지만, IEEE 저널 또는 컨퍼런스 양식을 맞춰야 한다면 `IEEEtran` 계열 클래스를 사용해야 합니다. IEEEtran은 IEEE 논문 레이아웃을 위한 대표적인 LaTeX 클래스이며, CTAN에서 배포되는 버전은 v1.8b입니다.[^ctan-ieeetran]
 
-| 클래스 | 용도 |
-|--------|------|
-| `article` | 일반 논문, 보고서 |
-| `report` | 긴 보고서, 학위논문 |
-| `book` | 단행본 |
-| `beamer` | 프레젠테이션 슬라이드 |
-| `IEEEtran` | **IEEE 논문 표준 클래스** |
-| `ieeecolor` | IEEE 컬러 저널용 (추가 패키지 필요) |
+| 문서 클래스 | 주 사용처 | 비고 |
+|---|---|---|
+| `article` | 짧은 논문, 보고서 | LaTeX 기본 클래스 |
+| `report` | 장문의 보고서, 학위논문 | 장과 절 구조에 적합 |
+| `book` | 단행본 | 책 구성에 적합 |
+| `beamer` | 발표 슬라이드 | 프레젠테이션 전용 |
+| `IEEEtran` | IEEE 논문 | IEEE 저널·컨퍼런스 양식에 적합 |
+| `ieeecolor` | 일부 IEEE 컬러 저널 템플릿 | 저널별 템플릿 지침 확인 필요 |
 
----
+## 2. 논문용 기본 패키지 구성
 
-## 2. 필수 패키지
+LaTeX 패키지는 필요한 기능만 추가하는 방식으로 관리하는 것이 좋습니다. 처음부터 많은 패키지를 넣으면 충돌 원인을 찾기 어렵습니다. 아래 구성은 수식, 그림, 표, 링크, IEEE 인용에 자주 쓰이는 기본 조합입니다.
 
 ```latex
-% ── 수학/기호 ─────────────────────────────────
-\usepackage{amsmath}       % 수식 환경 확장 (align, gather 등)
-\usepackage{amssymb}       % 수학 기호 (∈, ℝ 등)
-\usepackage{amsfonts}      % 수학 폰트 (\mathbb, \mathcal 등)
+% 수식과 수학 기호
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 
-% ── 그림/표 ──────────────────────────────────
-\usepackage{graphicx}      % 이미지 삽입
-\usepackage{booktabs}      % 고품질 표 (toprule/midrule/bottomrule)
+% 그림과 표
+\usepackage{graphicx}
+\usepackage{booktabs}
 
-% ── 다중 그림 (IEEEtran 공식 지원) ─────────────
-\usepackage{subfig}        % \subfloat 명령. subcaption 아님!
+% IEEE 다중 그림
+\usepackage{subfig}
 
-% ── 알고리즘 ─────────────────────────────────
+% 알고리즘
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
-% ── 링크/참조 ────────────────────────────────
+% 링크와 인용
 \usepackage{hyperref}
 \hypersetup{hidelinks=true}
-\usepackage{cite}          % 참고문헌 자동 정렬
-
-% ── 기타 ─────────────────────────────────────
-\usepackage{textcomp}
+\usepackage{cite}
 ```
 
-> ⚠️ **IEEEtran 사용 시 주의**  
-> `subcaption` 패키지는 `caption` 패키지에 의존하며 IEEEtran과 **충돌 가능**.  
-> 다중 그림은 반드시 `subfig` 패키지 사용.
+IEEEtran을 사용할 때는 특히 캡션 관련 패키지에 주의해야 합니다. `subcaption`은 내부적으로 `caption` 패키지에 의존하므로 IEEEtran과 충돌할 수 있습니다. IEEE 형식에서 다중 그림을 다룰 때는 보통 `subfig`를 사용하는 편이 안전합니다.
 
----
+## 3. 제목, 섹션, 문단 구조 잡기
 
-## 3. 텍스트 서식
+LaTeX 문서에서 제목 계층은 HTML의 heading과 비슷합니다. 가장 큰 단위는 `\section`, 그 아래는 `\subsection`, 그 아래는 `\subsubsection`입니다. 논문에서는 제목 계층이 너무 깊어지면 독자가 흐름을 놓치기 쉬우므로, 보통 `subsection` 수준까지를 중심으로 설계하는 것이 좋습니다.
 
 ```latex
-\textbf{굵게}              % Bold
-\textit{기울임꼴}           % Italic
-\underline{밑줄}            % Underline
-\texttt{고정폭 폰트}         % 코드/경로
-\emph{강조}                 % 문맥에 따라 이탤릭/로만 자동 전환
-
-% 크기 (작은 것 → 큰 것 순서)
-{\tiny}  {\scriptsize}  {\footnotesize}  {\small}  {\normalsize}
-{\large}  {\Large}  {\LARGE}  {\huge}  {\Huge}
+\section{Introduction}
+\subsection{Motivation}
+\subsection{Contribution}
+\section{Method}
+\subsection{Model Architecture}
+\section{Experiments}
+\section{Conclusion}
 ```
 
----
+기술 블로그 글도 마찬가지입니다. 제목은 글의 약속이고, 각 섹션은 그 약속을 단계적으로 증명해야 합니다. LaTeX 논문에서는 대체로 **Introduction → Related Work → Method → Experiments → Results → Conclusion** 흐름이 많이 사용됩니다.
 
-## 4. 섹션 구조
+## 4. 수식 작성: `equation`, `align`, `IEEEeqnarray`
 
-```latex
-\section{제목}
-\subsection{제목}
-\subsubsection{제목}
-\paragraph{제목}        % 인라인
-\subparagraph{제목}     % 인라인
-
-\section*{번호 없는 섹션}   % Acknowledgment, References 등
-```
-
----
-
-## 5. 수식 작성법
-
-### 인라인 / 독립 수식
+LaTeX를 쓰는 가장 큰 이유 중 하나는 수식 조판입니다. 짧은 인라인 수식은 `$...$`로 작성하고, 독립된 수식은 `equation` 또는 `align` 환경을 사용합니다.
 
 ```latex
-% 인라인
-텍스트 안에 $E = mc^2$ 수식.
+텍스트 안에서는 $E = mc^2$처럼 인라인 수식을 작성합니다.
 
-% 독립 — 번호 없음
-\[
-  \int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
-\]
-
-% 독립 — 번호 있음 (IEEE 주로 사용)
 \begin{equation}
-  E = mc^2.        % 문장의 일부면 구두점 포함
+  E = mc^2.
   \label{eq:energy}
 \end{equation}
 ```
 
-### 정렬 수식 (여러 줄)
+여러 줄로 정렬해야 하는 수식에는 `align`이 편리합니다.
 
 ```latex
-% ── align (amsmath) ────────────────────────
 \begin{align}
   f(x) &= ax^2 + bx + c \\
-       &= a(x+1)^2 + c - a
+       &= a(x + 1)^2 + c - a.
+  \label{eq:quadratic}
 \end{align}
+```
 
-% 번호 없음
-\begin{align*}
-  2x - 5y &= 8 \\
-  3x + 9y &= -12
-\end{align*}
+IEEEtran 문서에서는 `IEEEeqnarray`도 자주 사용됩니다. 등호 정렬과 번호 제어가 필요한 경우 IEEE 스타일에 더 적합한 선택이 될 수 있습니다.
 
-% ── IEEEeqnarray (IEEE 권장, IEEEtran 내장) ──
+```latex
 \begin{IEEEeqnarray}{rCl}
   a &=& b + c \nonumber \\
-  x &=& y + z \label{eq:sys}
+  x &=& y + z.
+  \label{eq:system}
 \end{IEEEeqnarray}
-
-% ── equation 안에서 줄 나누기 (split) ────────
-\begin{equation}
-  \begin{split}
-    A &= \frac{\pi r^2}{2} \\
-      &= \frac{1}{2}\pi r^2
-  \end{split}
-  \label{eq:area}
-\end{equation}
 ```
 
-### subequations — (a)(b) 번호
+반대로 `eqnarray`는 사용하지 않는 것이 좋습니다. 등호 주변 간격이 부정확하고, 현대 LaTeX 문서에서는 `align` 또는 `IEEEeqnarray`로 대체하는 것이 일반적입니다.
+
+## 5. 그림 삽입: 캡션과 라벨 순서가 중요하다
+
+논문에서 그림은 단순한 장식이 아니라 결과를 설명하는 핵심 근거입니다. LaTeX에서는 그림을 `figure` 환경 안에 넣고, `\caption` 뒤에 `\label`을 배치해야 참조 번호가 올바르게 연결됩니다.
 
 ```latex
-\begin{subequations}
-  \label{eq:maxwell}
-  \begin{align}
-    \nabla \cdot  \mathbf{E} &= \rho/\epsilon_0 \label{eq:ma} \\
-    \nabla \times \mathbf{B} &= \mu_0\mathbf{J} \label{eq:mb}
-  \end{align}
-\end{subequations}
-% 결과: (1a), (1b)
-```
-
-> ⚠️ `subequations` 환경은 내부에 수식이 없어도 메인 카운터를 증가시킴.  
-> 빈 블록 실수로 남기면 번호가 건너뜀.
-
-> ❌ **`eqnarray` 절대 금지**: 등호 공백 불균일, 공식 obsolete 환경.  
-> ✅ **IEEE 논문 권장 순서**: `IEEEeqnarray` → `align`
-
-### 자주 쓰는 수학 기호
-
-```latex
-% 위·아래첨자
-x^{2}   x_{i}   A_{ij}^{k}
-
-% 분수
-\frac{분자}{분모}
-\dfrac{분자}{분모}   % 인라인에서도 디스플레이 크기 강제
-
-% 루트
-\sqrt{x}    \sqrt[n]{x}
-
-% 합/곱/적분
-\sum_{i=1}^{n}    \prod_{k=0}^{N}
-\int_{a}^{b} f(x)\,dx     % \, : 미소 공백 (관례)
-\oint    \iint    \iiint   % amsmath 필요
-
-% 극한
-\lim_{n \to \infty}
-
-% 행렬 (amsmath)
-\begin{pmatrix} a & b \\ c & d \end{pmatrix}  % ( )
-\begin{bmatrix} a & b \\ c & d \end{bmatrix}  % [ ]
-\begin{vmatrix} a & b \\ c & d \end{vmatrix}  % | |
-
-% 굵은 기호
-\mathbf{A}            % 굵은 로마체 (벡터/행렬)
-\boldsymbol{\alpha}   % 굵은 그리스 문자 (amsmath)
-\mathbb{R}            % 블랙보드 볼드
-\mathcal{L}           % 캘리그래피
-
-% 그리스 문자 (소문자)
-\alpha  \beta  \gamma  \delta  \epsilon  \varepsilon
-\zeta   \eta   \theta  \vartheta  \kappa  \lambda
-\mu     \nu    \xi     \pi     \sigma   \varsigma
-\tau    \phi   \varphi \chi    \psi     \omega
-
-% 그리스 문자 (대문자)
-\Gamma \Delta \Theta \Lambda \Xi \Pi \Sigma \Upsilon \Phi \Psi \Omega
-
-% 연산자
-\times  \div  \pm  \mp  \cdot  \leq  \geq  \neq
-\approx  \equiv  \sim  \ll  \gg
-
-% 집합
-\in  \notin  \cup  \cap  \subset  \subseteq  \setminus
-\emptyset  \varnothing
-\mathbb{N}  \mathbb{Z}  \mathbb{Q}  \mathbb{R}  \mathbb{C}
-
-% 화살표
-\to  \leftarrow  \rightarrow  \leftrightarrow
-\Rightarrow  \Leftarrow  \Leftrightarrow  \mapsto
-
-% 기타
-\infty  \partial  \nabla  \forall  \exists
-\therefore  \because
-\ldots  \cdots  \vdots  \ddots
-\|  \langle  \rangle  \lfloor  \rfloor  \lceil  \rceil
-```
-
----
-
-## 6. 그림 삽입
-
-### 기본 그림
-
-```latex
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\columnwidth]{파일명.png}
-  \caption{그림 설명}
-  \label{fig:이름}    % 반드시 \caption 뒤에!
-\end{figure}
-```
-
-### 위치 옵션
-
-| 옵션 | 의미 |
-|------|------|
-| `h` | 현재 위치 |
-| `t` | 페이지 상단 (IEEE 권장) |
-| `b` | 페이지 하단 |
-| `p` | 별도 float 페이지 |
-| `!` | LaTeX 배치 제한 완화 |
-
-### 크기 옵션
-
-```latex
-width=0.8\textwidth     % 텍스트 너비의 80%
-width=\columnwidth       % 컬럼 너비
-height=5cm              % 고정 높이
-scale=0.7               % 원본의 70%
-keepaspectratio         % 비율 유지
-```
-
-### 다중 그림 — IEEE 공식 방식 (`subfig`)
-
-```latex
-\usepackage{subfig}   % ← subcaption 아님! IEEEtran 공식 지원
-
-% 1컬럼 다중 그림
 \begin{figure}[!t]
   \centering
-  \subfloat[케이스 A]{\includegraphics[width=1.6in]{fig_a}%
-    \label{fig:a}}
-  \hfil
-  \subfloat[케이스 B]{\includegraphics[width=1.6in]{fig_b}%
-    \label{fig:b}}
-  \caption{전체 캡션}
-  \label{fig:multi}
+  \includegraphics[width=\columnwidth]{fig1.png}
+  \caption{Proposed model architecture.}
+  \label{fig:model}
 \end{figure}
-
-% 2컬럼 전체 너비
-\begin{figure*}[!t]
-  \centering
-  \subfloat[케이스 A]{\includegraphics[width=2.5in]{fig_a}\label{fig:wa}}
-  \hfil
-  \subfloat[케이스 B]{\includegraphics[width=2.5in]{fig_b}\label{fig:wb}}
-  \caption{2컬럼 전체 너비 그림 캡션}
-  \label{fig:wide}
-\end{figure*}
 ```
 
-> **실무 팁**: 많은 IEEE 저널이 서브캡션 없이 메인 캡션에서  
-> "(a) ..., (b) ..." 방식 설명을 선호. 서브캡션 불필요 시 `\subfloat[]` (빈 대괄호).
+| 위치 옵션 | 의미 | 실무 메모 |
+|---|---|---|
+| `h` | 현재 위치 | LaTeX가 반드시 지키지는 않음 |
+| `t` | 페이지 상단 | IEEE 문서에서 자주 사용 |
+| `b` | 페이지 하단 | 그림 흐름에 따라 사용 |
+| `p` | 별도 float 페이지 | 큰 그림이 많을 때 사용 |
+| `!` | 배치 제한 완화 | `!t`처럼 함께 사용 가능 |
 
----
-
-## 7. 표 작성
+다중 그림을 넣을 때는 `subfig`의 `\subfloat`를 사용할 수 있습니다.
 
 ```latex
-\begin{table}[htbp]
+\begin{figure}[!t]
   \centering
-  \caption{표 제목 — 표는 캡션이 위에, 그림은 아래}
-  \label{tab:이름}
+  \subfloat[Case A]{%
+    \includegraphics[width=1.6in]{fig_a}%
+    \label{fig:case-a}}
+  \hfil
+  \subfloat[Case B]{%
+    \includegraphics[width=1.6in]{fig_b}%
+    \label{fig:case-b}}
+  \caption{Comparison of two experimental settings.}
+  \label{fig:comparison}
+\end{figure}
+```
+
+## 6. 표 작성: `booktabs`로 가독성 확보하기
+
+표는 결과를 정리하는 데 매우 유용하지만, 선을 많이 넣을수록 오히려 읽기 어려워집니다. `booktabs` 패키지의 `\toprule`, `\midrule`, `\bottomrule`을 사용하면 논문에 적합한 깔끔한 표를 만들 수 있습니다.
+
+```latex
+\begin{table}[!t]
+  \centering
+  \caption{Performance comparison.}
+  \label{tab:performance}
   \begin{tabular}{lcc}
     \toprule
-    항목 & 방법 A & 방법 B \\
+    Method & Accuracy & Latency \\
     \midrule
-    정확도 & 94.2\% & 91.7\% \\
-    속도   & 23 ms  & 18 ms  \\
+    Baseline & 91.7\% & 18 ms \\
+    Proposed & 94.2\% & 23 ms \\
     \bottomrule
   \end{tabular}
 \end{table}
 ```
 
-### 컬럼 지정자
+그림 캡션은 보통 그림 아래에 오고, 표 캡션은 표 위에 옵니다. 또한 본문에서 표를 언급할 때는 `Table \ref{tab:performance}`처럼 자동 참조를 사용해야 합니다.
 
-| 기호 | 의미 |
-|------|------|
-| `l` | 왼쪽 정렬 |
-| `c` | 가운데 정렬 |
-| `r` | 오른쪽 정렬 |
-| `p{폭}` | 고정 너비, 자동 줄바꿈 |
-| `\|` | 세로 구분선 |
+## 7. 상호 참조: 직접 숫자를 쓰지 않는다
+
+LaTeX 문서에서 수식, 그림, 표, 섹션 번호를 직접 입력하면 수정 과정에서 번호가 틀어지기 쉽습니다. 따라서 항상 `\label`과 `\ref`를 사용해야 합니다.
 
 ```latex
-% 셀 병합
-\multicolumn{3}{c}{가로 3칸 병합}
-\multirow{2}{*}{세로 2칸 병합}   % multirow 패키지 필요
+\section{Method}
+\label{sec:method}
+
+\begin{equation}
+  y = Wx + b.
+  \label{eq:linear}
+\end{equation}
+
+As shown in Section~\ref{sec:method}, the model is defined by Eq.~\eqref{eq:linear}.
 ```
 
----
+가장 흔한 오류는 `\label`을 `\caption` 앞에 두는 것입니다. 그림과 표에서는 반드시 `\caption`이 번호를 생성한 다음 `\label`을 붙여야 합니다.
 
-## 8. 상호 참조
+## 8. 참고문헌과 인용 관리
 
-```latex
-% 라벨 붙이기
-\section{서론} \label{sec:intro}
-\begin{equation}...\end{equation} \label{eq:main}
-\caption{설명} \label{fig:result}   % \caption 뒤에!
-
-% 참조
-\ref{sec:intro}       % → "1"
-\eqref{eq:main}       % → "(1)"  수식 전용, 괄호 자동
-\pageref{fig:result}  % → 페이지 번호
-```
-
-> ⚠️ **흔한 실수 두 가지**  
-> 1. `\label`을 `\caption` 앞에 두면 잘못된 번호 참조  
-> 2. 같은 라벨을 서브섹션과 표에 동시 사용 → "Table IV-B3" 같은 오류
-
----
-
-## 9. 참고문헌
+IEEE 논문에서 인용은 대괄호 번호 형식으로 표시됩니다. 수동으로 `thebibliography`를 사용할 수도 있고, 규모가 커지면 BibTeX 또는 BibLaTeX 기반으로 관리할 수 있습니다.
 
 ```latex
-% 본문 인용 — 구두점 안쪽
-결과가 나타났다 [1].
-\cite{bib1}
-\cite{bib1, bib2}   % cite 패키지가 자동 정렬
+Prior work reported similar behavior \cite{smith2024}.
 
 \begin{thebibliography}{99}
-  \bibitem{bib1}
-    J. Smith, ``논문 제목,'' {\it IEEE Trans. Signal Process.},
-    vol. 68, pp. 1--10, 2020.
+\bibitem{smith2024}
+J. Smith and A. Kim, ``A sample paper title,''
+{\it IEEE Transactions on Example}, vol. 1, no. 2, pp. 10--20, 2024.
 \end{thebibliography}
 ```
 
----
+IEEE 스타일에서는 저자명, 논문 제목, 저널명, 권·호·페이지, 연도, DOI 표기까지 일정한 형식이 요구됩니다. 제출 전에는 IEEE Author Center 또는 목표 저널의 공식 템플릿을 확인하는 것이 안전합니다.[^ieee-author-center]
 
-## 10. IEEE 전용 설정
+## 9. IEEE 템플릿의 기본 골격
 
-### 문서 선언부
+IEEE 논문 초안을 시작할 때는 빈 파일에서 모든 것을 만들기보다 공식 템플릿을 기준으로 줄여 나가는 방식이 좋습니다. 아래는 IEEE 스타일 문서의 기본 골격입니다.
 
 ```latex
-\documentclass[journal,twoside,web]{ieeecolor}
-\usepackage{generic}
+\documentclass[journal]{IEEEtran}
+
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
-\usepackage{subfig}        % 다중 그림용
-\usepackage{algorithm,algorithmic}
-\usepackage{hyperref}
-\hypersetup{hidelinks=true}
 \usepackage{textcomp}
 
-\markboth{\hskip25pc IEEE TRANSACTIONS AND JOURNALS TEMPLATE}
-{Author \MakeLowercase{\textit{et al.}}: Title}
-```
+\begin{document}
 
-### 제목 & 저자
+\title{Paper Title in Title Case}
 
-```latex
-\title{논문 제목 (대소문자 혼용 / 전체 대문자 금지 / 수식 기호 금지)}
+\author{First A. Author, Second B. Author, and Third C. Author}
 
-\author{
-  First A. Author, \IEEEmembership{Fellow, IEEE},
-  Second B. Author, and Third C. Author Jr., \IEEEmembership{Member, IEEE}
-  \thanks{연구비 지원 정보}
-  \thanks{First A. Author is with 소속기관, 주소 (e-mail: ...)}
-  \thanks{Second B. Author is with ...}
-}
 \maketitle
-```
 
-### Abstract & Index Terms
-
-```latex
 \begin{abstract}
-  % ✅ 150~250 단어 (저널마다 다름 — 해당 저널 가이드 확인 필수)
-  % ✅ 한 단락, 자기완결적
-  % ❌ 약어 (보편적 IEEE, SI 등 제외), 각주, 참조 번호 금지
-  % ❌ 수식 번호, 표 금지
+This paper presents ...
 \end{abstract}
 
 \begin{IEEEkeywords}
-  % IEEE 공식 명칭은 "Keywords"가 아닌 "Index Terms"
-  % ✅ 알파벳순, 첫 항목만 대문자
-  % ✅ 2025 IEEE Taxonomy 기반 표준 용어 사용 권장
-  Keyword one, keyword two, keyword three
+Deep learning, medical imaging, segmentation.
 \end{IEEEkeywords}
-```
 
-### 첫 단락 드롭캡
-
-```latex
 \section{Introduction}
-\label{sec:introduction}
+\IEEEPARstart{T}{his} paper ...
 
-\IEEEPARstart{T}{his} document is...
-%              ↑첫글자  ↑나머지
-% 최소 2줄 이상 단락이어야 드롭캡 정상 동작
+\section{Conclusion}
+
+\end{document}
 ```
 
----
+초록은 논문의 문제, 방법, 결과, 의의를 압축해서 보여주는 부분입니다. IEEE 문서에서는 초록 안에 각주, 참조 번호, 복잡한 수식, 표를 넣지 않는 것이 일반적입니다. `IEEEkeywords`에는 검색과 분류에 도움이 되는 Index Terms를 넣습니다.
 
-## 11. IEEE 그림 & 표 규칙
+## 10. IEEE 논문 작성 체크리스트
 
-### 그림 (IEEE 권장 방식)
+논문을 제출하기 전에는 문법보다 **일관성**을 먼저 점검해야 합니다. 아래 항목은 초안 단계에서 자주 발견되는 문제를 줄이는 데 도움이 됩니다.
+
+| 구분 | 확인할 항목 | 권장 방식 |
+|---|---|---|
+| 수식 | 번호 참조 | `\eqref{}` 사용 |
+| 그림 | 라벨 위치 | `\caption` 뒤에 `\label` 배치 |
+| 표 | 캡션 위치 | 표 위에 캡션 배치 |
+| 인용 | 번호 직접 입력 | `\cite{}` 사용 |
+| 단위 | 시간 단위 | `sec`보다 `s` 사용 |
+| 범위 | 페이지·수치 범위 | `1--10`처럼 엔 대시 사용 |
+| 문체 | 수동태 남용 | 가능한 경우 명확한 능동태 사용 |
+| 패키지 | 캡션 충돌 | IEEEtran에서는 `caption`, `subcaption` 사용 주의 |
+
+## 11. 자주 발생하는 오류와 해결 방법
+
+LaTeX 오류 메시지는 처음에는 어렵게 보이지만, 대부분 원인은 반복됩니다. 특히 괄호가 닫히지 않았거나, 패키지 충돌이 있거나, 라벨과 참조가 맞지 않는 경우가 많습니다.
+
+| 증상 | 원인 | 해결 |
+|---|---|---|
+| 수식 번호가 건너뜀 | 빈 `subequations` 환경이 남아 있음 | 사용하지 않는 환경 삭제 |
+| 그림 참조 번호가 이상함 | `\label`이 `\caption` 앞에 있음 | `\caption{...}\label{...}` 순서로 수정 |
+| Table IV-B3 같은 참조가 나옴 | 섹션과 표에 같은 라벨 사용 | `sec:`, `fig:`, `tab:`, `eq:` 접두사로 구분 |
+| 그림이 원하는 위치에 안 나옴 | float 배치 알고리즘 때문 | `[!t]`, `[htbp]` 등을 조정하고 본문 흐름 재검토 |
+| 다중 그림 캡션이 깨짐 | `subcaption`과 IEEEtran 충돌 | `subfig` 사용 검토 |
+
+## 12. 자주 쓰는 LaTeX 명령어 모음
+
+아래 명령어는 논문 작성 중 자주 사용됩니다. 처음부터 모두 외울 필요는 없고, 필요한 순간에 검색해서 반복적으로 사용하면 자연스럽게 익숙해집니다.
 
 ```latex
-\begin{figure}[!t]
-  \centerline{\includegraphics[width=\columnwidth]{fig1.png}}
-  \caption{그림 설명. 캡션에 그림의 의미를 충분히 설명.}
-  \label{fig1}
-\end{figure}
-```
-
-### 해상도 요구사항 (IEEE Author Center 공식)
-
-| 유형 | 최소 해상도 |
-|------|-----------|
-| 컬러 / 회색조 이미지 | **300 DPI** |
-| Black & white Line art | **600 DPI** |
-| 저자 사진 | **300 DPI** |
-
-> ⚠️ 저널에 따라 다름 (일부는 컬러도 600 DPI). 제출 전 해당 저널 개별 확인 필수.
-
-### 허용 포맷 & 크기
-
-```
-포맷:  .EPS / .PDF / .PS / .TIFF / .PNG / .MPS
-       벡터 포맷은 모든 폰트 임베드 필수
-
-크기:
-  1컬럼          →  3.5인치 / 88mm
-  2컬럼 전체 폭  →  7.16인치 / 181mm
-  최대 높이      →  8.5인치 / 216mm
-  저자 사진      →  1인치 × 1.25인치
-```
-
-### 파일 명명 규칙
-
-```
-그림:     성 앞 5글자 + 번호.확장자     ander1.tif
-표:       성 앞 5글자.t번호.확장자      ander.t1.tif
-저자 사진: 성 앞 5글자.확장자           oppen.tif
-동명이인: 겹치는 자리에 이니셜 대체     oppmi.tif / oppmo.tif
-```
-
----
-
-## 12. IEEE 참고문헌 형식
-
-### 단행본
-
-```latex
-G. O. Young, ``제목,'' in {\it 책 제목,} 2nd ed.,
-J. Peters, Ed. New York, NY, USA: McGraw-Hill, 1964, pp. 15--64.
-```
-
-### 저널 논문
-
-```latex
-J. U. Duncombe, ``논문 제목,'' {\it IEEE Trans. Electron Devices},
-vol. ED-11, no. 1, pp. 34--39, Jan. 1959, doi: 10.1109/TED.2016.2628402.
-```
-
-### 컨퍼런스 논문
-
-```latex
-D. B. Payne and J. R. Stern, ``논문 제목,''
-in {\it Proc. IOOC-ECOC,} Boston, MA, USA, 1985, pp. 585--590.
-```
-
-### 학위논문
-
-```latex
-% 박사
-J. O. Williams, ``논문 제목,'' Ph.D. dissertation,
-Dept. Elect. Eng., Harvard Univ., Cambridge, MA, USA, 1993.
-
-% 석사
-N. Kawasaki, ``논문 제목,'' M.S. thesis,
-Dept. Electron. Eng., Osaka Univ., Osaka, Japan, 1993.
-```
-
-### 특허 / 데이터셋 / 코드
-
-```latex
-% 특허
-G. Brandli and M. Dick, ``특허 제목,'' U.S. Patent 4 084 217, Nov. 4, 1978.
-
-% 데이터셋 (현행 IEEE 형식)
-U.S. Dept. of Health, Aug. 2013, ``데이터셋 제목,''
-Publisher, doi: 10.3886/ICPSR30122.v2.
-
-% 코드 (현행 IEEE 형식)
-T. D'Martin and S. Soares, 2019, ``코드 제목 (Version 1.0),''
-Code Ocean, doi: 10.24433/CO.7212286.v1.
-```
-
-### 핵심 규칙 요약
-
-```
-✅ 저자명: 이니셜 먼저, 성 뒤  →  G. O. Young
-✅ 논문 제목: 첫 단어만 대문자 (고유명사, 원소 기호 제외)
-✅ 책/저널 제목: {\it 이탤릭체}
-✅ 범위: pp. 15--64  (엔 대시 --)
-❌ "Ref." 사용 금지  (문장 시작 "Reference [3] shows..." 는 허용)
-```
-
----
-
-## 13. IEEE 스타일 체크리스트
-
-### ✅ 반드시 해야 할 것
-
-```
-□  소수점 앞 0:        0.25  (O)    /    .25  (X)
-□  범위 표기:          "7 to 9" 또는 "7--9"    /    "7~9" (X)
-□  부피 단위:          cm³  (O)    /    cc  (X)
-□  치수:               0.1 cm × 0.2 cm    /    0.1 × 0.2 cm²  (X)
-□  시간 단위:          s  (O)    /    sec  (X)
-□  수식 참조:          \eqref{}  (O)    /    "Eq. (1)"  (X)
-□  그림 참조:          Fig.  — 문장 시작 포함 항상 Fig.
-□  표 참조:            Table I  — 약어 금지, 로마 숫자
-□  약어 정의:          Abstract와 본문 각각 별도로 최초 사용 시 정의
-□  Serial comma:       "A, B, and C"    /    "A, B and C"  (X)
-□  수식 구두점:        문장 일부면 구두점 수식 안에 포함  $E=mc^2.$
-□  \label 위치:        항상 \caption 뒤에
-□  Index Terms:        알파벳순, 첫 항목만 대문자, 2025 IEEE Taxonomy 기반
-□  복합 단위:          가운데점  A$\cdot$m$^{2}$
-□  능동태:             "We observed" > "It was observed"
-□  축약형 금지:        "do not"  (O)    /    "don't"  (X)
-```
-
-### ❌ 하지 말아야 할 것
-
-```
-□  제목 전체 대문자 금지
-□  제목에 "(Invited)" 표기 금지
-□  제목에 수식 기호 포함 금지  ← 2025 IEEE Author Center 권고
-□  Abstract에 약어·각주·참조 번호 금지
-□  Abstract에 수식 번호·표 금지
-□  \eqnarray 사용 금지  →  align 또는 IEEEeqnarray
-□  \nonumber를 array 환경 내부에서 사용 금지
-□  동일 라벨을 서브섹션과 표에 동시 사용 금지
-□  \label을 \caption 앞에 배치 금지
-□  그림 안에 캡션 포함 금지
-□  그림 외부에 테두리(border) 추가 금지
-□  SI + CGS 단위 혼용 금지
-□  subcaption 패키지 사용 주의  →  subfig 사용
-□  "remnant/remnance"  →  "remanent/remanence"
-□  "micron"  →  "micrometer"
-□  "while" (동시 사건 외)  →  "whereas"
-□  "essentially" (≈ 의미)  →  "approximately"
-□  "issue" (문제 의미)  →  "problem"
-□  자동 endnote 사용 금지
-□  "Ref." 사용 금지  (문장 시작 제외)
-```
-
----
-
-## 14. 알고리즘 작성
-
-```latex
-\begin{algorithm}[H]
-  \caption{알고리즘 이름.}
-  \label{alg:name}
-  \begin{algorithmic}
-    \STATE {\textsc{TRAIN}}$(\mathbf{X}, \mathbf{T})$
-    \STATE \hspace{0.5cm}$\textbf{select randomly } W \subset \mathbf{X}$
-
-    \IF{조건}
-      \STATE 실행문
-    \ELSIF{조건2}
-      \STATE 실행문
-    \ELSE
-      \STATE 실행문
-    \ENDIF
-
-    \FOR{$i = 1$ \TO $N$}
-      \STATE 반복 내용
-    \ENDFOR
-
-    \WHILE{조건}
-      \STATE 반복 내용
-    \ENDWHILE
-
-    \STATE \textbf{return} $결과값$
-  \end{algorithmic}
-\end{algorithm}
-```
-
----
-
-## 15. 저자 약력
-
-```latex
-% 사진 포함
-\begin{IEEEbiography}[{%
-  \includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{photo.png}
-}]{First A. Author}
-  % 1단락: 생년월일/장소(선택), 학력
-  % 2단락: he/she 사용 (성 직접 언급 금지), 경력, 현 직책(위치 필수)
-  % 3단락: 직함+성, 전문학회 멤버십, 수상
-\end{IEEEbiography}
-
-% 사진 없음
-\begin{IEEEbiographynophoto}{Second B. Author}
-  photograph and biography not available at the time of publication.
-\end{IEEEbiographynophoto}
-```
-
----
-
-## 16. 버전별 변경사항 & 패키지 충돌 주의
-
-### IEEEtran.cls 버전 히스토리
-
-| 버전 | 주요 변경 |
-|------|---------|
-| v1.7 (2007) | `\IEEEbiography`, `\IEEEkeywords`, `\IEEEPARstart` 등 IEEE 접두사 명령 도입. 구형 명령 사용 시 경고 출력 후 동작 |
-| v1.8 (2012) | `\IEEEcompsoctitleabstractindextext` → `\IEEEtitleabstractindextext` 로 이름 변경. `transmag` 옵션 추가 |
-| v1.8a (2014) | Computer Society 포맷 전면 개편. `\IEEEraisesectionheading` 추가 |
-| **v1.8b (2015~현재)** | `comsoc` 모드 추가. **현재 CTAN 최신 버전** |
-
-### 패키지 호환성
-
-| 패키지 | IEEEtran 상태 | 비고 |
-|--------|-------------|------|
-| `subfig` | ✅ 공식 지원 | 다중 그림 권장 |
-| `subcaption` | ⚠️ 충돌 가능 | caption 패키지 의존 문제 |
-| `hyperref` | ✅ 호환 | `hidelinks=true` 권장 |
-| `amsthm` | ⚠️ `\proof` 충돌 가능 | v1.7+ 내부 처리 |
-| `caption` | ⚠️ 충돌 가능 | IEEEtran 기본 캡션 사용 권장 |
-
-### 자주 발생하는 오류 & 해결
-
-```latex
-% 문제: 수식 번호 건너뜀 (예: (17) → (20))
-% 원인: 빈 subequations 블록이 카운터를 증가시킴
-% 해결: 사용하지 않는 subequations 블록 완전 삭제
-
-% 문제: 그림/표 참조 번호 오류
-% 원인: \label이 \caption 앞에 위치
-% 해결: 항상 \caption{...} \label{...} 순서 준수
-
-% 문제: Table IV-B3 같은 이상한 참조
-% 원인: 서브섹션과 표에 동일 라벨 사용
-% 해결: 라벨 이름 구분  \label{sec:xxx}  \label{tab:xxx}
-```
-
----
-
-## 부록: 유용한 명령어 모음
-
-```latex
-% 줄바꿈 & 페이지
-\\              % 줄바꿈
-\newpage        % 새 페이지
-\clearpage      % float 전부 출력 후 새 페이지
-\noindent       % 들여쓰기 없이
-
-% 공백
-\,              % 얇은 공백 (수식 dx 앞 관례)
-\quad           % 1em
-\qquad          % 2em
-\hspace{1cm}    % 수평 고정
-\vspace{0.5cm}  % 수직 고정
-\hfill          % 남은 공간 채우기
+% 텍스트
+\textbf{bold}
+\textit{italic}
+\texttt{monospace}
+\emph{emphasis}
 
 % 특수문자
-\%  \$  \&  \#  \_  \{  \}  \^{}  \~{}
+\%  \$  \&  \#  \_  \{  \}
 
-% 따옴표 — 반드시 아래 방식
-``큰따옴표''    % " 직접 입력 금지
+% 줄과 페이지
+\\
+\newpage
+\clearpage
+\noindent
+
+% 공백
+\,
+\quad
+\qquad
+\hfill
+
+% 대시와 따옴표
+--       % en dash
+---      % em dash
+``큰따옴표''
 `작은따옴표'
-
-% 대시
---   % 엔 대시: 범위  pp. 1--10
----  % 엠 대시: 문장 단절
-
-% 길이 변수
-\textwidth    % 전체 텍스트 너비
-\columnwidth  % 현재 컬럼 너비
-\linewidth    % 현재 줄 너비
-\textheight   % 텍스트 영역 높이
 ```
 
----
+수학 기호는 다음처럼 작성합니다.
 
-## 마치며 — 핵심 원칙 6가지
+```latex
+% 첨자와 분수
+x_i^2
+\frac{a}{b}
+\sqrt{x}
 
-1. 하드코딩 숫자 대신 `\ref`, `\eqref`, `\cite` 사용
-2. `eqnarray` 절대 금지 → `align` 또는 `IEEEeqnarray`
-3. `\label`은 항상 `\caption` **뒤에**
-4. IEEEtran에서 `subcaption` 대신 `subfig`
-5. Index Terms는 **2025 IEEE Taxonomy** 기반 표준 용어 사용
-6. 해상도·단어 수 등은 **해당 저널 가이드 개별 확인** 필수
+% 합, 적분, 극한
+\sum_{i=1}^{n} x_i
+\int_a^b f(x)\,dx
+\lim_{n \to \infty}
 
----
+% 집합과 화살표
+\mathbb{R}
+\in
+\subseteq
+\Rightarrow
+\Leftrightarrow
 
-*검증 출처: IEEEtran.cls v1.8b changelog (CTAN), IEEE Editorial Style Manual (Updated 25 March 2025),  
-IEEE Author Center 공식 가이드, Overleaf amsmath 공식 문서, IEEE Author Center Magazines 가이드라인*
+% 행렬
+\begin{bmatrix}
+  a & b \\
+  c & d
+\end{bmatrix}
+```
+
+## 13. Overleaf로 시작할 때의 권장 흐름
+
+로컬 LaTeX 환경을 직접 구성하는 것도 가능하지만, 처음에는 Overleaf 같은 웹 기반 편집기를 사용하면 패키지 설치 문제를 줄일 수 있습니다. Overleaf는 LaTeX 프로젝트를 온라인에서 작성·컴파일할 수 있는 환경을 제공하며, 공식 문서에서 수식과 참고문헌 작성 예제를 제공하고 있습니다.[^overleaf-amsmath]
+
+실전에서는 다음 순서가 효율적입니다.
+
+| 순서 | 작업 | 이유 |
+|---|---|---|
+| 1 | 목표 저널 또는 학회 템플릿 다운로드 | 제출 형식을 처음부터 맞추기 위해 |
+| 2 | 예제 본문을 지우기 전에 구조 확인 | 어떤 명령이 필요한지 파악하기 위해 |
+| 3 | 제목·초록·섹션 제목만 먼저 작성 | 논문의 논리 구조를 먼저 고정하기 위해 |
+| 4 | 그림·표·수식을 라벨과 함께 추가 | 나중에 참조 오류를 줄이기 위해 |
+| 5 | 참고문헌을 마지막에 정리하지 말고 작성 중 관리 | 누락 인용을 줄이기 위해 |
+
+## 마치며
+
+LaTeX와 IEEE 템플릿은 처음에는 복잡해 보이지만, 실제로는 몇 가지 원칙을 반복해서 적용하는 작업입니다. 문서 클래스와 패키지는 최소한으로 시작하고, 모든 번호는 `\label`과 `\ref`로 관리하며, 그림과 표는 캡션과 라벨 순서를 지키고, IEEE 제출 전에는 공식 템플릿과 저널별 지침을 확인하면 됩니다.
+
+가장 중요한 것은 글을 쓰기 전에 구조를 먼저 정하는 것입니다. 논문도 기술 블로그도 독자에게 전달해야 할 문제, 방법, 결과가 명확할수록 읽기 쉬워집니다. LaTeX는 그 구조를 흔들리지 않게 유지해 주는 도구로 생각하면 됩니다.
+
+## 참고 자료
+
+[^google-snippet]: [Google Search Central, "메타 설명 작성 방법"](https://developers.google.com/search/docs/appearance/snippet)
+[^ctan-ieeetran]: [CTAN, "IEEEtran – Document class for IEEE Transactions journals and conferences"](https://ctan.org/pkg/ieeetran)
+[^ieee-author-center]: [IEEE Author Center, "Authoring Tools and Templates"](https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/create-the-text-of-your-article/ieee-article-templates/)
+[^overleaf-amsmath]: [Overleaf Documentation, "Aligning equations with amsmath"](https://www.overleaf.com/learn/latex/Aligning_equations_with_amsmath)
