@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bibtex on ArmyKim_space</title><link>https://jonghwan-dev.github.io/tags/bibtex/</link><description>Recent content in Bibtex on ArmyKim_space</description><generator>Hugo -- gohugo.io</generator><language>ko-KR</language><lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jonghwan-dev.github.io/tags/bibtex/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTeX 기초 문법 치트시트: 매번 찾아보는 명령어 사전</title><link>https://jonghwan-dev.github.io/post/tools-latex-intro/</link><pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate><guid>https://jonghwan-dev.github.io/post/tools-latex-intro/</guid><description>&lt;p&gt;LaTeX는 문서를 &lt;strong&gt;명령어로 조판&lt;/strong&gt;하는 도구입니다. 처음에는 &lt;code&gt;\begin&lt;/code&gt;, &lt;code&gt;\section&lt;/code&gt;, &lt;code&gt;\label&lt;/code&gt; 같은 문법이 낯설지만, 몇 번 쓰다 보면 반복되는 패턴이 거의 정해져 있다는 것을 알게 됩니다. 이 글은 LaTeX를 완벽히 설명하는 튜토리얼이 아니라, 문법이 기억나지 않을 때 바로 돌아와 확인하는 &lt;strong&gt;기초 명령어 사전&lt;/strong&gt;입니다.&lt;/p&gt;
-&lt;p&gt;논문 작성법이나 글쓰기 전략은 여기서 다루지 않습니다. 이 글의 목적은 명확합니다. LaTeX에서 자주 쓰는 용어와 명령어를 빠르게 찾고, 필요한 예제를 복사해서 바로 수정할 수 있게 만드는 것입니다.&lt;/p&gt;
-&lt;h2 id="빠른-검색-표"&gt;빠른 검색 표
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bibtex on ArmyKim_space</title><link>https://jonghwan-dev.github.io/tags/bibtex/</link><description>Recent content in Bibtex on ArmyKim_space</description><generator>Hugo -- gohugo.io</generator><language>ko-KR</language><lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://jonghwan-dev.github.io/tags/bibtex/index.xml" rel="self" type="application/rss+xml"/><item><title>LaTeX를 처음 쓸 때 자주 막히는 문법 정리</title><link>https://jonghwan-dev.github.io/post/tools-latex-intro/</link><pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate><guid>https://jonghwan-dev.github.io/post/tools-latex-intro/</guid><description>&lt;p&gt;LaTeX는 문서를 &lt;strong&gt;명령어로 조판&lt;/strong&gt;하는 도구입니다. 처음에는 &lt;code&gt;\begin&lt;/code&gt;, &lt;code&gt;\section&lt;/code&gt;, &lt;code&gt;\label&lt;/code&gt; 같은 문법이 낯설지만, 실제로 자주 쓰는 패턴은 생각보다 반복됩니다. LaTeX Project가 설명하듯 LaTeX는 문서의 구조와 표현을 분리해 고품질 조판을 돕는 시스템이며, Overleaf 역시 기본 구조를 익히면 브라우저에서 빠르게 문서를 작성하고 컴파일할 수 있는 학습 자료를 제공합니다.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;이 글은 LaTeX를 깊게 이론적으로 설명하기 위한 글이 아닙니다. 문법이 기억나지 않을 때 다시 들어와서 확인하고, 필요한 예제를 복사해 바로 수정할 수 있도록 자주 쓰는 용어와 명령어를 한곳에 정리한 기술 블로그용 기초 노트입니다.&lt;/p&gt;
+&lt;h2 id="빠르게-찾아보기"&gt;빠르게 찾아보기
 &lt;/h2&gt;&lt;p&gt;아래 표는 이 글에서 다루는 LaTeX 기초 항목을 한 번에 찾기 위한 색인입니다. 원하는 작업이 생기면 왼쪽 열에서 먼저 찾고, 오른쪽 예제를 기준으로 본문을 확인하면 됩니다.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -123,7 +123,7 @@
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="2-preamble에서-자주-쓰는-패키지"&gt;2. preamble에서 자주 쓰는 패키지
-&lt;/h2&gt;&lt;p&gt;패키지는 LaTeX의 기능을 확장합니다. 수식, 그림, 표, 링크, 참고문헌처럼 자주 쓰는 기능은 패키지로 불러온 뒤 사용합니다.&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;패키지는 LaTeX의 기능을 확장합니다. 수식, 그림, 표, 링크, 참고문헌처럼 자주 쓰는 기능은 패키지로 불러온 뒤 사용합니다. 예를 들어 &lt;code&gt;amsmath&lt;/code&gt;는 LaTeX에서 수학식 작성 기능을 확장하는 대표 패키지이고, &lt;code&gt;graphicx&lt;/code&gt;는 이미지 삽입, &lt;code&gt;hyperref&lt;/code&gt;는 링크와 PDF 메타 정보를 다룰 때 자주 사용됩니다.&lt;sup id="fnref:3"&gt;&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;sup id="fnref:4"&gt;&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref"&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;sup id="fnref:5"&gt;&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-latex" data-lang="latex"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;\documentclass&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;article&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;% 수식
@@ -1003,7 +1003,7 @@
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="20-overleaf에서-빠르게-확인할-것"&gt;20. Overleaf에서 빠르게 확인할 것
-&lt;/h2&gt;&lt;p&gt;처음 LaTeX를 쓸 때는 로컬 설치보다 Overleaf 같은 웹 기반 편집기가 편할 수 있습니다. Overleaf는 브라우저에서 LaTeX 문서를 작성하고 컴파일할 수 있는 환경과 기본 문서 예제를 제공합니다.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;처음 LaTeX를 쓸 때는 로컬 설치보다 Overleaf 같은 웹 기반 편집기가 편할 수 있습니다. Overleaf는 브라우저에서 LaTeX 문서를 작성하고 컴파일할 수 있는 환경과 기본 문서 예제를 제공합니다.&lt;sup id="fnref1:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -1148,8 +1148,24 @@
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.latex-project.org/" target="_blank" rel="noopener"
+ &gt;LaTeX Project, &amp;ldquo;LaTeX — A document preparation system&amp;rdquo;&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
 &lt;p&gt;&lt;a class="link" href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes" target="_blank" rel="noopener"
- &gt;Overleaf Documentation, &amp;ldquo;Learn LaTeX in 30 minutes&amp;rdquo;&lt;/a&gt;&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+ &gt;Overleaf Documentation, &amp;ldquo;Learn LaTeX in 30 minutes&amp;rdquo;&lt;/a&gt;&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href="#fnref1:2" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:3"&gt;
+&lt;p&gt;&lt;a class="link" href="https://ctan.org/pkg/amsmath" target="_blank" rel="noopener"
+ &gt;CTAN, &amp;ldquo;amsmath – AMS mathematical facilities for LaTeX&amp;rdquo;&lt;/a&gt;&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:4"&gt;
+&lt;p&gt;&lt;a class="link" href="https://ctan.org/pkg/graphicx" target="_blank" rel="noopener"
+ &gt;CTAN, &amp;ldquo;graphicx – Enhanced support for graphics&amp;rdquo;&lt;/a&gt;&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:5"&gt;
+&lt;p&gt;&lt;a class="link" href="https://ctan.org/pkg/hyperref" target="_blank" rel="noopener"
+ &gt;CTAN, &amp;ldquo;hyperref – Extensive support for hypertext in LaTeX&amp;rdquo;&lt;/a&gt;&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink"&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description></item></channel></rss>
