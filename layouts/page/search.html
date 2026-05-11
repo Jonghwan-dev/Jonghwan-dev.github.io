@@ -5,6 +5,13 @@
     {{- end -}}
 {{ end }}
 {{ define "main" }}
+<header>
+    <h1 class="section-title">{{ .Title }}</h1>
+    {{ with .Params.description }}
+        <p class="section-description">{{ . }}</p>
+    {{ end }}
+</header>
+
 <form action="{{ .RelPermalink }}" class="search-form"{{ with .OutputFormats.Get "json" -}} data-json="{{ .RelPermalink }}"{{- end }}>
     <div class="search-input-row">
         <label>{{ T "search.title" }}</label>

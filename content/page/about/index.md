@@ -1,14 +1,14 @@
 ---
 # ─── About 페이지 ──────────────────────────────────── 2026-04-14 by JHkim ──
 title: "About"
-description: "The AI Stack 블로그 소개"
+description: "ArmyKim_space 블로그 운영자 소개와 Computer Vision, VLM, LLM, 개발 도구, 기술 스택 중심의 글 작성 방향을 정리한 페이지입니다."
 slug: about
 url: /about/
 date: 2026-04-14
 lastmod: 2026-04-14
 ---
 
-## 안녕하세요 👋
+## 안녕하세요
 
 일단 환영합니다.
 
