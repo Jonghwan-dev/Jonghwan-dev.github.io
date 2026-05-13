@@ -19,6 +19,7 @@ enableRobotsTxt = true
   mainSections = ["post"]
   featuredImageField = "image"
   rssFullContent = true
+  favicon = "img/favicon.png"
 
   [params.footer]
     since = 2024

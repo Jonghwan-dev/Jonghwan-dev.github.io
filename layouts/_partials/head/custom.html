@@ -5,6 +5,9 @@
 {{ with .Site.Params.naver.siteVerification }}
 <meta name="naver-site-verification" content="{{ . }}" />
 {{ end }}
+{{ with .Params.robots }}
+<meta name="robots" content="{{ . }}" />
+{{ end }}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
